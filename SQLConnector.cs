@@ -261,9 +261,9 @@ namespace ConnectToDatabase
 					for (int i = 0; i < numberOfColumns; ++i)
 					{
 						if (!DataRecordExtensions.HasColumn(dataReader, columnNames[i]))
-                        {
+						{
 							return false;
-                        }
+						}
 					}
 
 					while (dataReader.Read())
@@ -274,8 +274,6 @@ namespace ConnectToDatabase
 						{
 							manyColumns[i].Add(dataReader[columnNames[i]] + "");
 						}
-						
-						
 					}
 
 					dataReader.Close();

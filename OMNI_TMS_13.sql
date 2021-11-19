@@ -61,38 +61,77 @@ CREATE TABLE `cities`
 `nextCityWest` INT DEFAULT NULL,
 `nextCityEast` INT DEFAULT NULL,
 PRIMARY KEY (`cityID`),
-KEY `nextCityWest` (`cityID`),
-KEY `nextCityEast` (`cityID`),
+KEY `nextCityWest` (`nextCityWest`),
+KEY `nextCityEast` (`nextCityEast`),
 CONSTRAINT `cities_constraint1` FOREIGN KEY (`nextCityWest`) REFERENCES `cities` (`cityID`),
 CONSTRAINT `cities_constraint2` FOREIGN KEY (`nextCityEast`) REFERENCES `cities` (`cityID`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 insert  into `cities`(`cityID`,`cityName`,`cityProvince`,`cityCountry`,`kilometersToNextCityEast`,`timeToNextCityEast`,`nextCityWest`,`nextCityEast`) values 
 
-(1, 'Windsor', 'Ontario', 'Canada', 191, 2.5, NULL, 2),
-(2, 'London', 'Ontario', 'Canada', 128, 1.75, 1, 3),
-(3, 'Hamilton', 'Ontario', 'Canada', 68, 1.25, 2, 4),
-(4, 'Toronto', 'Ontario', 'Canada', 60, 1.3, 3, 5),
-(5, 'Oshawa', 'Ontario', 'Canada', 134, 1.65, 4, 6),
-(6, 'Belleville', 'Ontario', 'Canada', 82, 1.2, 5, 7),
-(7, 'Kingston', 'Ontario', 'Canada', 196, 2.5, 6, 8),
+(1, 'Windsor', 'Ontario', 'Canada', 191, 2.5, NULL, NULL),
+(2, 'London', 'Ontario', 'Canada', 128, 1.75, 1, NULL),
+(3, 'Hamilton', 'Ontario', 'Canada', 68, 1.25, 2, NULL),
+(4, 'Toronto', 'Ontario', 'Canada', 60, 1.3, 3, NULL),
+(5, 'Oshawa', 'Ontario', 'Canada', 134, 1.65, 4, NULL),
+(6, 'Belleville', 'Ontario', 'Canada', 82, 1.2, 5, NULL),
+(7, 'Kingston', 'Ontario', 'Canada', 196, 2.5, 6, NULL),
 (8, 'Ottawa', 'Ontario', 'Canada', NULL, NULL, 7, NULL);
 
 DROP TABLE IF EXISTS `depots`;
 
 CREATE TABLE `depots`
 (
+`depotID` INT NOT NULL AUTO_INCREMENT,
 `carrierID` INT NOT NULL,
 `cityID` INT NOT NULL,
 `FTLAvailability` INT NOT NULL,
 `LTLAvailability` INT NOT NULL,
-PRIMARY KEY (`carrierID`, `cityID`),
+PRIMARY KEY (`depotID`),
 KEY `carrierID` (`carrierID`),
 KEY `cityID` (`cityID`),
 CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierID`) REFERENCES `carriers` (`carrierID`),
-CONSTRAINT `carrierDepots_constraint2` FOREIGN KEY (`cityID`) REFERENCES `cityID` (`cityID`)
+CONSTRAINT `carrierDepots_constraint2` FOREIGN KEY (`cityID`) REFERENCES `cities` (`cityID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-insert  into `orders`(`carrierID`,`cityID`,`FTLAvailability`,`LTLAvailability`) values 
+insert  into `depots`(`carrierID`,`cityID`,`FTLAvailability`,`LTLAvailability`) values 
 
-(123, '2021-01-01', NULL, 'OK', 'BIG_JOB', 69, 'Waterloo', 'Toronto', 'BIGASS_VAN', 132, 321);
+/*Planet Express*/
+(1, 1, 50, 640),
+(1, 3, 50, 640),
+(1, 5, 50, 640),
+(1, 6, 50, 640),
+(1, 8, 50, 640),
+
+/*Schooner's*/
+(2, 2, 18, 98),
+(2, 4, 18, 98),
+(2, 7, 18, 98),
+
+/*Tillman Transport*/
+(3, 1, 24, 35),
+(3, 2, 18, 45),
+(3, 3, 18, 45),
+
+/*We Haul*/
+(4, 8, 11, 0),
+(4, 4, 11, 40);
+
+
+DROP TABLE IF EXISTS `trips`;
+
+CREATE TABLE `trips`
+(
+`depotID` INT NOT NULL,
+`orderID` INT NOT NULL,
+`tripStatus` VARCHAR(40),
+`shipmentQuantity` INT NOT NULL,
+`timeToCompleteShipment` INT NOT NULL,
+PRIMARY KEY (`depotID`, `orderID`),
+KEY `depotID` (`depotID`),
+KEY `orderID` (`orderID`),
+CONSTRAINT `trips_constraint1` FOREIGN KEY (`depotID`) REFERENCES `depots` (`depotID`),
+CONSTRAINT `trips_constraint2` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

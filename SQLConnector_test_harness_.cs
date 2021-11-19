@@ -15,10 +15,10 @@ namespace ConnectToDatabase
     {
         static void Main(string[] args)
         {
-            SQLConnector dbc = new SQLConnector();
+            SQLConnector dbc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
             List<List<string>> stuff = new List<List<string>>();
             
-            if (dbc.Select("customers", "customerName, contactLast", out stuff))
+            if (dbc.Select("cities", "cityName", out stuff))
             {
                 foreach (List<string> bunchof in stuff)
                 {
