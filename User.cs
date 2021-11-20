@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConnectToDatabase;
 
 namespace UserClasses
 {
@@ -77,11 +78,44 @@ namespace UserClasses
         }
 
         /// <summary>
-        /// Method FetchCarrierData
+        /// Method FetchCarrierData fetches carrier data from the database and retunrs a list of Carrier objects.
+        /// Returns null if fetch failed.
         /// </summary>
-        public void FetchCarrierData()
+        public  List<Carrier> FetchCarrierData()
         {
+            //create SQLConnecter to connect to database
+            SQLConnector carrierFetcher = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
 
+            //create a list in which to store the data
+            List<List<string>> carrierInfoRetrieved = new List<List<string>>();
+
+            //retrieve the data
+            if (carrierFetcher.RetrieveFromColumns("carriers", "carrierID, carrierName, FTLRate, LTLRate, reefCharge", out carrierInfoRetrieved))
+            {
+                //this int will later be initialized using a method that returns the number of rows in the `carrierID` column
+                int numberofCarriers = 4;
+
+                //create a list of carriers
+                List<Carrier> carriersFetched = new List<Carrier>();
+
+                //fill the list with the retrieved data
+                for (int i = 0; i < numberofCarriers; ++i)
+                {
+                    Carrier carrier = new Carrier(int.Parse(carrierInfoRetrieved[0][i]));
+                    carrier.CarrierName = carrierInfoRetrieved[1][i];
+                    carrier.FTLRate = float.Parse(carrierInfoRetrieved[2][i]);
+                    carrier.LTLRate = float.Parse(carrierInfoRetrieved[3][i]);
+                    carrier.ReefCharge = float.Parse(carrierInfoRetrieved[4][i]);
+                    carriersFetched.Add(carrier);
+                }
+
+                return carriersFetched;
+            }
+
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>

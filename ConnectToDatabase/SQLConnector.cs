@@ -230,7 +230,7 @@ namespace ConnectToDatabase
 		/// <param name="table"></param>
 		/// <param name="columns"></param>
 		/// <returns>Returns a dynamic array of lists of strings which contain the specified data that was retrieved.</returns>
-		public bool Select(string table, string columns, out List<List<string>> output)
+		public bool RetrieveFromColumns(string table, string columns, out List<List<string>> output)
 		{
 			string query = "SELECT * FROM "+table;
 
