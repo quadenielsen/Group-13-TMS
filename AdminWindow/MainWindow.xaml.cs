@@ -23,21 +23,24 @@ namespace AdminWindow
     /// </summary>
     public partial class MainWindow : Window
     {
-        User user;
+        ConnectToDatabase.Admin admin;
         ObservableCollection<Carrier> carriers;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            user = new User("planner");
-             carriers = user.Carriers;
+            admin = new ConnectToDatabase.Admin();
+            carriers = admin.Carriers;
             DG1.DataContext = carriers;
         }
 
-        private void DG1_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        private void btnUpdate_Table_Click(object sender, RoutedEventArgs e)
         {
-            carriers[carriers.Count - 1].CarrierID = 5;
+            if (CarrierData.IsSelected == true)
+            {
+                
+            }
         }
     }
 }

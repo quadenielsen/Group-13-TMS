@@ -34,7 +34,7 @@ namespace UserClasses
 		public User(string userRole)
 		{
 			sqlc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
-			if (userRole == "planner")
+			if (userRole == "planner" || userRole == "admin")
 			{
 				Carriers = FetchCarrierData();
 			}
@@ -102,7 +102,7 @@ namespace UserClasses
 			List<List<string>> carrierInfoRetrieved = new List<List<string>>();
 
 			//retrieve the data
-			if (sqlc.RetrieveFromColumns("carriers", "carrierID, carrierName, FTLRate, LTLRate, reefCharge", out carrierInfoRetrieved))
+			if (sqlc.RetrieveFromColumns("carriers", "carrierName, FTLRate, LTLRate, reefCharge", out carrierInfoRetrieved))
 			{
 				//get the number of carriers
 				int numberofCarriers = carrierInfoRetrieved[0].Count;
@@ -115,11 +115,11 @@ namespace UserClasses
 					//fill the list with the retrieved data
 					for (int i = 0; i < numberofCarriers; ++i)
 					{
-						Carrier carrier = new Carrier(int.Parse(carrierInfoRetrieved[0][i]));
-						carrier.CarrierName = carrierInfoRetrieved[1][i];
-						carrier.FTLRate = float.Parse(carrierInfoRetrieved[2][i]);
-						carrier.LTLRate = float.Parse(carrierInfoRetrieved[3][i]);
-						carrier.ReefCharge = float.Parse(carrierInfoRetrieved[4][i]);
+						Carrier carrier = new Carrier();
+						carrier.CarrierName = carrierInfoRetrieved[0][i];
+						carrier.FTLRate = float.Parse(carrierInfoRetrieved[1][i]);
+						carrier.LTLRate = float.Parse(carrierInfoRetrieved[2][i]);
+						carrier.ReefCharge = float.Parse(carrierInfoRetrieved[3][i]);
 						carriersFetched.Add(carrier);
 					}
 				}

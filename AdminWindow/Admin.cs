@@ -7,22 +7,22 @@ using UserClasses;
 
 namespace ConnectToDatabase
 {
-    class Admin : User
+    public class Admin : User
     {
 
-        public Admin()
+        public Admin() : base("admin")
         {
-            userRole = "admin";
-            Carriers = FetchCarrierData();
+            
         }
 
 
         public bool UpdateCarrierData()
         {
-            //take our carriers
-            //update the table in the database
-
-            //sqlc.UpdateRow();
+            sqlc.ClearTable("carriers");
+            foreach (Carrier carrier in this.Carriers)
+            {
+                sqlc.InsertRow("carriers (carrierName, FTLRate, LTLRate, ReefCharge)", carrier.GenerateCommaDelimitedString());
+            }
 
             return true;
         }

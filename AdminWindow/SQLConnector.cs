@@ -220,6 +220,18 @@ namespace ConnectToDatabase
 			}
 		}
 
+		public void ClearTable(string table)
+        {
+			string query = "DELETE FROM "+table;
+
+			if (this.OpenConnection() == true)
+			{
+				MySqlCommand cmd = new MySqlCommand(query, connection);
+				cmd.ExecuteNonQuery();
+				this.CloseConnection();
+			}
+		}
+
 
 
 		/// <summary>
