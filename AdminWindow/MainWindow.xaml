@@ -1,0 +1,34 @@
+﻿<Window x:Class="AdminWindow.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:AdminWindow"
+		mc:Ignorable="d"
+		Title="OMNI TMS Admin" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="149*"/>
+            <ColumnDefinition Width="643*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="2">
+            <TabItem Header="Rate/Fee Tables">
+
+            </TabItem>
+            <TabItem Header="Carrier Data">
+                <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" AddingNewItem="DG1_AddingNewItem" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Carrier ID"  Binding="{Binding CarrierID}"/>
+                        <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" />
+                        <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
+                        <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTLRate}" />
+                        <DataGridTextColumn Header="Reefer Charge"  Binding="{Binding ReefCharge}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Route Table">
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
