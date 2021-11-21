@@ -3,56 +3,35 @@ DROP DATABASE IF EXISTS `OMNI_TMS_13`;
 CREATE DATABASE `OMNI_TMS_13`;
 USE `OMNI_TMS_13`;
 
-DROP TABLE IF EXISTS `orders`;
 
-CREATE TABLE `orders`
-(
-`orderID` INT NOT NULL,
-`orderSubmissionDate` DATE NOT NULL, /*year-month-day*/
-`orderCompletionDate` DATE DEFAULT NULL, /*year-month-day*/
-`orderStatus` VARCHAR(15) NOT NULL,
-`jobType` VARCHAR(3) NOT NULL, /*"FTL" or "LTL"*/
-`quantity` INT NOT NULL,
-`originCity` VARCHAR(40) NOT NULL,
-`destinationCity` VARCHAR(40) NOT NULL,
-`vanType` VARCHAR(4) NOT NULL, /*"DRY" for dry and "REEF" for reefer*/
-`customerID` INT NOT NULL,
-`invoiceID` INT DEFAULT NULL,
-PRIMARY KEY (`orderID`)/*,
-KEY `customerID` (`customerID`),
-KEY `invoiceID` (`invoiceID`),
-CONSTRAINT `orders_constraint1` FOREIGN KEY (`customerID`) REFERENCES `customers` (`customerID`),
-CONSTRAINT `orders_constraint2` FOREIGN KEY (`invoiceID`) REFERENCES `invoices` (`invoiceID`)*/
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-insert  into `orders`(`orderID`,`orderSubmissionDate`,`orderCompletionDate`,`orderStatus`,`jobType`,`quantity`,`originCity`,`destinationCity`,`vanType`,`customerID`,`invoiceID`) values 
-
-(123, '2021-01-01', NULL, 'OK', 'BIG_JOB', 69, 'Waterloo', 'Toronto', 'BIGASS_VAN', 132, 321);
 
 DROP TABLE IF EXISTS `carriers`;
 
 CREATE TABLE `carriers`
 (
-`carrierID` INT NOT NULL,
 `carrierName` VARCHAR(40) NOT NULL,
 `FTLRate` DECIMAL(5,4) NOT NULL,
 `LTLRate` DECIMAL(5,4) NOT NULL,
 `reefCharge` DECIMAL(5,4) NOT NULL,
-PRIMARY KEY (`carrierID`)
+PRIMARY KEY (`carrierName`),
+CHECK (`carrierName` != ""),
+CHECK (`FTLRate` >= 0),
+CHECK (`LTLRate` >= 0),
+CHECK (`reefCharge` >= 0)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-insert  into `carriers`(`carrierID`,`carrierName`,`FTLRate`,`LTLRate`,`reefCharge`) values 
+insert  into `carriers`(`carrierName`,`FTLRate`,`LTLRate`,`reefCharge`) values 
 
-(1, 'Planet Express', 5.21, 0.3621, 0.08),
-(2, 'Schooner\'s', 5.05, 0.3434, 0.07),
-(3, 'Tillman Transport', 5.11, 0.3012, 0.09),
-(4, 'We Haul', 5.2, 0, 0.065);
+('Planet Express', 5.21, 0.3621, 0.08),
+('Schooner\'s', 5.05, 0.3434, 0.07),
+('Tillman Transport', 5.11, 0.3012, 0.09),
+('We Haul', 5.2, 0, 0.065);
 
 DROP TABLE IF EXISTS `cities`;
 
 CREATE TABLE `cities`
 (
-`cityID` INT NOT NULL,
+`cityID` INT NOT NULL AUTO_INCREMENT,
 `cityName` VARCHAR(40) NOT NULL,
 `cityProvince` VARCHAR(40) NOT NULL,
 `cityCountry` VARCHAR(40) NOT NULL,
@@ -79,44 +58,70 @@ insert  into `cities`(`cityID`,`cityName`,`cityProvince`,`cityCountry`,`kilomete
 (7, 'Kingston', 'Ontario', 'Canada', 196, 2.5, 6, NULL),
 (8, 'Ottawa', 'Ontario', 'Canada', NULL, NULL, 7, NULL);
 
+DROP TABLE IF EXISTS `orders`;
+
+CREATE TABLE `orders`
+(
+`orderID` INT NOT NULL AUTO_INCREMENT,
+`orderSubmissionDate` DATE NOT NULL, /*year-month-day*/
+`orderCompletionDate` DATE DEFAULT NULL, /*year-month-day*/
+`orderStatus` VARCHAR(15) NOT NULL,
+`jobType` VARCHAR(3) NOT NULL, /*"FTL" or "LTL"*/
+`quantity` INT NOT NULL,
+`originCity` INT NOT NULL,
+`destinationCity` INT NOT NULL,
+`vanType` VARCHAR(4) NOT NULL, /*"DRY" for dry and "REEF" for reefer*/
+`customerID` INT NOT NULL,
+`invoiceID` INT DEFAULT NULL,
+PRIMARY KEY (`orderID`),/*,
+KEY `customerID` (`customerID`),
+KEY `invoiceID` (`invoiceID`),
+CONSTRAINT `orders_constraint1` FOREIGN KEY (`customerID`) REFERENCES `customers` (`customerID`),
+CONSTRAINT `orders_constraint2` FOREIGN KEY (`invoiceID`) REFERENCES `invoices` (`invoiceID`)*/
+KEY `customerID` (`customerID`),
+KEY `invoiceID` (`invoiceID`),
+CONSTRAINT `orders_constraint3` FOREIGN KEY (`originCity`) REFERENCES `cities` (`cityID`),
+CONSTRAINT `orders_constraint4` FOREIGN KEY (`destinationCity`) REFERENCES `cities` (`cityID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 DROP TABLE IF EXISTS `depots`;
 
 CREATE TABLE `depots`
 (
 `depotID` INT NOT NULL AUTO_INCREMENT,
-`carrierID` INT NOT NULL,
+`carrierName` VARCHAR(40) NOT NULL,
 `cityID` INT NOT NULL,
 `FTLAvailability` INT NOT NULL,
 `LTLAvailability` INT NOT NULL,
 PRIMARY KEY (`depotID`),
-KEY `carrierID` (`carrierID`),
+KEY `carrierName` (`carrierName`),
 KEY `cityID` (`cityID`),
-CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierID`) REFERENCES `carriers` (`carrierID`),
+CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`),
 CONSTRAINT `carrierDepots_constraint2` FOREIGN KEY (`cityID`) REFERENCES `cities` (`cityID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-insert  into `depots`(`carrierID`,`cityID`,`FTLAvailability`,`LTLAvailability`) values 
+insert  into `depots`(`carrierName`,`cityID`,`FTLAvailability`,`LTLAvailability`) values 
 
 /*Planet Express*/
-(1, 1, 50, 640),
-(1, 3, 50, 640),
-(1, 5, 50, 640),
-(1, 6, 50, 640),
-(1, 8, 50, 640),
+('Planet Express', 1, 50, 640),
+('Planet Express', 3, 50, 640),
+('Planet Express', 5, 50, 640),
+('Planet Express', 6, 50, 640),
+('Planet Express', 8, 50, 640),
 
 /*Schooner's*/
-(2, 2, 18, 98),
-(2, 4, 18, 98),
-(2, 7, 18, 98),
+('Schooner\'s', 2, 18, 98),
+('Schooner\'s', 4, 18, 98),
+('Schooner\'s', 7, 18, 98),
 
 /*Tillman Transport*/
-(3, 1, 24, 35),
-(3, 2, 18, 45),
-(3, 3, 18, 45),
+('Tillman Transport', 1, 24, 35),
+('Tillman Transport', 2, 18, 45),
+('Tillman Transport', 3, 18, 45),
 
 /*We Haul*/
-(4, 8, 11, 0),
-(4, 4, 11, 40);
+('We Haul', 8, 11, 0),
+('We Haul', 4, 11, 40);
 
 
 DROP TABLE IF EXISTS `trips`;
