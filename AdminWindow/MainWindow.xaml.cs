@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,18 +24,20 @@ namespace AdminWindow
     public partial class MainWindow : Window
     {
         User user;
+        ObservableCollection<Carrier> carriers;
+
         public MainWindow()
         {
             InitializeComponent();
 
             user = new User("planner");
-            List<Carrier> carriers = user.Carriers;
+             carriers = user.Carriers;
             DG1.DataContext = carriers;
         }
 
         private void DG1_AddingNewItem(object sender, AddingNewItemEventArgs e)
         {
-            
+            carriers[carriers.Count - 1].CarrierID = 5;
         }
     }
 }

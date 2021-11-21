@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace UserClasses
 		protected string username { get; set; }
 		protected string userPassword { get; set; }
 		protected string userRole { get; set; }
-		public List<Carrier> Carriers { get; set; }
+		public ObservableCollection<Carrier> Carriers { get; set; }
 
 		protected SQLConnector sqlc;
 
@@ -95,7 +96,7 @@ namespace UserClasses
 		/// Method FetchCarrierData fetches carrier data from the database and retunrs a list of Carrier objects.
 		/// Returns null if fetch failed.
 		/// </summary>
-		public  List<Carrier> FetchCarrierData()
+		public  ObservableCollection<Carrier> FetchCarrierData()
 		{
 			//create a list in which to store the data
 			List<List<string>> carrierInfoRetrieved = new List<List<string>>();
@@ -107,7 +108,7 @@ namespace UserClasses
 				int numberofCarriers = carrierInfoRetrieved[0].Count;
 
 				//create a list of carriers
-				List<Carrier> carriersFetched = new List<Carrier>();
+				ObservableCollection<Carrier> carriersFetched = new ObservableCollection<Carrier>();
 
 				try
 				{

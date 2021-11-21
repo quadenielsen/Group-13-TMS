@@ -18,7 +18,7 @@
             <TabItem Header="Carrier Data">
                 <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" AddingNewItem="DG1_AddingNewItem" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Carrier ID"  Binding="{Binding CarrierID}"/>
+                        <DataGridTextColumn Header="Carrier ID"  Binding="{Binding CarrierID}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" />
                         <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
                         <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTLRate}" />

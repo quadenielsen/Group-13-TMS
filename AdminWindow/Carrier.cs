@@ -26,7 +26,7 @@ namespace ConnectToDatabase
         /// <summary>
         /// 
         /// </summary>
-        public int CarrierID { get { return carrierID; } }
+        public int CarrierID { get { return carrierID; } set { carrierID = value; } }
 
         /// <summary>
         /// 
