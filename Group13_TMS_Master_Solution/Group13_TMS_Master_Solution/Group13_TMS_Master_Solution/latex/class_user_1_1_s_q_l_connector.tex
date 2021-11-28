@@ -1,0 +1,213 @@
+\hypertarget{class_user_1_1_s_q_l_connector}{}\doxysection{User.\+SQLConnector Class Reference}
+\label{class_user_1_1_s_q_l_connector}\index{User.SQLConnector@{User.SQLConnector}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_1_1_s_q_l_connector_a59197f9e33670672e3ea0cbbd3dd4a63}{SQLConnector}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the DBConnector class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_1_1_s_q_l_connector_a06bfff8a48125dba01e1c408195363b0}{SQLConnector}} (string server, string database, string uid, string password)
+\begin{DoxyCompactList}\small\item\em Constructor for the DBConnector class. Creates an object which connects to a user-\/specified server and database, using a user-\/specified uid and password. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_1_1_s_q_l_connector_a81943dcbb5252b53b6ec860688e73e5c}{Insert\+Row}} (string table, string values)
+\begin{DoxyCompactList}\small\item\em Inserts a row into a relation in the database. String for table must be formatted as follows\+: \char`\"{}table\+Name (column1, column2...)\char`\"{} String for values must be formatted as follows\+: \char`\"{}\textquotesingle{}value1\textquotesingle{}, \textquotesingle{}value2\textquotesingle{}...\char`\"{} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_1_1_s_q_l_connector_afdc4015c9b755018e9c0246420048932}{Update\+Row}} (string table, string values, string location)
+\begin{DoxyCompactList}\small\item\em Inserts a row into a relation in the database. String for table must be formatted as follows\+: \char`\"{}table\+Name\char`\"{} String for values must be formatted as follows\+: \char`\"{}column1=\textquotesingle{}value1\textquotesingle{}, column2=\textquotesingle{}value2\textquotesingle{}...\char`\"{} String for location must be formatted as follows\+: \char`\"{}column=\textquotesingle{}value\textquotesingle{}\char`\"{} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_1_1_s_q_l_connector_a79a551dbba09d47100c7abbac09e6385}{Delete\+Row}} (string table, string location)
+\begin{DoxyCompactList}\small\item\em Inserts a row into a relation in the database. String for table must be formatted as follows\+: \char`\"{}table\+Name\char`\"{} String for location must be formatted as follows\+: \char`\"{}column=\textquotesingle{}value\textquotesingle{}\char`\"{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a3c429557f42f3bc040484692e2c57c95}\label{class_user_1_1_s_q_l_connector_a3c429557f42f3bc040484692e2c57c95}} 
+void {\bfseries Clear\+Table} (string table)
+\item 
+bool \mbox{\hyperlink{class_user_1_1_s_q_l_connector_a3c2e624cddea74d1e34f957a7c5c7230}{Retrieve\+From\+Columns}} (string table, string columns, out List$<$ List$<$ string $>$$>$ output)
+\begin{DoxyCompactList}\small\item\em Gets data from a table in a database. String for table must be formatted as follows\+: \char`\"{}table\+Name\char`\"{} String for columns must be formatted as follows\+: \char`\"{}column1, column2...\char`\"{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_ac26f48c60a6356984bd6cb646eb73302}\label{class_user_1_1_s_q_l_connector_ac26f48c60a6356984bd6cb646eb73302}} 
+int {\bfseries Count} ()
+\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_afac155e6efd1ed1e4630a363f9869122}\label{class_user_1_1_s_q_l_connector_afac155e6efd1ed1e4630a363f9869122}} 
+void {\bfseries Backup} ()
+\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a1a64e0ad5096b7c5958600e983c5faa7}\label{class_user_1_1_s_q_l_connector_a1a64e0ad5096b7c5958600e983c5faa7}} 
+void {\bfseries Restore} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_1_1_s_q_l_connector_af50966cf17ce8de60bf0dd57198863dc}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializer for the DBConnector class. To be called in the default constructor. Initializes object variables with defaults. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_1_1_s_q_l_connector_abc59fdf291e78ebea3b21ad015951a78}{Open\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Opens a connection to the database which the object is pointing to. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_1_1_s_q_l_connector_a14340d73feb2b3ac6b31f97e5def5a01}{Close\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Closes a connection to the database which the object is pointing to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a847cd4b3fb3136a4dbed21ea43f21bf1}\label{class_user_1_1_s_q_l_connector_a847cd4b3fb3136a4dbed21ea43f21bf1}} 
+My\+Sql\+Connection {\bfseries connection}
+\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_aff92dc8694db2e8c978634b5fa3563b7}\label{class_user_1_1_s_q_l_connector_aff92dc8694db2e8c978634b5fa3563b7}} 
+string {\bfseries server}
+\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a37e3e163717b9ff9cce62606a405e25c}\label{class_user_1_1_s_q_l_connector_a37e3e163717b9ff9cce62606a405e25c}} 
+string {\bfseries database}
+\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_aa71ea37c7f43b857857763d94e5fdad9}\label{class_user_1_1_s_q_l_connector_aa71ea37c7f43b857857763d94e5fdad9}} 
+string {\bfseries uid}
+\item 
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_aa7dbbdde86b5dc771ef45b3910ab6477}\label{class_user_1_1_s_q_l_connector_aa7dbbdde86b5dc771ef45b3910ab6477}} 
+string {\bfseries password}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a59197f9e33670672e3ea0cbbd3dd4a63}\label{class_user_1_1_s_q_l_connector_a59197f9e33670672e3ea0cbbd3dd4a63}} 
+\index{User.SQLConnector@{User.SQLConnector}!SQLConnector@{SQLConnector}}
+\index{SQLConnector@{SQLConnector}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{SQLConnector()}{SQLConnector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily User.\+SQLConnector.\+SQLConnector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the DBConnector class. 
+
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a06bfff8a48125dba01e1c408195363b0}\label{class_user_1_1_s_q_l_connector_a06bfff8a48125dba01e1c408195363b0}} 
+\index{User.SQLConnector@{User.SQLConnector}!SQLConnector@{SQLConnector}}
+\index{SQLConnector@{SQLConnector}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{SQLConnector()}{SQLConnector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily User.\+SQLConnector.\+SQLConnector (\begin{DoxyParamCaption}\item[{string}]{server,  }\item[{string}]{database,  }\item[{string}]{uid,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+
+
+Constructor for the DBConnector class. Creates an object which connects to a user-\/specified server and database, using a user-\/specified uid and password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server} & \\
+\hline
+{\em database} & \\
+\hline
+{\em uid} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a14340d73feb2b3ac6b31f97e5def5a01}\label{class_user_1_1_s_q_l_connector_a14340d73feb2b3ac6b31f97e5def5a01}} 
+\index{User.SQLConnector@{User.SQLConnector}!CloseConnection@{CloseConnection}}
+\index{CloseConnection@{CloseConnection}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{CloseConnection()}{CloseConnection()}}
+{\footnotesize\ttfamily bool User.\+SQLConnector.\+Close\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Closes a connection to the database which the object is pointing to. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the disconnection was successful, otherwise false.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a79a551dbba09d47100c7abbac09e6385}\label{class_user_1_1_s_q_l_connector_a79a551dbba09d47100c7abbac09e6385}} 
+\index{User.SQLConnector@{User.SQLConnector}!DeleteRow@{DeleteRow}}
+\index{DeleteRow@{DeleteRow}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{DeleteRow()}{DeleteRow()}}
+{\footnotesize\ttfamily void User.\+SQLConnector.\+Delete\+Row (\begin{DoxyParamCaption}\item[{string}]{table,  }\item[{string}]{location }\end{DoxyParamCaption})}
+
+
+
+Inserts a row into a relation in the database. String for table must be formatted as follows\+: \char`\"{}table\+Name\char`\"{} String for location must be formatted as follows\+: \char`\"{}column=\textquotesingle{}value\textquotesingle{}\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & \\
+\hline
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_af50966cf17ce8de60bf0dd57198863dc}\label{class_user_1_1_s_q_l_connector_af50966cf17ce8de60bf0dd57198863dc}} 
+\index{User.SQLConnector@{User.SQLConnector}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void User.\+SQLConnector.\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializer for the DBConnector class. To be called in the default constructor. Initializes object variables with defaults. 
+
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a81943dcbb5252b53b6ec860688e73e5c}\label{class_user_1_1_s_q_l_connector_a81943dcbb5252b53b6ec860688e73e5c}} 
+\index{User.SQLConnector@{User.SQLConnector}!InsertRow@{InsertRow}}
+\index{InsertRow@{InsertRow}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{InsertRow()}{InsertRow()}}
+{\footnotesize\ttfamily bool User.\+SQLConnector.\+Insert\+Row (\begin{DoxyParamCaption}\item[{string}]{table,  }\item[{string}]{values }\end{DoxyParamCaption})}
+
+
+
+Inserts a row into a relation in the database. String for table must be formatted as follows\+: \char`\"{}table\+Name (column1, column2...)\char`\"{} String for values must be formatted as follows\+: \char`\"{}\textquotesingle{}value1\textquotesingle{}, \textquotesingle{}value2\textquotesingle{}...\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & \\
+\hline
+{\em values} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the insertion was successful, otherwise false.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_abc59fdf291e78ebea3b21ad015951a78}\label{class_user_1_1_s_q_l_connector_abc59fdf291e78ebea3b21ad015951a78}} 
+\index{User.SQLConnector@{User.SQLConnector}!OpenConnection@{OpenConnection}}
+\index{OpenConnection@{OpenConnection}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{OpenConnection()}{OpenConnection()}}
+{\footnotesize\ttfamily bool User.\+SQLConnector.\+Open\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Opens a connection to the database which the object is pointing to. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the connection was successful, otherwise false.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_a3c2e624cddea74d1e34f957a7c5c7230}\label{class_user_1_1_s_q_l_connector_a3c2e624cddea74d1e34f957a7c5c7230}} 
+\index{User.SQLConnector@{User.SQLConnector}!RetrieveFromColumns@{RetrieveFromColumns}}
+\index{RetrieveFromColumns@{RetrieveFromColumns}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{RetrieveFromColumns()}{RetrieveFromColumns()}}
+{\footnotesize\ttfamily bool User.\+SQLConnector.\+Retrieve\+From\+Columns (\begin{DoxyParamCaption}\item[{string}]{table,  }\item[{string}]{columns,  }\item[{out List$<$ List$<$ string $>$$>$}]{output }\end{DoxyParamCaption})}
+
+
+
+Gets data from a table in a database. String for table must be formatted as follows\+: \char`\"{}table\+Name\char`\"{} String for columns must be formatted as follows\+: \char`\"{}column1, column2...\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & \\
+\hline
+{\em columns} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a dynamic array of lists of strings which contain the specified data that was retrieved.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_1_1_s_q_l_connector_afdc4015c9b755018e9c0246420048932}\label{class_user_1_1_s_q_l_connector_afdc4015c9b755018e9c0246420048932}} 
+\index{User.SQLConnector@{User.SQLConnector}!UpdateRow@{UpdateRow}}
+\index{UpdateRow@{UpdateRow}!User.SQLConnector@{User.SQLConnector}}
+\doxysubsubsection{\texorpdfstring{UpdateRow()}{UpdateRow()}}
+{\footnotesize\ttfamily bool User.\+SQLConnector.\+Update\+Row (\begin{DoxyParamCaption}\item[{string}]{table,  }\item[{string}]{values,  }\item[{string}]{location }\end{DoxyParamCaption})}
+
+
+
+Inserts a row into a relation in the database. String for table must be formatted as follows\+: \char`\"{}table\+Name\char`\"{} String for values must be formatted as follows\+: \char`\"{}column1=\textquotesingle{}value1\textquotesingle{}, column2=\textquotesingle{}value2\textquotesingle{}...\char`\"{} String for location must be formatted as follows\+: \char`\"{}column=\textquotesingle{}value\textquotesingle{}\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & \\
+\hline
+{\em values} & \\
+\hline
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the insertion was successful, otherwise false.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+SQLConnector.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,176 @@
+\hypertarget{class_user_1_1_t_m_s_user}{}\doxysection{User.\+TMSUser Class Reference}
+\label{class_user_1_1_t_m_s_user}\index{User.TMSUser@{User.TMSUser}}
+Inheritance diagram for User.\+TMSUser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user_1_1_t_m_s_user}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_1_1_t_m_s_user_adde01b7429b7569d91647413b8a38276}{TMSUser}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_1_1_t_m_s_user_aec285ba8060132c1383b2648dff797f9}{TMSUser}} (string user\+Role)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_1_1_t_m_s_user_a2eeedca0d80000331b17c31d5f3f4748}{TMSUser}} (string Username, string user\+Password, string user\+Role)
+\begin{DoxyCompactList}\small\item\em Instance constructor that has three parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_1_1_t_m_s_user_a6031b58e3a965aba2ac157007198af42}{Update}} (string \mbox{\hyperlink{class_user_1_1_t_m_s_user_acd73cab809bbd5c87cb3d534822b2401}{username}}, string user\+Password)
+\begin{DoxyCompactList}\small\item\em Method Update enables you to update the username and password of an existing \mbox{\hyperlink{namespace_user}{User}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_1_1_t_m_s_user_a5d507feea7c20fda4316f42d05ec1102}{Check\+Login\+Credentials}} (string \mbox{\hyperlink{class_user_1_1_t_m_s_user_acd73cab809bbd5c87cb3d534822b2401}{username}}, string user\+Password)
+\begin{DoxyCompactList}\small\item\em Method Check\+Login\+Credentials enables you to update the username and password of an existing \mbox{\hyperlink{namespace_user}{User}} object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_user_1_1_t_m_s_user_abadce04b327e70f734f6a46ced964f83}{Check\+User\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Method Check\+User\+Type enables you to check what type of user an object is \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_1_1_t_m_s_user_a5e09bbdac3a975500f986b3512999cd4}{Fetch\+Order\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Method Fetch\+Order\+Data fetches and orders made by user \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_1_1_t_m_s_user_abcff2b0e04b971a6b339474de1d5ba62}{Fetch\+Customer\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Method Fetch\+Customer\+Data fetches and orders made by user \end{DoxyCompactList}\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_user_1_1_carrier}{Carrier}} $>$ \mbox{\hyperlink{class_user_1_1_t_m_s_user_a5f371595bc36367d18cfa90da023b3e9}{Fetch\+Carrier\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Method Fetch\+Carrier\+Data fetches carrier data from the database and retunrs a list of \mbox{\hyperlink{class_user_1_1_carrier}{Carrier}} objects. Returns null if fetch failed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_1_1_t_m_s_user_abff6248937cecbfe0c703954c587638c}{Fetch\+City\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Method Fetch\+Order\+Data fetches and orders made by user \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a5b6b6ba2053fc9e58cb5907ed8ceec43}\label{class_user_1_1_t_m_s_user_a5b6b6ba2053fc9e58cb5907ed8ceec43}} 
+\mbox{\hyperlink{class_user_1_1_s_q_l_connector}{SQLConnector}} {\bfseries sqlc}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_user_1_1_t_m_s_user_acd73cab809bbd5c87cb3d534822b2401}{username}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_user_1_1_properties}{Properties}} -\/ username, user\+Password, user\+Role, Carriers \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_acee702dda2771f8347a85fc7d381cff6}\label{class_user_1_1_t_m_s_user_acee702dda2771f8347a85fc7d381cff6}} 
+string {\bfseries user\+Password}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a0aa87f7a2ae4e0305d0318548c3f8c04}\label{class_user_1_1_t_m_s_user_a0aa87f7a2ae4e0305d0318548c3f8c04}} 
+string {\bfseries user\+Role}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a8078e74128969a76010c00e22a89a158}\label{class_user_1_1_t_m_s_user_a8078e74128969a76010c00e22a89a158}} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_user_1_1_carrier}{Carrier}} $>$ {\bfseries Carriers}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_adde01b7429b7569d91647413b8a38276}\label{class_user_1_1_t_m_s_user_adde01b7429b7569d91647413b8a38276}} 
+\index{User.TMSUser@{User.TMSUser}!TMSUser@{TMSUser}}
+\index{TMSUser@{TMSUser}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{TMSUser()}{TMSUser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily User.\+TMSUser.\+TMSUser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_aec285ba8060132c1383b2648dff797f9}\label{class_user_1_1_t_m_s_user_aec285ba8060132c1383b2648dff797f9}} 
+\index{User.TMSUser@{User.TMSUser}!TMSUser@{TMSUser}}
+\index{TMSUser@{TMSUser}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{TMSUser()}{TMSUser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily User.\+TMSUser.\+TMSUser (\begin{DoxyParamCaption}\item[{string}]{user\+Role }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a2eeedca0d80000331b17c31d5f3f4748}\label{class_user_1_1_t_m_s_user_a2eeedca0d80000331b17c31d5f3f4748}} 
+\index{User.TMSUser@{User.TMSUser}!TMSUser@{TMSUser}}
+\index{TMSUser@{TMSUser}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{TMSUser()}{TMSUser()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily User.\+TMSUser.\+TMSUser (\begin{DoxyParamCaption}\item[{string}]{Username,  }\item[{string}]{user\+Password,  }\item[{string}]{user\+Role }\end{DoxyParamCaption})}
+
+
+
+Instance constructor that has three parameters. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a5d507feea7c20fda4316f42d05ec1102}\label{class_user_1_1_t_m_s_user_a5d507feea7c20fda4316f42d05ec1102}} 
+\index{User.TMSUser@{User.TMSUser}!CheckLoginCredentials@{CheckLoginCredentials}}
+\index{CheckLoginCredentials@{CheckLoginCredentials}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{CheckLoginCredentials()}{CheckLoginCredentials()}}
+{\footnotesize\ttfamily void User.\+TMSUser.\+Check\+Login\+Credentials (\begin{DoxyParamCaption}\item[{string}]{username,  }\item[{string}]{user\+Password }\end{DoxyParamCaption})}
+
+
+
+Method Check\+Login\+Credentials enables you to update the username and password of an existing \mbox{\hyperlink{namespace_user}{User}} object. 
+
+~\newline
+ \mbox{\Hypertarget{class_user_1_1_t_m_s_user_abadce04b327e70f734f6a46ced964f83}\label{class_user_1_1_t_m_s_user_abadce04b327e70f734f6a46ced964f83}} 
+\index{User.TMSUser@{User.TMSUser}!CheckUserType@{CheckUserType}}
+\index{CheckUserType@{CheckUserType}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{CheckUserType()}{CheckUserType()}}
+{\footnotesize\ttfamily string User.\+TMSUser.\+Check\+User\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method Check\+User\+Type enables you to check what type of user an object is 
+
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a5f371595bc36367d18cfa90da023b3e9}\label{class_user_1_1_t_m_s_user_a5f371595bc36367d18cfa90da023b3e9}} 
+\index{User.TMSUser@{User.TMSUser}!FetchCarrierData@{FetchCarrierData}}
+\index{FetchCarrierData@{FetchCarrierData}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{FetchCarrierData()}{FetchCarrierData()}}
+{\footnotesize\ttfamily Observable\+Collection$<$\mbox{\hyperlink{class_user_1_1_carrier}{Carrier}}$>$ User.\+TMSUser.\+Fetch\+Carrier\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method Fetch\+Carrier\+Data fetches carrier data from the database and retunrs a list of \mbox{\hyperlink{class_user_1_1_carrier}{Carrier}} objects. Returns null if fetch failed. 
+
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_abff6248937cecbfe0c703954c587638c}\label{class_user_1_1_t_m_s_user_abff6248937cecbfe0c703954c587638c}} 
+\index{User.TMSUser@{User.TMSUser}!FetchCityData@{FetchCityData}}
+\index{FetchCityData@{FetchCityData}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{FetchCityData()}{FetchCityData()}}
+{\footnotesize\ttfamily void User.\+TMSUser.\+Fetch\+City\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method Fetch\+Order\+Data fetches and orders made by user 
+
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_abcff2b0e04b971a6b339474de1d5ba62}\label{class_user_1_1_t_m_s_user_abcff2b0e04b971a6b339474de1d5ba62}} 
+\index{User.TMSUser@{User.TMSUser}!FetchCustomerData@{FetchCustomerData}}
+\index{FetchCustomerData@{FetchCustomerData}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{FetchCustomerData()}{FetchCustomerData()}}
+{\footnotesize\ttfamily void User.\+TMSUser.\+Fetch\+Customer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method Fetch\+Customer\+Data fetches and orders made by user 
+
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a5e09bbdac3a975500f986b3512999cd4}\label{class_user_1_1_t_m_s_user_a5e09bbdac3a975500f986b3512999cd4}} 
+\index{User.TMSUser@{User.TMSUser}!FetchOrderData@{FetchOrderData}}
+\index{FetchOrderData@{FetchOrderData}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{FetchOrderData()}{FetchOrderData()}}
+{\footnotesize\ttfamily void User.\+TMSUser.\+Fetch\+Order\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method Fetch\+Order\+Data fetches and orders made by user 
+
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_a6031b58e3a965aba2ac157007198af42}\label{class_user_1_1_t_m_s_user_a6031b58e3a965aba2ac157007198af42}} 
+\index{User.TMSUser@{User.TMSUser}!Update@{Update}}
+\index{Update@{Update}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void User.\+TMSUser.\+Update (\begin{DoxyParamCaption}\item[{string}]{username,  }\item[{string}]{user\+Password }\end{DoxyParamCaption})}
+
+
+
+Method Update enables you to update the username and password of an existing \mbox{\hyperlink{namespace_user}{User}} object. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_user_1_1_t_m_s_user_acd73cab809bbd5c87cb3d534822b2401}\label{class_user_1_1_t_m_s_user_acd73cab809bbd5c87cb3d534822b2401}} 
+\index{User.TMSUser@{User.TMSUser}!username@{username}}
+\index{username@{username}!User.TMSUser@{User.TMSUser}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily string User.\+TMSUser.\+username\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{namespace_user_1_1_properties}{Properties}} -\/ username, user\+Password, user\+Role, Carriers 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TMSUser.\+cs\end{DoxyCompactItemize}
