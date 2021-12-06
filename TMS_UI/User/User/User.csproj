@@ -55,13 +55,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AdminCommands\NavigateHomeCommand.cs" />
+    <Compile Include="Commands\AdminCommands\NavigateSelectDirectoryCommand.cs" />
+    <Compile Include="Commands\AdminCommands\NavigateSettingsCommand.cs" />
+    <Compile Include="Commands\BuyerCommands\NavigateHomeCommand.cs" />
     <Compile Include="Commands\CommandBASE.cs" />
+    <Compile Include="Commands\NavigateLoginCommand.cs" />
+    <Compile Include="Commands\PlannerCommands\NavigateHomeCommand.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
+    <Compile Include="Users\Maintenance\ValidateUser.cs" />
+    <Compile Include="ViewModels\AdminViewModels\Home_ViewModel.cs" />
+    <Compile Include="ViewModels\AdminViewModels\SelectDirectory_ViewModel.cs" />
+    <Compile Include="ViewModels\AdminViewModels\Settings_ViewModel.cs" />
+    <Compile Include="ViewModels\BuyerViewModels\Home_ViewModel.cs" />
     <Compile Include="ViewModels\Login_ViewModel.cs" />
     <Compile Include="ViewModels\Main_ViewModel.cs" />
+    <Compile Include="ViewModels\PlannerViewModels\Home_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBASE.cs" />
+    <Compile Include="Views\AdminViews\Home_View.xaml.cs">
+      <DependentUpon>Home_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminViews\SelectDirectory_View.xaml.cs">
+      <DependentUpon>SelectDirectory_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminViews\Settings_View.xaml.cs">
+      <DependentUpon>Settings_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuyerViews\Home_View.xaml.cs">
+      <DependentUpon>Home_View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login_View.xaml.cs">
       <DependentUpon>Login_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlannerViews\Home_View.xaml.cs">
+      <DependentUpon>Home_View.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -75,7 +102,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AdminViews\Home_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminViews\SelectDirectory_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminViews\Settings_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuyerViews\Home_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Login_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlannerViews\Home_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,6 +149,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Views\background.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -111,6 +159,15 @@
     <Folder Include="Users\Admins\" />
     <Folder Include="Users\Buyers\" />
     <Folder Include="Users\Planners\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\TMS_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\background.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

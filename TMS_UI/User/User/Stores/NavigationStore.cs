@@ -23,6 +23,7 @@ namespace User.Stores
             }
         }
 
+        // CURRENT VIEW MODEL AND VIEW CHANGED EVENT
         private void OnCurrentViewModelChanged()
         {
             CurrentViewModelChanged?.Invoke();

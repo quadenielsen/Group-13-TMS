@@ -1,0 +1,11 @@
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\bin\Debug\TestHarness.exe.config
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\bin\Debug\TestHarness.exe
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\bin\Debug\TestHarness.pdb
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\bin\Debug\User.exe
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\bin\Debug\User.pdb
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\bin\Debug\User.exe.config
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.csproj.AssemblyReference.cache
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.csproj.CoreCompileInputs.cache
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.csproj.CopyComplete
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.exe
+C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.pdb
