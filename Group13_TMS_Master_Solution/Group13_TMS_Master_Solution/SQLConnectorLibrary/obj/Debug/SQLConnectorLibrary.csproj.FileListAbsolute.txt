@@ -16,7 +16,6 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\bin\Debug\MySql.Data.xml
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\bin\Debug\MySql.Data.EntityFramework.xml
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\bin\Debug\MySql.Web.xml
-C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.csproj.AssemblyReference.cache
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.csproj.CoreCompileInputs.cache
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.csproj.CopyComplete
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.dll

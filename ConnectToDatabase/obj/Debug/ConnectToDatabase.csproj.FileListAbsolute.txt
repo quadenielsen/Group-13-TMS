@@ -40,3 +40,5 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\ConnectToDatabase\obj\Debug\Connect
 C:\Users\quade\Documents\GitHub\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj.CopyComplete
 C:\Users\quade\Documents\GitHub\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.exe
 C:\Users\quade\Documents\GitHub\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\ConnectToDatabase\bin\Debug\SQLConnectorLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\ConnectToDatabase\bin\Debug\SQLConnectorLibrary.pdb

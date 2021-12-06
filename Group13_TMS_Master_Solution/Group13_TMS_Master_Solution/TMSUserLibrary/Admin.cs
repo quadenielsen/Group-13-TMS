@@ -8,7 +8,7 @@ using SQLConnectorLibrary;
 
 namespace TMSUserLibrary
 {
-    public class Admin : User
+    public class Admin : TMSUser
     {
 
         public Admin() : base("admin")

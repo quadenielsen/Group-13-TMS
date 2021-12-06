@@ -37,3 +37,9 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User.exe
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User.pdb
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User_Content.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\SQLConnectorLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSObjectLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSUserLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\SQLConnectorLibrary.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSObjectLibrary.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSUserLibrary.pdb

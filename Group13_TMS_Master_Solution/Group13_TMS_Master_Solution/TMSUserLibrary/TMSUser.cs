@@ -9,7 +9,7 @@ using SQLConnectorLibrary;
 
 namespace TMSUserLibrary
 {
-    public class User
+    public class TMSUser
     {
         /// <summary>
         /// Properties - username, userPassword, userRole, Carriers
@@ -19,13 +19,14 @@ namespace TMSUserLibrary
         protected string userRole { get; set; }
         public ObservableCollection<Carrier> Carriers { get; set; }
         public ObservableCollection<Depot> Depots { get; set; }
+        public ObservableCollection<City> Cities { get; set; }
 
         protected SQLConnector sqlc;
 
         /// <summary>
         /// Default constructor. 
         /// </summary>
-        public User()
+        public TMSUser()
         {
             sqlc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
         }
@@ -33,7 +34,7 @@ namespace TMSUserLibrary
         /// <summary>
         /// Default constructor. 
         /// </summary>
-        public User(string userRole)
+        public TMSUser(string userRole)
         {
             sqlc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
             if (userRole == "planner" || userRole == "admin")
@@ -46,7 +47,7 @@ namespace TMSUserLibrary
         /// <summary>
         /// Instance constructor that has three parameters.
         /// </summary>
-        public User(string Username, string userPassword, string userRole)
+        public TMSUser(string Username, string userPassword, string userRole)
         {
             this.username = username;
             this.userPassword = userPassword;
@@ -202,76 +203,119 @@ namespace TMSUserLibrary
             }
         }
 
+        
 
         /// <summary>
-        /// Method FetchOrderData fetches and orders made by user
+        /// Method FetchCarrierData fetches city data from the database and returns a list of City objects.
+        /// Returns null if fetch failed.
         /// </summary>
-        public void FetchCityData()
+        public ObservableCollection<City> FetchCityData()
         {
+            //create a list in which to store the data
+            List<List<string>> cityInfoRetrieved = new List<List<string>>();
 
+            //retrieve the data
+            if (sqlc.RetrieveFromColumns("cities", "cityID, cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest, nextCityEast", out cityInfoRetrieved))
+            {
+                //get the number of carriers
+                int numberofCities = cityInfoRetrieved[0].Count;
+
+                //create a list of carriers
+                ObservableCollection<City> citiesFetched = new ObservableCollection<City>();
+
+                try
+                {
+                    //fill the list with the retrieved data
+                    //in the 2D array, the first index represents the column, and the second index represents the row
+                    for (int i = 0; i < numberofCities; ++i)
+                    {
+                        City city = new City();
+                        city.CityID = int.Parse(cityInfoRetrieved[0][i]);
+                        city.CityName = cityInfoRetrieved[1][i];
+                        city.CityProvince = cityInfoRetrieved[2][i];
+                        city.CityCountry = cityInfoRetrieved[3][i];
+                        city.KilometersToNextCityEast = int.Parse(cityInfoRetrieved[4][i]);
+                        city.TimeToNextCityEast = float.Parse(cityInfoRetrieved[5][i]);
+                        city.NextCityWest = cityInfoRetrieved[6][i];
+                        city.NextCityEast = cityInfoRetrieved[7][i];
+
+                        citiesFetched.Add(city);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                return citiesFetched;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+    
+
+        /// <summary>
+        /// Buyer derives from User and adds methods CreatOrder(), GetContract(), GenerateInvoice()
+        /// </summary>
+        public class Buyer : TMSUser
+        {
+            /// <summary>
+            /// Method CreateOrder
+            /// </summary>
+            public void CreateOrder()
+            {
+
+            }
+
+            /// <summary>
+            /// Method GetContract
+            /// </summary>
+            public void GetContract()
+            {
+
+            }
+
+            /// <summary>
+            /// Method GenerateInvoice
+            /// </summary>
+            public void GenerateInvoice()
+            {
+
+            }
+
+        }
+
+
+        /// <summary>
+        /// Planner derives from User and adds methods AdvanceTime(), PairCarrierToOrder(), ConfirmOrder(), FetchShipmentData()
+        /// </summary>
+        public class Planner : TMSUser
+        {
+            /// <summary>
+            /// Method AdvanceTime
+            /// </summary>
+            public void AdvanceTime()
+            {
+
+            }
+
+            /// <summary>
+            /// Method PAirCarrierToOrder
+            /// </summary>
+            public void PairCarrierToOrder()
+            {
+
+            }
+
+            /// <summary>
+            /// Method FetchShipmentData
+            /// </summary>
+            public void FetchShipmentData()
+            {
+
+            }
         }
     }
 
-
-    /// <summary>
-    /// Buyer derives from User and adds methods CreatOrder(), GetContract(), GenerateInvoice()
-    /// </summary>
-    public class Buyer : User
-    {
-        /// <summary>
-        /// Method CreateOrder
-        /// </summary>
-        public void CreateOrder()
-        {
-
-        }
-
-        /// <summary>
-        /// Method GetContract
-        /// </summary>
-        public void GetContract()
-        {
-
-        }
-
-        /// <summary>
-        /// Method GenerateInvoice
-        /// </summary>
-        public void GenerateInvoice()
-        {
-
-        }
-
-    }
-
-
-    /// <summary>
-    /// Planner derives from User and adds methods AdvanceTime(), PairCarrierToOrder(), ConfirmOrder(), FetchShipmentData()
-    /// </summary>
-    public class Planner : User
-    {
-        /// <summary>
-        /// Method AdvanceTime
-        /// </summary>
-        public void AdvanceTime()
-        {
-
-        }
-
-        /// <summary>
-        /// Method PAirCarrierToOrder
-        /// </summary>
-        public void PairCarrierToOrder()
-        {
-
-        }
-
-        /// <summary>
-        /// Method FetchShipmentData
-        /// </summary>
-        public void FetchShipmentData()
-        {
-
-        }
-    }
-}
