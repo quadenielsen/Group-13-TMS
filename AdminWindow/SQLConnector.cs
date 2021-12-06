@@ -31,7 +31,7 @@ namespace ConnectToDatabase
 			Initialize();
 		}
 
-		
+
 
 		/// <summary>
 		/// Constructor for the DBConnector class. Creates an object which connects to a user-specified
@@ -144,8 +144,8 @@ namespace ConnectToDatabase
 		public bool InsertRow(string table, string values)
 		{
 			//create query string including the table and values specified by the user
-			string query = "INSERT INTO "+table+" VALUES("+values+")";
-			
+			string query = "INSERT INTO " + table + " VALUES(" + values + ")";
+
 			if (this.OpenConnection() == true)
 			{
 				try
@@ -158,6 +158,7 @@ namespace ConnectToDatabase
 				}
 				catch (MySqlException ex)
 				{
+					this.CloseConnection();
 					Console.WriteLine(ex);
 					return false;
 				}
@@ -177,9 +178,9 @@ namespace ConnectToDatabase
 		/// <param name="values"></param>
 		/// <param name="location"></param>
 		/// <returns>Returns true if the insertion was successful, otherwise false.</returns>
-		public bool UpdateRow(string table, string values, string location)
+		public void UpdateRow(string table, string values, string location)
 		{
-			string query = "UPDATE "+table+" SET "+values+" WHERE "+location;
+			string query = "UPDATE " + table + " SET " + values + " WHERE " + location;
 
 			//Open connection
 			if (this.OpenConnection() == true)
@@ -188,15 +189,16 @@ namespace ConnectToDatabase
 				{
 					MySqlCommand cmd = new MySqlCommand(query, connection);
 					cmd.ExecuteNonQuery();
-					this.CloseConnection();
 				}
 				catch (MySqlException ex)
 				{
 					Console.WriteLine(ex);
-					return false;
+				}
+				finally
+				{
+					this.CloseConnection();
 				}
 			}
-			return false;
 		}
 
 
@@ -210,7 +212,7 @@ namespace ConnectToDatabase
 		/// <param name="location"></param>
 		public void DeleteRow(string table, string location)
 		{
-			string query = "DELETE FROM "+table+" WHERE "+location;
+			string query = "DELETE FROM " + table + " WHERE " + location;
 
 			if (this.OpenConnection() == true)
 			{
@@ -221,8 +223,8 @@ namespace ConnectToDatabase
 		}
 
 		public void ClearTable(string table)
-        {
-			string query = "DELETE FROM "+table;
+		{
+			string query = "DELETE FROM " + table;
 
 			if (this.OpenConnection() == true)
 			{
@@ -244,7 +246,7 @@ namespace ConnectToDatabase
 		/// <returns>Returns a dynamic array of lists of strings which contain the specified data that was retrieved.</returns>
 		public bool RetrieveFromColumns(string table, string columns, out List<List<string>> output)
 		{
-			string query = "SELECT * FROM "+table;
+			string query = "SELECT * FROM " + table;
 
 
 			//parse columns
@@ -280,8 +282,8 @@ namespace ConnectToDatabase
 
 					while (dataReader.Read())
 					{
-						
-						
+
+
 						for (int i = 0; i < numberOfColumns; ++i)
 						{
 							manyColumns[i].Add(dataReader[columnNames[i]] + "");
@@ -299,6 +301,78 @@ namespace ConnectToDatabase
 			}
 			return false;
 		}
+
+
+
+		/// <summary>
+		/// Gets data from a table in a database.
+		/// String for table must be formatted as follows: "tableName"
+		/// String for columns must be formatted as follows: "column1, column2..."
+		/// </summary>
+		/// <param name="table"></param>
+		/// <param name="requestColumns"></param>
+		/// <param name="lookupColumn"></param>
+		/// <param name="value"></param>
+		/// <returns>Returns a dynamic array of lists of strings which contain the specified data that was retrieved.</returns>
+		public bool RetrieveFromColumnsWithLookup(string table, string requestColumns, string lookupColumn, string value, out List<List<string>> output)
+		{
+			string query = "SELECT * FROM " + table + " WHERE " + lookupColumn + "=" + value;
+
+			//parse columns
+			char[] columnNameDelimiter = { ',', ' ' };
+			string[] columnNames = requestColumns.Split(columnNameDelimiter, StringSplitOptions.RemoveEmptyEntries);
+
+
+			//create dynamic array of lists of strings in which to store data
+			List<List<string>> manyColumns = new List<List<string>>();
+			foreach (string s in columnNames)
+			{
+				List<string> singleColumn = new List<string>();
+				manyColumns.Add(singleColumn);
+			}
+			output = manyColumns;
+
+			//attempt to read from database
+			try
+			{
+				if (this.OpenConnection() == true)
+				{
+					MySqlCommand cmd = new MySqlCommand(query, connection);
+					MySqlDataReader dataReader = cmd.ExecuteReader();
+					int numberOfColumns = manyColumns.Count;
+
+					for (int i = 0; i < numberOfColumns; ++i)
+					{
+						if (!DataRecordExtensions.HasColumn(dataReader, columnNames[i]))
+						{
+							return false;
+						}
+					}
+
+					while (dataReader.Read())
+					{
+
+
+						for (int i = 0; i < numberOfColumns; ++i)
+						{
+							manyColumns[i].Add(dataReader[columnNames[i]] + "");
+						}
+					}
+
+					dataReader.Close();
+					this.CloseConnection();
+					return true;
+				}
+			}
+			catch (MySqlException ex)
+			{
+				Console.WriteLine(ex);
+			}
+			return false;
+		}
+
+
+
 
 		//Count statement
 		public int Count()

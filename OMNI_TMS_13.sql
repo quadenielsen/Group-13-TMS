@@ -88,12 +88,11 @@ DROP TABLE IF EXISTS `depots`;
 
 CREATE TABLE `depots`
 (
-`depotID` INT NOT NULL AUTO_INCREMENT,
 `carrierName` VARCHAR(40) NOT NULL,
 `cityID` INT NOT NULL,
 `FTLAvailability` INT NOT NULL,
 `LTLAvailability` INT NOT NULL,
-PRIMARY KEY (`depotID`),
+PRIMARY KEY (`carrierName`, `cityID`),
 KEY `carrierName` (`carrierName`),
 KEY `cityID` (`cityID`),
 CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`),
@@ -128,15 +127,16 @@ DROP TABLE IF EXISTS `trips`;
 
 CREATE TABLE `trips`
 (
-`depotID` INT NOT NULL,
+`carrierName` VARCHAR(40) NOT NULL,
+`cityID` INT NOT NULL,
 `orderID` INT NOT NULL,
 `tripStatus` VARCHAR(40),
 `shipmentQuantity` INT NOT NULL,
 `timeToCompleteShipment` INT NOT NULL,
-PRIMARY KEY (`depotID`, `orderID`),
-KEY `depotID` (`depotID`),
+PRIMARY KEY (`carrierName`, `cityID`, `orderID`),
 KEY `orderID` (`orderID`),
-CONSTRAINT `trips_constraint1` FOREIGN KEY (`depotID`) REFERENCES `depots` (`depotID`),
-CONSTRAINT `trips_constraint2` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`)
+CONSTRAINT `trips_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `depots` (`carrierName`),
+CONSTRAINT `trips_constraint2` FOREIGN KEY (`cityID`) REFERENCES `depots` (`cityID`),
+CONSTRAINT `trips_constraint3` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

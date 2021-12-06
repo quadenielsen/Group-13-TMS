@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="Carrier.cs" />
     <Compile Include="DataRecordExtensions.cs" />
     <Compile Include="SQLConnector.cs" />

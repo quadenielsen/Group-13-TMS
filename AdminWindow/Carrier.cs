@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdminWindow;
 
 namespace ConnectToDatabase
 {
@@ -14,6 +16,7 @@ namespace ConnectToDatabase
         //======================
 
         private string carrierName;
+        private ObservableCollection<Depot> depots;
         private float ftlRate;
         private float ltlRate;
         private float reefCharge;
@@ -39,6 +42,19 @@ namespace ConnectToDatabase
                 }
             }
         }
+
+        public ObservableCollection<Depot> Depots
+        {
+            get
+            {
+                return depots;
+            }
+            set
+            {
+                depots = value;
+            }
+        }
+
         public float FTLRate
         {
             get

@@ -22,6 +22,7 @@
                 <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" />
+                        <DataGridTextColumn Header="Depots" Binding="{Binding Depots}" />
                         <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
                         <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTLRate}" />
                         <DataGridTextColumn Header="Reefer Charge"  Binding="{Binding ReefCharge}"/>

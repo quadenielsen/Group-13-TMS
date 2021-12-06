@@ -18,3 +18,4 @@ C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj
 C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj.CopyComplete
 C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.exe
 C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.pdb
+C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj.AssemblyReference.cache

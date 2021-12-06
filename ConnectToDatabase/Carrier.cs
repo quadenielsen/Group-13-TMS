@@ -13,7 +13,6 @@ namespace ConnectToDatabase
         //PRIVATE MEMBERS
         //======================
 
-        private int carrierID;
         private string carrierName;
         private float ftlRate;
         private float ltlRate;
@@ -23,7 +22,13 @@ namespace ConnectToDatabase
         //PUBLIC PROPERTIES
         //======================
 
-        public int CarrierID { get { return carrierID; } }
+        /// <summary>
+        /// 
+        /// </summary>
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string CarrierName 
         {
             get
@@ -108,7 +113,6 @@ namespace ConnectToDatabase
         public Carrier()
         {
             objectType = "carrier";
-            carrierID = -1;
             carrierName = "Unknown";
             ftlRate = -1;
             ltlRate = -1;
@@ -118,7 +122,6 @@ namespace ConnectToDatabase
         public Carrier(int carrierID)
         {
             objectType = "carrier";
-            this.carrierID = carrierID;
         }
 
         //======================
@@ -128,10 +131,6 @@ namespace ConnectToDatabase
         override public bool ValidateProperties()
         {
             if (carrierName == "Unknown" || carrierName == "")
-            {
-                return false;
-            }
-            if (carrierID <= 0)
             {
                 return false;
             }
@@ -152,7 +151,7 @@ namespace ConnectToDatabase
 
         override public string GenerateQueryString()
         {
-            return carrierID+"|"+carrierName+"|"+ftlRate+"|"+ltlRate+"|"+reefCharge+"|";
+            return carrierName+"|"+ftlRate+"|"+ltlRate+"|"+reefCharge;
         }
     }
 }

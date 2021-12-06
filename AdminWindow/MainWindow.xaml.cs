@@ -30,6 +30,7 @@ namespace AdminWindow
         {
             InitializeComponent();
 
+            Logger.ClearLog();
             admin = new ConnectToDatabase.Admin();
             carriers = admin.Carriers;
             DG1.DataContext = carriers;
@@ -37,9 +38,16 @@ namespace AdminWindow
 
         private void btnUpdate_Table_Click(object sender, RoutedEventArgs e)
         {
-            if (CarrierData.IsSelected == true)
+            try
             {
-                
+                if (CarrierData.IsSelected == true)
+                {
+                    admin.UpdateCarrierData();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message);
             }
         }
     }

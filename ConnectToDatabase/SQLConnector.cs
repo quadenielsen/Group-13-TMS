@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace ConnectToDatabase
 {
-	class SQLConnector
+	public class SQLConnector
 	{
 		private MySqlConnection connection;
 		private string server;
@@ -69,7 +69,7 @@ namespace ConnectToDatabase
 		private void Initialize()
 		{
 			server = "localhost";
-			database = "classicmodels";
+			database = "OMNI_TMS_13";
 			uid = "root";
 			password = "securepassword!94";
 			string connectionString;
@@ -177,7 +177,7 @@ namespace ConnectToDatabase
 		/// <param name="values"></param>
 		/// <param name="location"></param>
 		/// <returns>Returns true if the insertion was successful, otherwise false.</returns>
-		public bool UpdateRow(string table, string values, string location)
+		public void UpdateRow(string table, string values, string location)
 		{
 			string query = "UPDATE "+table+" SET "+values+" WHERE "+location;
 
@@ -188,15 +188,16 @@ namespace ConnectToDatabase
 				{
 					MySqlCommand cmd = new MySqlCommand(query, connection);
 					cmd.ExecuteNonQuery();
-					this.CloseConnection();
 				}
 				catch (MySqlException ex)
 				{
 					Console.WriteLine(ex);
-					return false;
+				}
+				finally
+                {
+					this.CloseConnection();
 				}
 			}
-			return false;
 		}
 
 

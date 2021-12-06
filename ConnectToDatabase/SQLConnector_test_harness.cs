@@ -16,19 +16,28 @@ namespace ConnectToDatabase
     {
         static void Main(string[] args)
         {
-            User user = new User();
-            List <Carrier> carriers = user.FetchCarrierData();
+            User user = new User("planner");
+            
+            foreach (Carrier carrier in user.Carriers)
+            {
+                Console.WriteLine(carrier.GenerateQueryString());
+            }
+
+            /*
+            SQLConnector sqlc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
+            sqlc.InsertRow("carriers (carrierName, FTLRate, LTLRate, reefCharge)", "\"Shipping Stuff\", 0.5, 0.5, 0.5");
+            carriers = user.FetchCarrierData();
             foreach (Carrier carrier in carriers)
             {
                 Console.WriteLine(carrier.GenerateQueryString());
             }
-        
+            sqlc.DeleteRow("carriers", "carrierName='Shipping Stuff'");
+            carriers = user.FetchCarrierData();
+            foreach (Carrier carrier in carriers)
+            {
+                Console.WriteLine(carrier.GenerateQueryString());
+            }
+            */
         }
      }
-        
-        
-
-
-    
-    
 }
