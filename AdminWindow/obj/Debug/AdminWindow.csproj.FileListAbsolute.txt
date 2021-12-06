@@ -59,3 +59,9 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.c
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.exe
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.pdb
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.csproj.AssemblyReference.cache
+C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\SQLConnectorLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\TMSObjectLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\TMSUserLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\SQLConnectorLibrary.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\TMSObjectLibrary.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\TMSUserLibrary.pdb

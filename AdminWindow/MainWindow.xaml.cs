@@ -13,8 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ConnectToDatabase;
-using UserClasses;
+using TMSObjectLibrary;
+using TMSUserLibrary;
+using SQLConnectorLibrary;
 
 namespace AdminWindow
 {
@@ -23,7 +24,7 @@ namespace AdminWindow
     /// </summary>
     public partial class MainWindow : Window
     {
-        ConnectToDatabase.Admin admin;
+        Admin admin;
         ObservableCollection<Carrier> carriers;
         ObservableCollection<Depot> depots;
         volatile bool addingNewRow = false;
@@ -35,7 +36,7 @@ namespace AdminWindow
             Logger.ClearLog();
             try
             {
-                admin = new ConnectToDatabase.Admin();
+                admin = new Admin();
                 carriers = admin.Carriers;
                 depots = admin.Depots;
                 Carriers.DataContext = carriers;

@@ -58,12 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Carrier.cs" />
     <Compile Include="Commands\CommandBASE.cs" />
-    <Compile Include="SQLConnector.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
-    <Compile Include="TMSObject.cs" />
-    <Compile Include="TMSUser.cs" />
     <Compile Include="ViewModels\Login_ViewModel.cs" />
     <Compile Include="ViewModels\Main_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBASE.cs" />
@@ -128,6 +124,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DOxygenMainProjectPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SQLConnectorLibrary\SQLConnectorLibrary.csproj">
+      <Project>{68df36fd-5f10-4a65-8c25-900d50c52afc}</Project>
+      <Name>SQLConnectorLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMSObjectLibrary\TMSObjectLibrary.csproj">
+      <Project>{849edbf0-a384-4a3f-9ac5-6444d471c28f}</Project>
+      <Name>TMSObjectLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMSUserLibrary\TMSUserLibrary.csproj">
+      <Project>{b997bf4c-04de-4e35-b259-e333f2d93a77}</Project>
+      <Name>TMSUserLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

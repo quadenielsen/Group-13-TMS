@@ -46,8 +46,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Carrier.cs" />
-    <Compile Include="DataRecordExtensions.cs" />
-    <Compile Include="SQLConnector.cs" />
+    <Compile Include="Depot.cs" />
     <Compile Include="SQLConnector_test_harness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TMSObject.cs" />
@@ -55,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnectorLibrary.csproj">
+      <Project>{68df36fd-5f10-4a65-8c25-900d50c52afc}</Project>
+      <Name>SQLConnectorLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

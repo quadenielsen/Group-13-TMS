@@ -57,22 +57,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Depot.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="SQLConnector.cs" />
-    <Compile Include="TMSObject.cs" />
-    <Compile Include="User.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Admin.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Carrier.cs" />
-    <Compile Include="DataRecordExtensions.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -103,6 +95,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnectorLibrary.csproj">
+      <Project>{68df36fd-5f10-4a65-8c25-900d50c52afc}</Project>
+      <Name>SQLConnectorLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\TMSObjectLibrary\TMSObjectLibrary.csproj">
+      <Project>{849edbf0-a384-4a3f-9ac5-6444d471c28f}</Project>
+      <Name>TMSObjectLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\TMSUserLibrary\TMSUserLibrary.csproj">
+      <Project>{b997bf4c-04de-4e35-b259-e333f2d93a77}</Project>
+      <Name>TMSUserLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
