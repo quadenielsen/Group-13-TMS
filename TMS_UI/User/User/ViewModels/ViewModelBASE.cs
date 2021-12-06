@@ -7,6 +7,7 @@ using System.ComponentModel;
 
 namespace User.ViewModels
 {
+    //PARENT CLASS OF ALL VIEW MODELS
     public class ViewModelBASE : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;

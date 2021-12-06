@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace User.Commands
 {
+    //PARENT CLASS OF ALL NAVIGATION COMMANDS
     public abstract class CommandBASE : ICommand
     {
         public event EventHandler CanExecuteChanged;

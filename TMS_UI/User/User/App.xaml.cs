@@ -19,7 +19,10 @@ namespace User
         protected override void OnStartup(StartupEventArgs e)
         {
             NavigationStore navigationStore = new NavigationStore();
+            
+            // Initial VIEW and VIEW MODEL is LOGIN screen
             navigationStore.CurrentViewModel = new Login_ViewModel(navigationStore);
+
             MainWindow mainWindow = new MainWindow()
             {
                 DataContext = new Main_ViewModel(navigationStore)
