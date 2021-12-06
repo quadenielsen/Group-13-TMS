@@ -41,6 +41,7 @@ namespace TMSUserLibrary
             {
                 Carriers = FetchCarrierData();
                 Depots = FetchDepotData();
+                Cities = FetchCityData();
             }
         }
 
@@ -244,7 +245,7 @@ namespace TMSUserLibrary
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logger.Log(ex.Message);
                 }
                 return citiesFetched;
             }

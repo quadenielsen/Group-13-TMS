@@ -27,7 +27,7 @@ namespace AdminWindow
         Admin admin;
         ObservableCollection<Carrier> carriers;
         ObservableCollection<Depot> depots;
-        volatile bool addingNewRow = false;
+        ObservableCollection<City> cities;
 
         public MainWindow()
         {
@@ -39,7 +39,9 @@ namespace AdminWindow
                 admin = new Admin();
                 carriers = admin.Carriers;
                 depots = admin.Depots;
+                cities = admin.Cities;
                 Carriers.DataContext = carriers;
+                Routes.DataContext = cities;
                 
             }
             catch (Exception ex)
@@ -62,6 +64,7 @@ namespace AdminWindow
                     
                     admin.UpdateCarrierData();
                 }
+
             }
             catch (Exception ex)
             {
@@ -76,7 +79,7 @@ namespace AdminWindow
             Carrier test = new Carrier();
             try
             {
-                if (Carriers.SelectedItem.GetType() == test.GetType() && Carriers.SelectedItem != null && addingNewRow == false)
+                if (Carriers.SelectedItem.GetType() == test.GetType() && Carriers.SelectedItem != null)
                 {
                     Carrier currentCarrier = (Carrier)Carriers.SelectedItem;
                     Depots.DataContext = currentCarrier.Depots;
@@ -90,10 +93,6 @@ namespace AdminWindow
             
         }
 
-        private void Depots_AddingNewItem(object sender, AddingNewItemEventArgs e)
-        {
-            
-        }
 
         private void Depots_InitializingNewItem(object sender, InitializingNewItemEventArgs e)
         {

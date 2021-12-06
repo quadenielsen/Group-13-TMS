@@ -38,7 +38,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" AddingNewItem="Depots_AddingNewItem" InitializingNewItem="Depots_InitializingNewItem">
+                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
                             <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>
@@ -48,8 +48,18 @@
                 </Grid>
                 
             </TabItem>
-            <TabItem Header="Route Table">
-
+            <TabItem Header="Route Table" Name="RouteTable">
+                <DataGrid Grid.Column="0" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="City" Binding="{Binding CityName}" MinWidth="100"/>
+                        <DataGridTextColumn Header="Province/State" Binding="{Binding CityProvince}"/>
+                        <DataGridTextColumn Header="Country" Binding="{Binding CityCountry}"/>
+                        <DataGridTextColumn Header="Kilometers to Next City (East)" Binding="{Binding KilometersToNextCityEast}"/>
+                        <DataGridTextColumn Header="Hours to Next City (East)" Binding="{Binding TimeToNextCityEast}"/>
+                        <DataGridTextColumn Header="Next City (West)" Binding="{Binding NextCityWest}"/>
+                        <DataGridTextColumn Header="Next City (East)" Binding="{Binding NextCityEast}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </TabItem>
         </TabControl>
 

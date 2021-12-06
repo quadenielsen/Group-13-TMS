@@ -166,15 +166,7 @@ namespace TMSObjectLibrary
             }
             set
             {
-                if (value != "")
-                {
-                    nextCityEast = value;
-                }
-                else
-                {
-                    Exception ex = new Exception("Value for NextCityEast rejected.");
-                    throw ex;
-                }
+                nextCityEast = value;
             }
         }
 
@@ -186,15 +178,7 @@ namespace TMSObjectLibrary
             }
             set
             {
-                if (value != "")
-                {
-                    nextCityWest = value;
-                }
-                else
-                {
-                    Exception ex = new Exception("Value for NextCityWest rejected.");
-                    throw ex;
-                }
+                nextCityWest = value;
             }
         }
         //======================
