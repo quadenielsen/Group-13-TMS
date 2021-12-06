@@ -5,35 +5,54 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:AdminWindow"
 		mc:Ignorable="d"
-		Title="OMNI TMS Admin" Height="450" Width="800">
+		Title="OMNI TMS Admin" MinHeight="600" Height="600" MinWidth="1000" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition MinWidth="650" Width="*"/>
+            <ColumnDefinition MinWidth="200" Width="200"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="500"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TabControl Grid.Row="1" Name="Data_Editing_Tabs">
+
+        <TabControl Grid.Column="0" Name="Data_Editing_Tabs">
             <TabItem Header="Rate/Fee Tables">
             </TabItem>
             <TabItem Name="CarrierData" Header="Carrier Data">
-                <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" >
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" />
-                        <DataGridTextColumn Header="Depots" Binding="{Binding Depots}" />
-                        <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
-                        <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTLRate}" />
-                        <DataGridTextColumn Header="Reefer Charge"  Binding="{Binding ReefCharge}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="400" Width="*"/>
+                        <ColumnDefinition MinWidth="300" Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Column="0" Name="Carriers" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" MinWidth="150"/>
+                            <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
+                            <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTLRate}"/>
+                            <DataGridTextColumn Header="Reefer Charge" Binding="{Binding ReefCharge}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" AddingNewItem="Depots_AddingNewItem" InitializingNewItem="Depots_InitializingNewItem">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
+                            <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>
+                            <DataGridTextColumn Header="LTL Availability" Binding="{Binding LTLAvailability}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                
             </TabItem>
             <TabItem Header="Route Table">
 
             </TabItem>
         </TabControl>
 
-        <Button x:Name="btnUpdate_Table" Grid.Column="1" Height="40" Width="100" Margin="10,196,286,264" Content="Update Table" Click="btnUpdate_Table_Click"></Button>
+        <Button x:Name="btnUpdate_Table" Grid.Column="1" Height="40" Width="100" Margin="20,0,0,0" Content="Update Table" Click="btnUpdate_Table_Click" HorizontalAlignment="Left"></Button>
     </Grid>
 </Window>

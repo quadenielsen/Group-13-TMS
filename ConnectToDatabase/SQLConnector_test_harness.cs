@@ -16,12 +16,20 @@ namespace ConnectToDatabase
     {
         static void Main(string[] args)
         {
-            User user = new User("planner");
-            
-            foreach (Carrier carrier in user.Carriers)
+            try
             {
-                Console.WriteLine(carrier.GenerateQueryString());
+                User user = new User("planner");
+            
+                foreach (Carrier carrier in user.Carriers)
+                {
+                    Console.WriteLine(carrier.GenerateQueryString());
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+                
 
             /*
             SQLConnector sqlc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");

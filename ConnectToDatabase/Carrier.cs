@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdminWindow;
 
 namespace ConnectToDatabase
 {
@@ -14,6 +16,7 @@ namespace ConnectToDatabase
         //======================
 
         private string carrierName;
+        private ObservableCollection<Depot> depots;
         private float ftlRate;
         private float ltlRate;
         private float reefCharge;
@@ -21,10 +24,6 @@ namespace ConnectToDatabase
         //======================
         //PUBLIC PROPERTIES
         //======================
-
-        /// <summary>
-        /// 
-        /// </summary>
 
         /// <summary>
         /// 
@@ -41,13 +40,21 @@ namespace ConnectToDatabase
                 {
                     carrierName = value;
                 }
-                else
-                {
-                    Exception ex = new Exception("Value for CarrierName rejected.");
-                    throw ex;
-                }
             }
         }
+
+        public ObservableCollection<Depot> Depots
+        {
+            get
+            {
+                return depots;
+            }
+            set
+            {
+                depots = value;
+            }
+        }
+
         public float FTLRate
         {
             get
@@ -60,11 +67,7 @@ namespace ConnectToDatabase
                 {
                     ftlRate = value;
                 }
-                else
-                {
-                    Exception ex = new Exception("Value for FTLRate rejected.");
-                    throw ex;
-                }
+
             }
         }
         public float LTLRate
@@ -79,11 +82,7 @@ namespace ConnectToDatabase
                 {
                     ltlRate = value;
                 }
-                else
-                {
-                    Exception ex = new Exception("Value for LTLRate rejected.");
-                    throw ex;
-                }
+
             }
         }
         public float ReefCharge
@@ -98,11 +97,7 @@ namespace ConnectToDatabase
                 {
                     reefCharge = value;
                 }
-                else
-                {
-                    Exception ex = new Exception("Value for carrierName rejected.");
-                    throw ex;
-                }
+
             }
         }
 
@@ -114,14 +109,10 @@ namespace ConnectToDatabase
         {
             objectType = "carrier";
             carrierName = "Unknown";
-            ftlRate = -1;
-            ltlRate = -1;
-            reefCharge = -1;
-        }
-
-        public Carrier(int carrierID)
-        {
-            objectType = "carrier";
+            depots = new ObservableCollection<Depot>();
+            ftlRate = 0;
+            ltlRate = 0;
+            reefCharge = 0;
         }
 
         //======================
@@ -152,6 +143,20 @@ namespace ConnectToDatabase
         override public string GenerateQueryString()
         {
             return carrierName+"|"+ftlRate+"|"+ltlRate+"|"+reefCharge;
+        }
+
+        public string GenerateCommaDelimitedString()
+        {
+            //check strings for characters that would possibly be misinterpreted as control characters by MySQL
+
+            string name = carrierName;
+            if (name.Contains('\'') == true)
+            {
+                name = name.Replace("\'", "\\\'");
+            }
+
+            //return a string that can be used in a MySQL query to specify the values for an INSERT statement
+            return "'" + name + "'" + ", " + ftlRate + ", " + ltlRate + ", " + reefCharge;
         }
     }
 }

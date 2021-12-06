@@ -25,16 +25,30 @@ namespace AdminWindow
     {
         ConnectToDatabase.Admin admin;
         ObservableCollection<Carrier> carriers;
+        ObservableCollection<Depot> depots;
+        volatile bool addingNewRow = false;
 
         public MainWindow()
         {
             InitializeComponent();
 
             Logger.ClearLog();
-            admin = new ConnectToDatabase.Admin();
-            carriers = admin.Carriers;
-            DG1.DataContext = carriers;
+            try
+            {
+                admin = new ConnectToDatabase.Admin();
+                carriers = admin.Carriers;
+                depots = admin.Depots;
+                Carriers.DataContext = carriers;
+                
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message);
+            }
+            
         }
+
+
 
         private void btnUpdate_Table_Click(object sender, RoutedEventArgs e)
         {
@@ -42,6 +56,9 @@ namespace AdminWindow
             {
                 if (CarrierData.IsSelected == true)
                 {
+                    admin.Carriers = carriers;
+                    admin.Depots = depots;
+                    
                     admin.UpdateCarrierData();
                 }
             }
@@ -49,6 +66,39 @@ namespace AdminWindow
             {
                 Logger.Log(ex.Message);
             }
+        }
+
+
+
+        private void Carriers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Carrier test = new Carrier();
+            try
+            {
+                if (Carriers.SelectedItem.GetType() == test.GetType() && Carriers.SelectedItem != null && addingNewRow == false)
+                {
+                    Carrier currentCarrier = (Carrier)Carriers.SelectedItem;
+                    Depots.DataContext = currentCarrier.Depots;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message);
+            }
+            
+        }
+
+        private void Depots_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+            
+        }
+
+        private void Depots_InitializingNewItem(object sender, InitializingNewItemEventArgs e)
+        {
+            Depot depot = (Depot)e.NewItem;
+            Carrier carrier = (Carrier)Carriers.SelectedItem;
+            depot.CarrierName = carrier.CarrierName;
         }
     }
 }

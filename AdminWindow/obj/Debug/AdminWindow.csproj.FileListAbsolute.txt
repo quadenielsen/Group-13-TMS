@@ -45,7 +45,6 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\K4os.Hash.xxH
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\MySql.Data.xml
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\bin\Debug\MySql.Web.xml
-C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.csproj.AssemblyReference.cache
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.exe.config
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\MainWindow.g.cs
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\App.g.cs
@@ -59,3 +58,4 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.c
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.csproj.CopyComplete
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.exe
 C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\obj\Debug\AdminWindow.csproj.AssemblyReference.cache

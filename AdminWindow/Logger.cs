@@ -17,8 +17,10 @@ using System.IO;
 namespace AdminWindow
 {
 
+
+
     /* 
-     * Name         :   Server
+     * Name         :   Logger
      * Description  :   This class is a logger. The logger will append to a log file
 	 *					in the same directory as the executable
      */
@@ -45,6 +47,8 @@ namespace AdminWindow
             permissionToLog.ReleaseMutex();
         }
 
+
+
         /*
          * Function     :   ClearLog
          * Description  :   If a log file exists, it is deleted.
@@ -59,6 +63,8 @@ namespace AdminWindow
                 File.Delete(AppDomain.CurrentDomain.BaseDirectory + fileName);
             }
         }
+
+
 
         public static void ChangeFileName(string name)
         {

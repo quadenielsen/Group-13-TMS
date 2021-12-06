@@ -18,6 +18,7 @@ namespace UserClasses
         protected string userPassword { get; set; }
         protected string userRole { get; set; }
         public ObservableCollection<Carrier> Carriers { get; set; }
+        public ObservableCollection<Depot> Depots { get; set; }
 
         protected SQLConnector sqlc;
 
@@ -38,6 +39,7 @@ namespace UserClasses
             if (userRole == "planner" || userRole == "admin")
             {
                 Carriers = FetchCarrierData();
+                Depots = FetchDepotData();
             }
         }
 
@@ -93,8 +95,10 @@ namespace UserClasses
 
         }
 
+
+
         /// <summary>
-        /// Method FetchCarrierData fetches carrier data from the database and retunrs a list of Carrier objects.
+        /// Method FetchCarrierData fetches carrier data from the database and returns a list of Carrier objects.
         /// Returns null if fetch failed.
         /// </summary>
         public ObservableCollection<Carrier> FetchCarrierData()
@@ -114,15 +118,22 @@ namespace UserClasses
                 try
                 {
                     //fill the list with the retrieved data
+                    //in the 2D array, the first index represents the column, and the second index represents the row
                     for (int i = 0; i < numberofCarriers; ++i)
                     {
                         Carrier carrier = new Carrier();
                         carrier.CarrierName = carrierInfoRetrieved[0][i];
-                        carrier.Depots = FetchDepotData();
+
+                        //populate the depot collection of the carrier
+                        ObservableCollection<Depot> depots = FetchDepotData();
+                        foreach (Depot depot in depots)
+                        {
+                            if (depot.CarrierName == carrier.CarrierName)
+                                carrier.Depots.Add(depot);
+                        }
                         carrier.FTLRate = float.Parse(carrierInfoRetrieved[1][i]);
                         carrier.LTLRate = float.Parse(carrierInfoRetrieved[2][i]);
                         carrier.ReefCharge = float.Parse(carrierInfoRetrieved[3][i]);
-
                         carriersFetched.Add(carrier);
                     }
                 }
@@ -141,7 +152,7 @@ namespace UserClasses
 
 
         /// <summary>
-        /// Method FetchCarrierData fetches carrier data from the database and retunrs a list of Carrier objects.
+        /// Method FetchCarrierData fetches depot data from the database and returns a list of Depot objects.
         /// Returns null if fetch failed.
         /// </summary>
         public ObservableCollection<Depot> FetchDepotData()
@@ -150,7 +161,7 @@ namespace UserClasses
             List<List<string>> depotInfoRetrieved = new List<List<string>>();
 
             //retrieve the data
-            if (sqlc.RetrieveFromColumns("carriers", "carrierName, FTLRate, LTLRate, reefCharge", out depotInfoRetrieved))
+            if (sqlc.RetrieveFromColumns("depots", "carrierName, CityID, FTLAvailability, LTLAvailability", out depotInfoRetrieved))
             {
                 //get the number of carriers
                 int numberofDepots = depotInfoRetrieved[0].Count;
@@ -161,13 +172,17 @@ namespace UserClasses
                 try
                 {
                     //fill the list with the retrieved data
+                    //in the 2D array, the first index represents the column, and the second index represents the row
                     for (int i = 0; i < numberofDepots; ++i)
                     {
                         Depot depot = new Depot();
                         depot.CarrierName = depotInfoRetrieved[0][i];
                         depot.CityID = int.Parse(depotInfoRetrieved[1][i]);
+
+                        //retrieve the name of the city where the depot is located
                         List<List<String>> cityName = new List<List<String>>();
                         sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", depot.CityID.ToString(), out cityName);
+
                         depot.CityName = cityName[0][0];
                         depot.FTLAvailability = int.Parse(depotInfoRetrieved[2][i]);
                         depot.LTLAvailability = int.Parse(depotInfoRetrieved[3][i]);
@@ -186,6 +201,7 @@ namespace UserClasses
                 return null;
             }
         }
+
 
         /// <summary>
         /// Method FetchOrderData fetches and orders made by user

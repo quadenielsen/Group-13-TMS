@@ -109,6 +109,7 @@ namespace ConnectToDatabase
         {
             objectType = "carrier";
             carrierName = "Unknown";
+            depots = new ObservableCollection<Depot>();
             ftlRate = 0;
             ltlRate = 0;
             reefCharge = 0;
@@ -146,7 +147,16 @@ namespace ConnectToDatabase
 
         public string GenerateCommaDelimitedString()
         {
-            return carrierName + ", " + ftlRate + ", " + ltlRate + ", " + reefCharge;
+            //check strings for characters that would possibly be misinterpreted as control characters by MySQL
+
+            string name = carrierName;
+            if (name.Contains('\'') == true)
+            {
+                name = name.Replace("\'", "\\\'");
+            }
+
+            //return a string that can be used in a MySQL query to specify the values for an INSERT statement
+            return "'" + name + "'" + ", " + ftlRate + ", " + ltlRate + ", " + reefCharge;
         }
     }
 }
