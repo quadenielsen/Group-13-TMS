@@ -34,5 +34,19 @@ namespace User.Views.BuyerViews
         {
             home.Foreground = Brushes.White;
         }
+
+        private void settingsGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            User.ViewModels.Main_ViewModel a = Window.GetWindow(this).DataContext as User.ViewModels.Main_ViewModel;
+            if ((string)userid.Content == string.Empty)
+            {
+                userid.Content = "USERID: " + a.username;
+            }
+
+            if ((string)password.Content == string.Empty)
+            {
+                password.Content = "PASSWORD: " + a.password;
+            }
+        }
     }
 }
