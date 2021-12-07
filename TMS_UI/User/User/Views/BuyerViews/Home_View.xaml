@@ -9,60 +9,64 @@
              d:DesignWidth="800"
              Background="SlateGray">
     <Grid>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
 
 
-            <Border BorderBrush="DimGray" BorderThickness="0,0,4,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,42,0">
-                <StackPanel Grid.Row="0"
-                        Grid.Column="0"
-                        Width="100"
-                        Orientation="Vertical"
-                        HorizontalAlignment="Left"
-                        Margin="2"
-                        Background="#14212B"
-                        >
-                    <Button x:Name="settings" Content="Account Settings" Height="50" Width="100" Command="{Binding NavigateSettingsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,180,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="Settings_MouseEnter" MouseLeave="Settings_MouseLeave"/>
+        <Border BorderBrush="DimGray" BorderThickness="0,0,4,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,42,0">
+            <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Width="100"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left"
+                    Margin="2"
+                    Background="#14212B"
+                    >
+                <Button x:Name="settings" Content="Account Settings" Height="50" Width="100"
+                        Command="{Binding NavigateSettingsCommand}" Background="Transparent"
+                        BorderBrush="Transparent" Margin="0,150,0,20" Foreground="#E0FFFF"
+                        FontWeight="SemiBold" MouseEnter="Settings_MouseEnter"
+                        MouseLeave="Settings_MouseLeave"/>
 
-                </StackPanel>
-            </Border>
+            </StackPanel>
+        </Border>
 
-            <Grid Height="60" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Background="#233C4F">
-                <Label Content="HOME"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   Grid.Column="0"
-                   Grid.Row="0"
-                   Grid.ColumnSpan="2"
-                   FontSize="26"
-                   FontFamily="open sans condensed"
-                   Foreground="#E0FFFF"
-               />
-            </Grid>
-
-            <Grid Height="60" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Background="#233C4F">
-                <Label 
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   Grid.Column="0"
-                   Grid.Row="0"
-                   Grid.ColumnSpan="2"
-                   FontSize="26"
-                   FontFamily="open sans condensed"
-                   Foreground="#E0FFFF"
-               />
-            </Grid>
-
-
-            <Button Grid.Column="1" Grid.Row="1" Content="Logout" Command="{Binding NavigateLoginCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Height="40" Width="80"/>
+        <Grid Height="60" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Background="#233C4F">
+            <Label Content="HOME"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                FontSize="26"
+                FontFamily="open sans condensed"
+                Foreground="#E0FFFF"
+            />
         </Grid>
+
+        <Grid Height="60" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Background="#233C4F">
+            <Label 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                FontSize="26"
+                FontFamily="open sans condensed"
+                Foreground="#E0FFFF"
+            />
+        </Grid>
+
+
+        <Button Grid.Column="1" Grid.Row="1" Content="Logout" Command="{Binding NavigateLoginCommand}"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                Margin="10" Height="40" Width="80"/>
     </Grid>
 </UserControl>

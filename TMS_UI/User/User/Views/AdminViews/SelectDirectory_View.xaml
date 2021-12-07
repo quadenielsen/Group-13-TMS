@@ -5,31 +5,85 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:User.Views.AdminViews"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             Background="SlateGray">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="650" Width="*"/>
-            <ColumnDefinition MinWidth="200" Width="200"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
 
-        <TabControl Grid.Column="0" Name="Data_Editing_Tabs">
+
+        <Border BorderBrush="DimGray" BorderThickness="0,0,4,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,42,0">
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Width="100"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Left"
+                        Margin="2"
+                        Background="#14212B"
+                        >
+                <Button x:Name="Home" Content="Home" Height="50" Width="100" Command="{Binding NavigateHomeCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,150,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="home_MouseEnter" MouseLeave="home_MouseLeave"/>
+                <Button x:Name="settings" Content="Account Settings" Height="50" Width="100" Command="{Binding NavigateSettingsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="settings_MouseEnter" MouseLeave="settings_MouseLeave"/>
+
+            </StackPanel>
+        </Border>
+
+        <Grid Height="60" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Background="#233C4F">
+            <Label Content="DATATABLES"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="26"
+                   FontFamily="open sans condensed"
+                   Foreground="#E0FFFF"
+               />
+        </Grid>
+
+        <Grid Height="60" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Background="#233C4F">
+            <Label 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="26"
+                   FontFamily="open sans condensed"
+                   Foreground="#E0FFFF"
+               />
+        </Grid>
+
+        <Button Grid.Column="1" Grid.Row="1" Content="Logout" Command="{Binding NavigateLoginCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Height="40" Width="80"/>
+
+
+        <TabControl Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,60" HorizontalAlignment="Right" Width="680" Background="DarkGray" Name="Data_Editing_Tabs">
             <TabItem Header="Rate/Fee Tables">
             </TabItem>
             <TabItem Name="CarrierData" Header="Carrier Data">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="400" Width="*"/>
-                        <ColumnDefinition MinWidth="300" Width="*"/>
+                        <ColumnDefinition MinWidth="400" Width="51*"/>
+                        <ColumnDefinition Width="29*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition MinWidth="300" Width="60*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <DataGrid Grid.Column="0" Name="Carriers" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged">
+                    <DataGrid Name="Carriers" Background="Transparent" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged" Margin="0,0,46,0" Grid.ColumnSpan="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" MinWidth="150"/>
                             <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
@@ -38,7 +92,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
+                    <DataGrid Background="Transparent" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Grid.ColumnSpan="8" Margin="354,0,26,0">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
                             <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>
@@ -49,9 +103,9 @@
 
             </TabItem>
             <TabItem Header="Route Table" Name="RouteTable">
-                <DataGrid Grid.Column="0" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
+                <DataGrid Background="Transparent" Grid.Column="0" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Margin="0,-3,-3,3" HorizontalAlignment="Left" Width="672" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="City" Binding="{Binding CityName}" MinWidth="100"/>
+                        <DataGridTextColumn Header="City" Binding="{Binding CityName}" MinWidth="50"/>
                         <DataGridTextColumn Header="Province/State" Binding="{Binding CityProvince}"/>
                         <DataGridTextColumn Header="Country" Binding="{Binding CityCountry}"/>
                         <DataGridTextColumn Header="Kilometers to Next City (East)" Binding="{Binding KilometersToNextCityEast}"/>
@@ -61,16 +115,17 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
-            <TabItem Header="Logger">
+            <TabItem Header="Logger" >
                 <Grid>
-                    <Button Content="Choose New Log File" HorizontalAlignment="Left" Margin="362,350,0,0" VerticalAlignment="Top" Click="ChooseLoggerFilepath_Click"/>
-                    <TextBox Name="FilepathText" HorizontalAlignment="Left" Margin="47,352,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
-                    <TextBox Name="LogFileText" HorizontalAlignment="Left" Margin="47,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430" Height="243"/>
-                    <Button Content="View Log File" HorizontalAlignment="Left" Margin="47,79,0,0" VerticalAlignment="Top" Click="ViewLogFile_Click"/>
+                    <Button Content="Choose New Log File" HorizontalAlignment="Left" Margin="482,229,0,0" VerticalAlignment="Top" Click="ChooseLoggerFilepath_Click"/>
+
+                    <TextBox Name="FilepathText" HorizontalAlignment="Left" Margin="47,0,0,30"  TextWrapping="Wrap" VerticalAlignment="Bottom" Width="296" Height="20"/>
+                    <TextBox Background="Wheat" Name="LogFileText" HorizontalAlignment="Left" Margin="47,71,0,53" TextWrapping="Wrap" Width="430"/>
+                    <Button Content="View Log File" HorizontalAlignment="Left" Margin="47,46,0,0" VerticalAlignment="Top" Click="ViewLogFile_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
 
-        <Button x:Name="btnUpdate_Table" Grid.Column="1" Height="40" Width="100" Margin="20,0,0,0" Content="Update Table" Click="btnUpdate_Table_Click" HorizontalAlignment="Left"></Button>
+        <Button x:Name="btnUpdate_Table" Grid.Column="1" Grid.Row="1" Height="40" Width="100" Margin="0,0,332,10" Content="Update Table" Click="btnUpdate_Table_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
     </Grid>
 </UserControl>

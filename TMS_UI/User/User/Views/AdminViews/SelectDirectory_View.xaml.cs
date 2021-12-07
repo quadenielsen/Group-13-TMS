@@ -143,5 +143,26 @@ namespace User.Views.AdminViews
             // Show contents of Log File in Textbox
             LogFileText.Text = File.ReadAllText(filepath);
         }
+
+
+        private void home_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Home.Foreground = Brushes.Black;
+        }
+
+        private void home_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Home.Foreground = Brushes.White;
+        }
+
+        private void settings_MouseEnter(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.Black;
+        }
+
+        private void settings_MouseLeave(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.White;
+        }
     }
 }

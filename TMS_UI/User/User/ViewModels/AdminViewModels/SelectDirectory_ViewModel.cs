@@ -16,12 +16,14 @@ namespace User.ViewModels.AdminViewModels
         //----------------------------------- COMMANDS --------------------------------------------
         public ICommand NavigateHomeCommand { get; }
         public ICommand NavigateLoginCommand { get; }
+        public ICommand NavigateSettingsCommand { get; }
 
         //----------------------------------- CONSTRUCTOR --------------------------------------------
         public SelectDirectory_ViewModel(NavigationStore navigationStore)
         {
             NavigateHomeCommand = new Commands.AdminCommands.NavigateHomeCommand(navigationStore);
             NavigateLoginCommand = new Commands.NavigateLoginCommand(navigationStore);
+            NavigateSettingsCommand = new Commands.AdminCommands.NavigateSettingsCommand(navigationStore);
         }
     }
 }

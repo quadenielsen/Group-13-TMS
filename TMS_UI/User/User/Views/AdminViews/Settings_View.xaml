@@ -18,7 +18,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-
+        <Label Content="USERID: " Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,85,0,0"/>
+        <Label Content="PASSWORD: " Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,135,0,0"/>
 
         <Border BorderBrush="DimGray" BorderThickness="0,0,4,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,42,0">
             <StackPanel Grid.Row="0"
@@ -29,7 +30,7 @@
                         Margin="2"
                         Background="#14212B"
                         >
-                <Button x:Name="datatables" Content="DataTables" Height="50" Width="100" Command="{Binding NavigateSelectDirectoryCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,180,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="datatables_MouseEnter" MouseLeave="datatables_MouseLeave"/>
+                <Button x:Name="datatables" Content="DataTables" Height="50" Width="100" Command="{Binding NavigateSelectDirectoryCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,150,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="datatables_MouseEnter" MouseLeave="datatables_MouseLeave"/>
                 <Button x:Name="home" Content="Home" Height="50" Width="100" Command="{Binding NavigateHomeCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="home_MouseEnter" MouseLeave="home_MouseLeave"/>
 
             </StackPanel>
@@ -60,6 +61,9 @@
                    Foreground="#E0FFFF"
                />
         </Grid>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                   Text="TMS is under Property rights of OmniCorp Corporation" TextWrapping="Wrap" Margin="0,0,20,65"/>
 
         <Button Grid.Column="1" Grid.Row="1" Content="Logout" Command="{Binding NavigateLoginCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Height="40" Width="80"/>
 

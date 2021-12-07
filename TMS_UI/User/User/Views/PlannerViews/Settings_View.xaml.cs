@@ -24,5 +24,14 @@ namespace User.Views.PlannerViews
         {
             InitializeComponent();
         }
+        private void home_MouseEnter(object sender, MouseEventArgs e)
+        {
+            home.Foreground = Brushes.Black;
+        }
+
+        private void home_MouseLeave(object sender, MouseEventArgs e)
+        {
+            home.Foreground = Brushes.White;
+        }
     }
 }

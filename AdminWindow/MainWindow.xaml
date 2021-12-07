@@ -22,14 +22,15 @@
             <TabItem Name="CarrierData" Header="Carrier Data">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="400" Width="*"/>
-                        <ColumnDefinition MinWidth="300" Width="*"/>
+                        <ColumnDefinition MinWidth="400" Width="13*"/>
+                        <ColumnDefinition Width="187*"/>
+                        <ColumnDefinition MinWidth="300" Width="193*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <DataGrid Grid.Column="0" Name="Carriers" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged">
+                    <DataGrid Grid.Column="0" Name="Carriers" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged" Grid.ColumnSpan="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" MinWidth="150"/>
                             <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
@@ -38,7 +39,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
+                    <DataGrid Grid.Column="2" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
                             <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>
@@ -46,7 +47,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
-                
+
             </TabItem>
             <TabItem Header="Route Table" Name="RouteTable">
                 <DataGrid Grid.Column="0" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
