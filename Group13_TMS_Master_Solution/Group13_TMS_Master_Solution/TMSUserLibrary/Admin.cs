@@ -72,19 +72,19 @@ namespace TMSUserLibrary
                 
 
                 //clear the tables in the database
-                sqlc.ClearTable("depots");
-                sqlc.ClearTable("carriers");
+                sqlcTMS.ClearTable("depots");
+                sqlcTMS.ClearTable("carriers");
 
                 //for each carrier, insert a new row into the database
                 foreach (Carrier carrier in this.Carriers)
                 {
-                    sqlc.InsertRow("carriers (carrierName, FTLRate, LTLRate, ReefCharge)", carrier.GenerateCommaDelimitedString());
+                    sqlcTMS.InsertRow("carriers (carrierName, FTLRate, LTLRate, ReefCharge)", carrier.GenerateCommaDelimitedString());
 
                     //for each depot owned by the carrier, add a new row into the database
                     foreach (Depot depot in carrier.Depots)
                     {
                         {
-                            sqlc.InsertRow("depots (carrierName, CityID, FTLAvailability, LTLAvailability)", depot.GenerateCommaDelimitedString());
+                            sqlcTMS.InsertRow("depots (carrierName, CityID, FTLAvailability, LTLAvailability)", depot.GenerateCommaDelimitedString());
                         }
                     }
                 }
@@ -113,13 +113,13 @@ namespace TMSUserLibrary
             try
             { 
                 //clear the tables in the database
-                sqlc.ClearTable("cities");
+                sqlcTMS.ClearTable("cities");
 
 
                 //for each carrier, insert a new row into the database
                 foreach (City city in this.Cities)
                 {
-                    sqlc.InsertRow("cities (cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest, nextCityEast)", city.GenerateCommaDelimitedString());
+                    sqlcTMS.InsertRow("cities (cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest, nextCityEast)", city.GenerateCommaDelimitedString());
                 }
 
             }
