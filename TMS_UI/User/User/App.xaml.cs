@@ -27,7 +27,7 @@ namespace User
             {
                 DataContext = new Main_ViewModel(navigationStore)
             };
-            mainWindow.Title = "Log In";
+            mainWindow.Title = "TMS";
             mainWindow.Show();
 
             base.OnStartup(e);

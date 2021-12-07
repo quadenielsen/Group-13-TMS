@@ -10,31 +10,19 @@ namespace User.Users.Maintenance
 {
     public class ValidateUser
     {
-        static public bool ValidateCredentials(string fName, string lName, string dob, string Email)
+        static public bool ValidateCredentials(string UserName, string PassWord)
         {
             bool validityStatus = true;
 
-            if (!Regex.IsMatch(fName, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(UserName, @"^[a-zA-Z0-9]+$"))
             {
                 validityStatus = false;
             }
 
-            if (!Regex.IsMatch(lName, @"^[a-zA-Z]+$"))
-            {
-                validityStatus = false;
-            }
-
-            DateTime date;
-            if (!DateTime.TryParse(dob, out date))
-            {
-                validityStatus = false;
-            }
-
-            var foo = new EmailAddressAttribute();
-            if (!foo.IsValid(Email))
-            {
-                validityStatus = false;
-            }
+            //if (!Regex.IsMatch(PassWord, @"^[a-zA-Z0-9]+$"))
+            //{
+            //    validityStatus = false;
+            //}
 
             return validityStatus;
         }

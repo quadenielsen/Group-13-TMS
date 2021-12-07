@@ -197,6 +197,25 @@ namespace User.Views.AdminViews
             {
                 Error.Visibility = Visibility.Visible;
             }
+
+        private void home_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Home.Foreground = Brushes.Black;
+        }
+
+        private void home_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Home.Foreground = Brushes.White;
+        }
+
+        private void settings_MouseEnter(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.Black;
+        }
+
+        private void settings_MouseLeave(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.White;
         }
     }
 }

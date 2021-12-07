@@ -30,7 +30,7 @@
                         Margin="2"
                         Background="#14212B"
                         >
-                    <Button x:Name="settings" Content="Account Settings" Height="50" Width="100" Command="{Binding NavigateSettingsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,180,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="Settings_MouseEnter" MouseLeave="Settings_MouseLeave"/>
+                    <Button x:Name="settings" Content="Account Settings" Height="50" Width="100" Command="{Binding NavigateSettingsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,150,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="Settings_MouseEnter" MouseLeave="Settings_MouseLeave"/>
 
                 </StackPanel>
             </Border>

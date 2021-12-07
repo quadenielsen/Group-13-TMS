@@ -22,7 +22,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-
+        <Label Grid.Row="0" Grid.Column="1" Content="Welcome Back" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,80,0,0"
+               FontSize="20" FontFamily="Segoe UI Semibold" Foreground="#FF1D41B9"/>
 
         <Border BorderBrush="DimGray" BorderThickness="0,0,4,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,42,0">
             <StackPanel Grid.Row="0"
@@ -33,7 +34,7 @@
                         Margin="2"
                         Background="#14212B"
                         >
-                <Button x:Name="datatables" Content="DataTables" Height="50" Width="100" Command="{Binding NavigateSelectDirectoryCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,180,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="datatables_MouseEnter" MouseLeave="datatables_MouseLeave"/>
+                <Button x:Name="datatables" Content="DataTables" Height="50" Width="100" Command="{Binding NavigateSelectDirectoryCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,150,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="datatables_MouseEnter" MouseLeave="datatables_MouseLeave"/>
                 <Button x:Name="settings" Content="Account Settings" Height="50" Width="100" Command="{Binding NavigateSettingsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="settings_MouseEnter" MouseLeave="settings_MouseLeave"/>
 
             </StackPanel>
@@ -64,6 +65,14 @@
                    Foreground="#E0FFFF"
                />
         </Grid>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" 
+                   Text="TMS is a critical part of the shipping and logistics industry. Allowing for the purchasing, scheduling, 
+monitoring and billing of organizations who desire to have cargo shipped via truck or train, the TMS system 
+is a representation of a system that has been worked on by SET students in their co-op work terms. Omnicorp Corporation." 
+                   TextWrapping="Wrap" LineHeight="20"
+                   VerticalAlignment="Top" HorizontalAlignment="Left"
+                   Margin="0,130,10,0" FontSize="14" Foreground="Black" FontWeight="Bold"/>
 
         <Button Grid.Column="1" Grid.Row="1" Content="Logout" Command="{Binding NavigateLoginCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Height="40" Width="80"/>
     </Grid>

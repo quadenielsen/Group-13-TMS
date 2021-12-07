@@ -24,5 +24,24 @@ namespace User.Views.AdminViews
         {
             InitializeComponent();
         }
+        private void datatables_MouseEnter(object sender, MouseEventArgs e)
+        {
+            datatables.Foreground = Brushes.Black;
+        }
+
+        private void datatables_MouseLeave(object sender, MouseEventArgs e)
+        {
+            datatables.Foreground = Brushes.White;
+        }
+
+        private void home_MouseEnter(object sender, MouseEventArgs e)
+        {
+            home.Foreground = Brushes.Black;
+        }
+
+        private void home_MouseLeave(object sender, MouseEventArgs e)
+        {
+            home.Foreground = Brushes.White;
+        }
     }
 }
