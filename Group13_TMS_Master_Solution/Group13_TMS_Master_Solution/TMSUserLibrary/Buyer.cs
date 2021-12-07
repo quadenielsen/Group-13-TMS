@@ -17,7 +17,7 @@ namespace TMSUserLibrary
     public class Buyer : TMSUser
     {
 
-        private SQLConnector sqlcTMS;
+        //private SQLConnector sqlcTMS;
         private SQLConnector sqlcCMP;
 
         public ObservableCollection<Contract> Contracts { get; set; }
@@ -77,11 +77,11 @@ namespace TMSUserLibrary
                         contract.VanType = contractInfoRetrieved[5][i];
                         if (contract.VanType == "0")
                         {
-                            contract.JobType = "Dry";
+                            contract.VanType = "Dry";
                         }
                         else
                         {
-                            contract.JobType = "Reefer";
+                            contract.VanType = "Reefer";
                         }
                         contractsFetched.Add(contract);
                     }
