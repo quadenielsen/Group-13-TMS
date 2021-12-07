@@ -60,15 +60,15 @@
             </Grid>
 
             <DataGrid Background="Transparent" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right"
-                      Margin="0,60,0,0" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="687" >
+                      Margin="0,60,0,0" Name="Contracts" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="687" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="City" Binding="{Binding CityName}" MinWidth="50"/>
-                    <DataGridTextColumn Header="Province/State" Binding="{Binding CityProvince}"/>
-                    <DataGridTextColumn Header="Country" Binding="{Binding CityCountry}"/>
-                    <DataGridTextColumn Header="Kilometers to Next City (East)" Binding="{Binding KilometersToNextCityEast}"/>
-                    <DataGridTextColumn Header="Hours to Next City (East)" Binding="{Binding TimeToNextCityEast}"/>
-                    <DataGridTextColumn Header="Next City (West)" Binding="{Binding NextCityWestName}"/>
-                    <DataGridTextColumn Header="Next City (East)" Binding="{Binding NextCityEastName}"/>
+                    <DataGridTextColumn Header="ClientName" Binding="{Binding ClientName}" MinWidth="50"/>
+                    <DataGridTextColumn Header="JobType" Binding="{Binding JobType}"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+                    <DataGridTextColumn Header="Origin" Binding="{Binding Origin}"/>
+                    <DataGridTextColumn Header="Destination" Binding="{Binding Destination}"/>
+                    <DataGridTextColumn Header="VanType" Binding="{Binding VanType}"/>
+                    
                 </DataGrid.Columns>
             </DataGrid>
 
