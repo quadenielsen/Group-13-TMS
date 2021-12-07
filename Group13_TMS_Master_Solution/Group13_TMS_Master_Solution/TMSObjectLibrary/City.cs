@@ -253,7 +253,7 @@ namespace TMSObjectLibrary
 
         public string GenerateCommaDelimitedString()
         {
-            return "'" + cityID + "'" + ", " + cityName + ", " + cityProvince + ", " + cityCountry + ", " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEastID + ", " + nextCityWestID;
+            return  cityID + ", '" + cityName + "', '" + cityProvince + "', '" + cityCountry + "', " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEastID + ", " + nextCityWestID;
         }
 
     }

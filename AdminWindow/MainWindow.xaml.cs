@@ -71,6 +71,15 @@ namespace AdminWindow
                     Status.Text = status;
                 }
 
+                if (CarrierData.IsSelected == true)
+                {
+                    admin.Carriers = carriers;
+                    admin.Depots = depots;
+                    string status;
+                    status = admin.UpdateCarrierData();
+                    Status.Text = status;
+                }
+
             }
             catch (Exception ex)
             {

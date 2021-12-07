@@ -100,5 +100,38 @@ namespace TMSUserLibrary
             return "Update successful.";
         }
 
+
+
+        /// <summary>
+        /// This method updates the `cities` table on the database.
+        /// It does this by first deleting everything in those tables and then repopulating the tables using the new data
+        /// specified by the Admin.
+        /// </summary>
+        /// <returns>True if the update was successful.</returns>
+        public string UpdateCityData()
+        {
+            try
+            { 
+                //clear the tables in the database
+                sqlc.ClearTable("cities");
+
+
+                //for each carrier, insert a new row into the database
+                foreach (City city in this.Cities)
+                {
+                    sqlc.InsertRow("cities (cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest, nextCityEast)", city.GenerateCommaDelimitedString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                logger.Log(ex.ToString());
+                return "Update failed.";
+            }
+
+            return "Update successful.";
+        }
+
     }
 }
