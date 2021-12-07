@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMSUserLibrary", "TMSUserLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User", "..\..\TMS_UI\User\User\User.csproj", "{C90887B6-CB48-4055-AB9B-69CBEAC9CC8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminWindow", "..\..\..\..\..\Desktop\Group-13-TMS\AdminWindow\AdminWindow.csproj", "{28048B54-1DB9-4CB6-A61B-467281975EE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C90887B6-CB48-4055-AB9B-69CBEAC9CC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C90887B6-CB48-4055-AB9B-69CBEAC9CC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C90887B6-CB48-4055-AB9B-69CBEAC9CC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28048B54-1DB9-4CB6-A61B-467281975EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28048B54-1DB9-4CB6-A61B-467281975EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28048B54-1DB9-4CB6-A61B-467281975EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28048B54-1DB9-4CB6-A61B-467281975EE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
