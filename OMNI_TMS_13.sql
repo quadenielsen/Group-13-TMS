@@ -168,8 +168,6 @@ CONSTRAINT `trips_constraint2` FOREIGN KEY (`cityID`) REFERENCES `depots` (`city
 CONSTRAINT `trips_constraint3` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
-
 DROP TABLE IF EXISTS `logs`;
 
 CREATE TABLE `logs`
@@ -193,3 +191,18 @@ CREATE TABLE `IPAddress`
 `logPathname` VARCHAR(40) NOT NULL,
 PRIMARY KEY (`IPID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `systemUser`;
+
+CREATE TABLE `systemUser`
+(
+`username` CHAR(40),
+`userPassword` CHAR(40),
+`userRole` CHAR(40),
+PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert  into `systemUser`(`username`,`userPassword`,`userRole`) values 
+('TestAdmin', 'abc123', 'admin'),
+('TestPlanner', 'abc123', 'planner'),
+('TestBuyer', 'abc123', 'buyer');

@@ -54,7 +54,7 @@
                 </Grid>
             </Border>
 
-            <Button x:Name="submitBtn" Grid.Row="3" Grid.Column="2"  Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30" Command="{Binding NavigateBuyerHomeCommand}" Click="Button_Click_1"/>
+            <Button x:Name="submitBtn" Grid.Row="3" Grid.Column="2"  Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30" Command="{Binding NavigateAdminHomeCommand}" Click="Button_Click_1"/>
             <Button Grid.Row="4" Grid.Column="4" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" Height="30" Foreground="red" Click="Button_Click"/>
         </Grid>
     </Viewbox>
