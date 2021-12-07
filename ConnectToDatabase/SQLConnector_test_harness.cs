@@ -20,16 +20,16 @@ namespace ConnectToDatabase
         {
             try
             {
-                TMSUser user = new TMSUser("planner");
+                Buyer buyer = new Buyer();
             
-                foreach (Carrier carrier in user.Carriers)
+                foreach (Contract contract in buyer.Contracts)
                 {
-                    Console.WriteLine(carrier.GenerateQueryString());
+                    Console.WriteLine(contract.GenerateCommaDelimitedString());
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex);
             }
                 
 

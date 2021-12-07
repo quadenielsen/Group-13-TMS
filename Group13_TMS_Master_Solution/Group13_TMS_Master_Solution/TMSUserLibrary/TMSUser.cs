@@ -22,14 +22,14 @@ namespace TMSUserLibrary
         public ObservableCollection<Depot> Depots { get; set; }
         public ObservableCollection<City> Cities { get; set; }
 
-        protected SQLConnector sqlc;
+        protected SQLConnector sqlcTMS;
 
         /// <summary>
         /// Default constructor. 
         /// </summary>
         public TMSUser()
         {
-            sqlc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
+            sqlcTMS = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace TMSUserLibrary
         /// </summary>
         public TMSUser(string userRole)
         {
-            sqlc = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
+            sqlcTMS = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
             if (userRole == "planner" || userRole == "admin")
             {
                 Carriers = FetchCarrierData();
@@ -110,7 +110,7 @@ namespace TMSUserLibrary
             List<List<string>> carrierInfoRetrieved = new List<List<string>>();
 
             //retrieve the data
-            if (sqlc.RetrieveFromColumns("carriers", "carrierName, FTLRate, LTLRate, reefCharge", out carrierInfoRetrieved))
+            if (sqlcTMS.RetrieveFromColumns("carriers", "carrierName, FTLRate, LTLRate, reefCharge", out carrierInfoRetrieved))
             {
                 //get the number of carriers
                 int numberofCarriers = carrierInfoRetrieved[0].Count;
@@ -165,7 +165,7 @@ namespace TMSUserLibrary
             List<List<string>> depotInfoRetrieved = new List<List<string>>();
 
             //retrieve the data
-            if (sqlc.RetrieveFromColumns("depots", "carrierName, CityID, FTLAvailability, LTLAvailability", out depotInfoRetrieved))
+            if (sqlcTMS.RetrieveFromColumns("depots", "carrierName, CityID, FTLAvailability, LTLAvailability", out depotInfoRetrieved))
             {
                 //get the number of carriers
                 int numberofDepots = depotInfoRetrieved[0].Count;
@@ -185,7 +185,7 @@ namespace TMSUserLibrary
 
                         //retrieve the name of the city where the depot is located
                         List<List<String>> cityName = new List<List<String>>();
-                        sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", depot.CityID.ToString(), out cityName);
+                        sqlcTMS.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", depot.CityID.ToString(), out cityName);
 
                         depot.CityName = cityName[0][0];
                         depot.FTLAvailability = int.Parse(depotInfoRetrieved[2][i]);
@@ -219,7 +219,7 @@ namespace TMSUserLibrary
             List<List<string>> cityInfoRetrieved = new List<List<string>>();
 
             //retrieve the data
-            if (sqlc.RetrieveFromColumns("cities", "cityID, cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest, nextCityEast", out cityInfoRetrieved))
+            if (sqlcTMS.RetrieveFromColumns("cities", "cityID, cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest, nextCityEast", out cityInfoRetrieved))
             {
                 //get the number of carriers
                 int numberofCities = cityInfoRetrieved[0].Count;
@@ -275,7 +275,7 @@ namespace TMSUserLibrary
 
 
                         List<List<String>> cityName = new List<List<String>>();
-                        sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityWestID.ToString(), out cityName);
+                        sqlcTMS.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityWestID.ToString(), out cityName);
 
                         if (cityName[0].Count != 0)
                         {
@@ -284,7 +284,7 @@ namespace TMSUserLibrary
 
 
                         cityName = new List<List<String>>();
-                        sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityEastID.ToString(), out cityName);
+                        sqlcTMS.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityEastID.ToString(), out cityName);
 
                         if (cityName[0].Count != 0)
                         {
@@ -307,38 +307,6 @@ namespace TMSUserLibrary
             }
         }
     }
-
-
-    /// <summary>
-    /// Buyer derives from User and adds methods CreatOrder(), GetContract(), GenerateInvoice()
-    /// </summary>
-    public class Buyer : TMSUser
-        {
-            /// <summary>
-            /// Method CreateOrder
-            /// </summary>
-            public void CreateOrder()
-            {
-
-            }
-
-            /// <summary>
-            /// Method GetContract
-            /// </summary>
-            public void GetContract()
-            {
-
-            }
-
-            /// <summary>
-            /// Method GenerateInvoice
-            /// </summary>
-            public void GenerateInvoice()
-            {
-
-            }
-
-        }
 
 
         /// <summary>
