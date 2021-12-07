@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Input;
 
 using User.Users.Maintenance;
 
@@ -57,6 +56,11 @@ namespace User.Views
                 {
                     submitBtn.Command = command;
                 }
+                //SQL function here
+                User.ViewModels.Main_ViewModel a = Window.GetWindow(this).DataContext as User.ViewModels.Main_ViewModel;
+                a.username = userNameTB.Text;
+                a.password = passWordTB.Text;
+                
             }
         }
     }
