@@ -37,15 +37,9 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User.exe
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User.pdb
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User_Content.g.cs
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\Group13_TMS_Master_Solution.csproj.AssemblyReference.cache
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User.exe.config
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\MainWindow.g.cs
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\Views\Login_View.g.cs
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\AdminWindow.g.cs
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\App.g.cs
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User_Content.g.cs
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User_MarkupCompile.cache
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User_MarkupCompile.lref
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User.exe
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\obj\Debug\User.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\SQLConnectorLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSObjectLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSUserLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\SQLConnectorLibrary.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSObjectLibrary.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\bin\Debug\TMSUserLibrary.pdb

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TMSObjectLibrary
 {
-    public class Cities : TMSObject
+    public class City : TMSObject
     {
 
         //======================
@@ -20,7 +20,7 @@ namespace TMSObjectLibrary
         private string cityProvince;
         private string cityCountry;
         private int kilometersToNextCityEast;
-        private int timeToNextCityEast;
+        private float timeToNextCityEast;
         private string nextCityEast;
         private string nextCityWest;
 
@@ -138,7 +138,7 @@ namespace TMSObjectLibrary
             }
         }
 
-        public int TimeToNextCityEast
+        public float TimeToNextCityEast
         {
             get
             {
@@ -166,15 +166,7 @@ namespace TMSObjectLibrary
             }
             set
             {
-                if (value != "")
-                {
-                    nextCityEast = value;
-                }
-                else
-                {
-                    Exception ex = new Exception("Value for NextCityEast rejected.");
-                    throw ex;
-                }
+                nextCityEast = value;
             }
         }
 
@@ -186,22 +178,14 @@ namespace TMSObjectLibrary
             }
             set
             {
-                if (value != "")
-                {
-                    nextCityWest = value;
-                }
-                else
-                {
-                    Exception ex = new Exception("Value for NextCityWest rejected.");
-                    throw ex;
-                }
+                nextCityWest = value;
             }
         }
         //======================
         //CONSTRUCTORS
         //======================
 
-        public Cities()
+        public City()
         {
 
         }

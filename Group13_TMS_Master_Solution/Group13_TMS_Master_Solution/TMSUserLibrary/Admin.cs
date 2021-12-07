@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TMSObjectLibrary;
 using SQLConnectorLibrary;
+using System.Configuration;
 
 namespace TMSUserLibrary
 {
-    public class Admin : User
+    public class Admin : TMSUser
     {
 
         public Admin() : base("admin")
@@ -79,7 +80,8 @@ namespace TMSUserLibrary
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.ToString());
+                Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                logger.Log(ex.ToString());
                 return false;
             }
             
