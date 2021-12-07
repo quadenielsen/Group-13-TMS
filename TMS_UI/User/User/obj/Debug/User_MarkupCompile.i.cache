@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\TMS_UI\User\User\App.xaml
-10-1046040919
+111900586390
 
-38656142851
+411038277764
 181785672187
-MainWindow.xaml;Views\AdminViews\Home_View.xaml;Views\AdminViews\SelectDirectory_View.xaml;Views\AdminViews\Settings_View.xaml;Views\BuyerViews\Contract_View.xaml;Views\BuyerViews\Home_View.xaml;Views\BuyerViews\Settings_View.xaml;Views\Login_View.xaml;Views\PlannerViews\Home_View.xaml;Views\PlannerViews\Settings_View.xaml;
+MainWindow.xaml;Views\AdminViews\Home_View.xaml;Views\AdminViews\SelectDirectory_View.xaml;Views\AdminViews\Settings_View.xaml;Views\BuyerViews\Contract_View.xaml;Views\BuyerViews\Home_View.xaml;Views\BuyerViews\Settings_View.xaml;Views\Login_View.xaml;Views\PlannerViews\Carrier_View.xaml;Views\PlannerViews\Home_View.xaml;Views\PlannerViews\Settings_View.xaml;
 
-False
+True
 

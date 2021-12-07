@@ -65,6 +65,7 @@
     <Compile Include="Commands\BuyerCommands\NavigateSettingsCommand.cs" />
     <Compile Include="Commands\CommandBASE.cs" />
     <Compile Include="Commands\NavigateLoginCommand.cs" />
+    <Compile Include="Commands\PlannerCommands\NavigateCarrierCommand.cs" />
     <Compile Include="Commands\PlannerCommands\NavigateHomeCommand.cs" />
     <Compile Include="Commands\PlannerCommands\NavigateSettingsCommand.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="ViewModels\BuyerViewModels\Settings_ViewModel.cs" />
     <Compile Include="ViewModels\Login_ViewModel.cs" />
     <Compile Include="ViewModels\Main_ViewModel.cs" />
+    <Compile Include="ViewModels\PlannerViewModels\Carrier_ViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModels\Home_ViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModels\Settings_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBASE.cs" />
@@ -100,6 +102,9 @@
     </Compile>
     <Compile Include="Views\Login_View.xaml.cs">
       <DependentUpon>Login_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlannerViews\Carrier_View.xaml.cs">
+      <DependentUpon>Carrier_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlannerViews\Home_View.xaml.cs">
       <DependentUpon>Home_View.xaml</DependentUpon>
@@ -144,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Login_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlannerViews\Carrier_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

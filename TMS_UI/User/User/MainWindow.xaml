@@ -73,6 +73,10 @@
             <DataTemplate DataType="{x:Type PlannerViewmodels:Settings_ViewModel}">
                 <PlannerViews:Settings_View />
             </DataTemplate>
+            <!--************************PLANNER CARRIER View and ViewModel***************************-->
+            <DataTemplate DataType="{x:Type PlannerViewmodels:Carrier_ViewModel}">
+                <PlannerViews:Carrier_View />
+            </DataTemplate>
 
 
         </ContentControl.Resources>
