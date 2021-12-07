@@ -70,6 +70,14 @@ namespace User.Views.AdminViews
                     Status.Text = status;
                 }
 
+                if (RouteTable.IsSelected == true)
+                {
+                    admin.Cities = cities;
+                    string status;
+                    status = admin.UpdateCityData();
+                    Status.Text = status;
+                }
+
             }
             catch (Exception ex)
             {
