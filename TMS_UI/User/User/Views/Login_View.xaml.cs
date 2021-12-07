@@ -59,39 +59,35 @@ namespace User.Views
 
                 SQLConnector connector = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
                 List<List<string>> retrivedData = null;
-                bool b = connector.RetrieveFromColumns("systemUser", "username", out retrivedData);
+                bool b = connector.RetrieveFromColumns("systemUser", "username, userPassword, userRole", out retrivedData);
 
                 bool checkUsername = false;
+                bool checkPassword = false;
+                int index;
                 foreach(string username in retrivedData[0])
                 {
                     if (username == a.username)
                     {
                         checkUsername = true;
+                        if (a.password == retrivedData[1][retrivedData[0].IndexOf(username)])
+                        {
+                            checkPassword = true;
+                        }
                     }
                 }
 
-                bool checkPassword = false;
-                if (checkUsername == true)
-                {
-                    connector.RetrieveFromColumnsWithLookup("systemUser", "userPassword", "username", a.username, out retrivedData);
-                    if (a.password == retrivedData[0][0])
-                    {
-                        checkPassword = true;
-                    }
-                }
 
                 if(checkPassword && checkUsername)
                 {
-                    connector.RetrieveFromColumnsWithLookup("systemuser", "userRole", "username", a.username, out retrivedData);
-                    if(retrivedData[0][0] == "admin")
+                    if(retrivedData[2][retrivedData[0].IndexOf(a.username)] == "admin")
                     {
                         command = new User.Commands.AdminCommands.NavigateHomeCommand(a._navigationStore);
                     }
-                    else if (retrivedData[0][0] == "buyer")
+                    else if (retrivedData[2][retrivedData[0].IndexOf(a.username)] == "buyer")
                     {
                         command = new User.Commands.BuyerCommands.NavigateHomeCommand(a._navigationStore);
                     }
-                    else if (retrivedData[0][0] == "planner")
+                    else if (retrivedData[2][retrivedData[0].IndexOf(a.username)] == "planner")
                     {
                         command = new User.Commands.PlannerCommands.NavigateHomeCommand(a._navigationStore);
                     }

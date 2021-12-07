@@ -60,19 +60,21 @@
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
    at SQLConnectorLibrary.SQLConnector.RetrieveFromColumnsWithLookup(String table, String requestColumns, String lookupColumn, String value, List`1& output) in C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnector.cs:line 356MySql.Data.MySqlClient.MySqlPacket ReadPacket()MySql.Data
-2021-12-07 2:48:38 PM: Unknown column 'TestAdmin' in 'where clause'   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+2021-12-07 2:47:30 PM: Unknown column 'TestAdmin' in 'where clause'   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
    at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
    at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
    at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
    at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at SQLConnectorLibrary.SQLConnector.RetrieveFromColumnsWithLookup(String table, String requestColumns, String lookupColumn, String value, List`1& output) in C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnector.cs:line 356MySql.Data.MySqlClient.MySqlPacket ReadPacket()MySql.Data
-2021-12-07 2:52:59 PM: Unknown column 'TestAdmin' in 'where clause'   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at SQLConnectorLibrary.SQLConnector.RetrieveFromColumnsWithLookup(String table, String requestColumns, String lookupColumn, String value, List`1& output) in C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnector.cs:line 356MySql.Data.MySqlClient.MySqlPacket ReadPacket()MySql.Data
+2021-12-07 2:47:57 PM: Unknown column 'TestAdmin' in 'where clause'   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
    at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
    at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
    at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
    at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at SQLConnectorLibrary.SQLConnector.RetrieveFromColumnsWithLookup(String table, String requestColumns, String lookupColumn, String value, List`1& output) in C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnector.cs:line 356MySql.Data.MySqlClient.MySqlPacket ReadPacket()MySql.Data
+   at SQLConnectorLibrary.SQLConnector.RetrieveFromColumnsWithLookup(String table, String requestColumns, String lookupColumn, String value, List`1& output) in C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnector.cs:line 356MySql.Data.MySqlClient.MySqlPacket ReadPacket()MySql.Data
+2021-12-07 3:07:05 PM: Program Started
+2021-12-07 3:07:16 PM: Program Started

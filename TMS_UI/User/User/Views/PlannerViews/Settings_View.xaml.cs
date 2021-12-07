@@ -23,9 +23,6 @@ namespace User.Views.PlannerViews
         public Settings_View()
         {
             InitializeComponent();
-            User.ViewModels.Main_ViewModel a = Window.GetWindow(this).DataContext as User.ViewModels.Main_ViewModel;
-            userid.Content = a.username;
-            password.Content = a.password;
         }
         private void home_MouseEnter(object sender, MouseEventArgs e)
         {
