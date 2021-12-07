@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-using UserClasses;
+using SQLConnectorLibrary;
+using TMSObjectLibrary;
+using TMSUserLibrary;
 
 
 namespace ConnectToDatabase
@@ -18,7 +20,7 @@ namespace ConnectToDatabase
         {
             try
             {
-                User user = new User("planner");
+                TMSUser user = new TMSUser("planner");
             
                 foreach (Carrier carrier in user.Carriers)
                 {
