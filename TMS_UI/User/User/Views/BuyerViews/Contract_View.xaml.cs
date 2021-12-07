@@ -15,9 +15,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TMSObjectLibrary;
 using TMSUserLibrary;
+using SQLConnectorLibrary;
+using System.Configuration;
+using System.IO;
+using Microsoft.Win32;
 
 namespace User.Views.BuyerViews
 {
+    
+    
     /// <summary>
     /// Interaction logic for Contract_View.xaml
     /// </summary>
@@ -25,14 +31,20 @@ namespace User.Views.BuyerViews
     {
         Buyer buyer;
         ObservableCollection<Contract> contracts;
-        
-
+        Logger logger = new Logger();
         public Contract_View()
         {
             InitializeComponent();
-            buyer = new Buyer();
-            contracts = buyer.Contracts;
-            Contracts.DataContext = contracts;
+            try
+            {
+                buyer = new Buyer();
+                contracts = buyer.Contracts;
+                Contracts.DataContext = contracts;
+            }
+            catch(Exception ex)
+            {
+                logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
+            }
         }
 
         private void settings_MouseEnter(object sender, MouseEventArgs e)
