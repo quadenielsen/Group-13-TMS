@@ -12,7 +12,7 @@ namespace User.ViewModels
     class Main_ViewModel : ViewModelBASE
     {
         //----------------------------------- NAVIGATION STORE --------------------------------------------
-        private readonly NavigationStore _navigationStore;
+        public readonly NavigationStore _navigationStore;
         public string username;
         public string password;
 

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using User.Users.Maintenance;
+using SQLConnectorLibrary;
 
 namespace User.Views
 {
@@ -52,15 +53,54 @@ namespace User.Views
             }
             else
             {
-                if(failedLogin == true)
-                {
-                    submitBtn.Command = command;
-                }
-                //SQL function here
                 User.ViewModels.Main_ViewModel a = Window.GetWindow(this).DataContext as User.ViewModels.Main_ViewModel;
                 a.username = userNameTB.Text;
                 a.password = passWordTB.Text;
-                
+
+                SQLConnector connector = new SQLConnector("localhost:3306", "OMNI_TMS_13", "root", "justin19987");
+                List<List<string>> retrivedData = null;
+                bool b = connector.RetrieveFromColumns("systemUser", "username", out retrivedData);
+
+                bool checkUsername = false;
+                foreach(string username in retrivedData[0])
+                {
+                    if (username == a.username)
+                    {
+                        checkUsername = true;
+                    }
+                }
+
+                bool checkPassword = false;
+                if (checkUsername == true)
+                {
+                    connector.RetrieveFromColumnsWithLookup("systemuser", "userpassword", "username", a.username, out retrivedData);
+                    if (a.password == retrivedData[0][0])
+                    {
+                        checkPassword = true;
+                    }
+                }
+
+                if(checkPassword && checkUsername)
+                {
+                    connector.RetrieveFromColumnsWithLookup("systemuser", "userRole", "username", a.username, out retrivedData);
+                    if(retrivedData[0][0] == "admin")
+                    {
+                        command = new User.Commands.AdminCommands.NavigateHomeCommand(a._navigationStore);
+                    }
+                    else if (retrivedData[0][0] == "buyer")
+                    {
+                        command = new User.Commands.BuyerCommands.NavigateHomeCommand(a._navigationStore);
+                    }
+                    else if (retrivedData[0][0] == "planner")
+                    {
+                        command = new User.Commands.BuyerCommands.NavigateHomeCommand(a._navigationStore);
+                    }
+                    submitBtn.Command = command;
+                }
+                else
+                {
+                    submitBtn.Command = null;
+                }
             }
         }
     }
