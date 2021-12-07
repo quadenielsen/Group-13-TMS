@@ -10,7 +10,6 @@
              d:DesignWidth="800">
     <UserControl.Background>
         <ImageBrush ImageSource="background.jpg" Stretch="Fill"/>
-        <!--<ImageBrush ImageSource="background.gif"/>-->
     </UserControl.Background>
 
     <Viewbox Stretch="Uniform">
