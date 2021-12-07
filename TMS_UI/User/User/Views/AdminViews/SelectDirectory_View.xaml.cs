@@ -218,6 +218,5 @@ namespace User.Views.AdminViews
         {
             settings.Foreground = Brushes.White;
         }
-
     }
 }
