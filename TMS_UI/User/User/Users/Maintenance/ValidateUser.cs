@@ -19,10 +19,10 @@ namespace User.Users.Maintenance
                 validityStatus = false;
             }
 
-            //if (!Regex.IsMatch(PassWord, @"^[a-zA-Z0-9]+$"))
-            //{
-            //    validityStatus = false;
-            //}
+            if (!Regex.IsMatch(PassWord, @"^[a-zA-Z0-9]+$"))
+            {
+                validityStatus = false;
+            }
 
             return validityStatus;
         }
