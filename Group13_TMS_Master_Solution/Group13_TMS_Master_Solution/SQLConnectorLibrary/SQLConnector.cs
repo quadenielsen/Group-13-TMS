@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace SQLConnectorLibrary
 {
@@ -304,7 +305,8 @@ namespace SQLConnectorLibrary
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine(ex);
+                Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
             }
             return false;
         }
@@ -342,41 +344,46 @@ namespace SQLConnectorLibrary
             }
             output = manyColumns;
 
-            //attempt to read from database
-            try
+            // check to make sure that there is a value to look up
+            if (value != "")
             {
-                if (this.OpenConnection() == true)
+                //attempt to read from database
+                try
                 {
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-                    int numberOfColumns = manyColumns.Count;
-
-                    for (int i = 0; i < numberOfColumns; ++i)
+                    if (this.OpenConnection() == true)
                     {
-                        if (!DataRecordExtensions.HasColumn(dataReader, columnNames[i]))
-                        {
-                            return false;
-                        }
-                    }
-
-                    while (dataReader.Read())
-                    {
-
+                        MySqlCommand cmd = new MySqlCommand(query, connection);
+                        MySqlDataReader dataReader = cmd.ExecuteReader();
+                        int numberOfColumns = manyColumns.Count;
 
                         for (int i = 0; i < numberOfColumns; ++i)
                         {
-                            manyColumns[i].Add(dataReader[columnNames[i]] + "");
+                            if (!DataRecordExtensions.HasColumn(dataReader, columnNames[i]))
+                            {
+                                return false;
+                            }
                         }
-                    }
 
-                    dataReader.Close();
-                    this.CloseConnection();
-                    return true;
+                        while (dataReader.Read())
+                        {
+
+
+                            for (int i = 0; i < numberOfColumns; ++i)
+                            {
+                                manyColumns[i].Add(dataReader[columnNames[i]] + "");
+                            }
+                        }
+
+                        dataReader.Close();
+                        this.CloseConnection();
+                        return true;
+                    }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine(ex);
+                catch (MySqlException ex)
+                {
+                    Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                    logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
+                }
             }
             return false;
         }

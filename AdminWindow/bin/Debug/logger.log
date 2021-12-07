@@ -7,3 +7,25 @@
 12/7/2021 12:54:08 AM: Program Started
 12/7/2021 12:56:06 AM: Program Started
 12/7/2021 1:12:57 AM: Program Started
+2021-12-07 1:19:02 AM: Program Started
+2021-12-07 1:19:02 AM: Input string was not in a correct format.
+2021-12-07 1:29:41 AM: Program Started
+2021-12-07 1:29:41 AM: The connection is already open.MySql.Data
+2021-12-07 1:31:33 AM: Program Started
+2021-12-07 1:31:33 AM: Input string was not in a correct format.mscorlib
+2021-12-07 1:33:08 AM: Program Started
+2021-12-07 1:33:08 AM: Input string was not in a correct format.mscorlib
+2021-12-07 1:33:20 AM: Program Started
+2021-12-07 1:33:20 AM: Input string was not in a correct format.mscorlib
+2021-12-07 1:35:06 AM: Program Started
+2021-12-07 1:35:06 AM: Input string was not in a correct format.mscorlib
+2021-12-07 1:35:42 AM: Program Started
+2021-12-07 1:35:42 AM: Input string was not in a correct format.mscorlib
+2021-12-07 1:37:11 AM: Program Started
+2021-12-07 1:37:11 AM: Input string was not in a correct format.   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at TMSUserLibrary.TMSUser.FetchCityData() in C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\TMSUserLibrary\TMSUser.cs:line 239Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)mscorlib
+2021-12-07 1:42:33 AM: Program Started
+2021-12-07 1:43:58 AM: Program Started
+2021-12-07 1:46:01 AM: Program Started
