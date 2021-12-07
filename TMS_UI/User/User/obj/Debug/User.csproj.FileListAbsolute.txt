@@ -26,3 +26,8 @@ C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\Views\AdminViews\Se
 C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\User.csproj.AssemblyReference.cache
 C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\Views\AdminViews\Settings_View.g.cs
 C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\Views\AdminViews\Settings_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\User.exe
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\SQLConnectorLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\TMSObjectLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\TMSUserLibrary.dll
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\System.Memory.dll
