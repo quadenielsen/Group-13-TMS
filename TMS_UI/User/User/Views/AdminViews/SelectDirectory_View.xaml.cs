@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using TMSObjectLibrary;
 using TMSUserLibrary;
 using SQLConnectorLibrary;
+using System.Configuration;
 
 namespace User.Views.AdminViews
 {
@@ -32,7 +33,7 @@ namespace User.Views.AdminViews
         {
             InitializeComponent();
 
-            Logger.ClearLog();
+            
             try
             {
                 admin = new Admin();
@@ -43,7 +44,8 @@ namespace User.Views.AdminViews
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                logger.Log(ex.Message);
             }
         }
 
@@ -61,7 +63,8 @@ namespace User.Views.AdminViews
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                logger.Log(ex.Message);
             }
         }
 
@@ -81,7 +84,8 @@ namespace User.Views.AdminViews
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                logger.Log(ex.Message);
             }
 
         }

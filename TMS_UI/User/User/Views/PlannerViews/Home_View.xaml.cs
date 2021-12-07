@@ -33,5 +33,10 @@ namespace User.Views.PlannerViews
         {
             settings.Foreground = Brushes.White;
         }
+
+        private void settings_Click()
+        {
+
+        }
     }
 }
