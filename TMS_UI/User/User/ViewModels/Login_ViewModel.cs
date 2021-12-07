@@ -29,7 +29,7 @@ namespace User.ViewModels
             NavigateBuyerHomeCommand = new Commands.BuyerCommands.NavigateHomeCommand(navigationStore);
             NavigatePlannerHomeCommand = new Commands.PlannerCommands.NavigateHomeCommand(navigationStore);
 
-            NavigateUserHomeCommand = NavigateAdminHomeCommand;
+            NavigateUserHomeCommand = null;
         }
     }
 }

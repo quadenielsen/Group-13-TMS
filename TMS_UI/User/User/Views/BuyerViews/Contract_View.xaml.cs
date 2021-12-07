@@ -16,14 +16,15 @@ using System.Windows.Shapes;
 namespace User.Views.BuyerViews
 {
     /// <summary>
-    /// Interaction logic for Home_View.xaml
+    /// Interaction logic for Contract_View.xaml
     /// </summary>
-    public partial class Home_View : UserControl
+    public partial class Contract_View : UserControl
     {
-        public Home_View()
+        public Contract_View()
         {
             InitializeComponent();
         }
+
         private void settings_MouseEnter(object sender, MouseEventArgs e)
         {
             settings.Foreground = Brushes.Black;
@@ -34,19 +35,14 @@ namespace User.Views.BuyerViews
             settings.Foreground = Brushes.White;
         }
 
-        private void contract_MouseEnter(object sender, MouseEventArgs e)
+        private void home_MouseEnter(object sender, MouseEventArgs e)
         {
-            contract.Foreground = Brushes.Black;
+            Home.Foreground = Brushes.Black;
         }
 
-        private void contract_MouseLeave(object sender, MouseEventArgs e)
+        private void home_MouseLeave(object sender, MouseEventArgs e)
         {
-            contract.Foreground = Brushes.White;
-        }
-
-        private void getContractsBtn_Click(object sender, RoutedEventArgs e)
-        {
-
+            Home.Foreground = Brushes.White;
         }
     }
 }

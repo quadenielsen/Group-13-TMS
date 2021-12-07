@@ -60,6 +60,7 @@
     <Compile Include="Commands\AdminCommands\NavigateHomeCommand.cs" />
     <Compile Include="Commands\AdminCommands\NavigateSelectDirectoryCommand.cs" />
     <Compile Include="Commands\AdminCommands\NavigateSettingsCommand.cs" />
+    <Compile Include="Commands\BuyerCommands\NavigateContractCommand.cs" />
     <Compile Include="Commands\BuyerCommands\NavigateHomeCommand.cs" />
     <Compile Include="Commands\BuyerCommands\NavigateSettingsCommand.cs" />
     <Compile Include="Commands\CommandBASE.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="ViewModels\AdminViewModels\Home_ViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModels\SelectDirectory_ViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModels\Settings_ViewModel.cs" />
+    <Compile Include="ViewModels\BuyerViewModels\Contract_ViewModel.cs" />
     <Compile Include="ViewModels\BuyerViewModels\Home_ViewModel.cs" />
     <Compile Include="ViewModels\BuyerViewModels\Settings_ViewModel.cs" />
     <Compile Include="ViewModels\Login_ViewModel.cs" />
@@ -86,6 +88,9 @@
     </Compile>
     <Compile Include="Views\AdminViews\Settings_View.xaml.cs">
       <DependentUpon>Settings_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuyerViews\Contract_View.xaml.cs">
+      <DependentUpon>Contract_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BuyerViews\Home_View.xaml.cs">
       <DependentUpon>Home_View.xaml</DependentUpon>
@@ -123,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminViews\Settings_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuyerViews\Contract_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

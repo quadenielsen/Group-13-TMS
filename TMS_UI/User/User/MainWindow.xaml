@@ -59,6 +59,10 @@
             <DataTemplate DataType="{x:Type BuyerViewModels:Settings_ViewModel}">
                 <BuyerViews:Settings_View />
             </DataTemplate>
+            <!--************************BUYER CONTRACTS View and ViewModel***************************-->
+            <DataTemplate DataType="{x:Type BuyerViewModels:Contract_ViewModel}">
+                <BuyerViews:Contract_View />
+            </DataTemplate>
 
         <!--PLANNER PAGES-->
             <!--************************PLANNER HOME View and ViewModel***************************-->

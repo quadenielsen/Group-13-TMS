@@ -16,12 +16,14 @@ namespace User.ViewModels.BuyerViewModels
         //----------------------------------- COMMANDS --------------------------------------------
         public ICommand NavigateLoginCommand { get; }
         public ICommand NavigateSettingsCommand { get; }
+        public ICommand NavigateContractCommand { get; }
 
         //----------------------------------- CONSTRUCTOR --------------------------------------------
         public Home_ViewModel(NavigationStore navigationStore)
         {
             NavigateLoginCommand = new Commands.NavigateLoginCommand(navigationStore);
             NavigateSettingsCommand = new Commands.BuyerCommands.NavigateSettingsCommand(navigationStore);
+            NavigateContractCommand = new Commands.BuyerCommands.NavigateContractCommand(navigationStore);
         }
     }
 }

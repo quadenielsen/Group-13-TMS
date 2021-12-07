@@ -57,7 +57,7 @@ namespace User.Views
                 a.username = userNameTB.Text;
                 a.password = passWordTB.Text;
 
-                SQLConnector connector = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
+                SQLConnector connector = new SQLConnector("localhost", "OMNI_TMS_13", "root", "justin19987");
                 List<List<string>> retrivedData = null;
                 bool b = connector.RetrieveFromColumns("systemUser", "username, userPassword, userRole", out retrivedData);
 

@@ -35,6 +35,16 @@ namespace User.Views.BuyerViews
             home.Foreground = Brushes.White;
         }
 
+        private void contract_MouseEnter(object sender, MouseEventArgs e)
+        {
+            contract.Foreground = Brushes.Black;
+        }
+
+        private void contract_MouseLeave(object sender, MouseEventArgs e)
+        {
+            contract.Foreground = Brushes.White;
+        }
+
         private void settingsGrid_MouseEnter(object sender, MouseEventArgs e)
         {
             User.ViewModels.Main_ViewModel a = Window.GetWindow(this).DataContext as User.ViewModels.Main_ViewModel;

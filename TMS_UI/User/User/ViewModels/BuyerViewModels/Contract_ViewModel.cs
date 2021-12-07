@@ -4,26 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows;
 
 using User.Commands;
 using User.Stores;
 
 namespace User.ViewModels.BuyerViewModels
 {
-    //SETTINGS-VIEW MODEL FOR BUYER
-    class Settings_ViewModel : ViewModelBASE
+    //CONTRACT-VIEW MODEL FOR BUYER
+    class Contract_ViewModel : ViewModelBASE
     {
         //----------------------------------- COMMANDS --------------------------------------------
         public ICommand NavigateHomeCommand { get; }
         public ICommand NavigateLoginCommand { get; }
-        public ICommand NavigateContractCommand { get; }
+        public ICommand NavigateSettingsCommand { get; }
+
 
         //----------------------------------- CONSTRUCTOR --------------------------------------------
-        public Settings_ViewModel(NavigationStore navigationStore)
+        public Contract_ViewModel(NavigationStore navigationStore)
         {
             NavigateHomeCommand = new Commands.BuyerCommands.NavigateHomeCommand(navigationStore);
             NavigateLoginCommand = new Commands.NavigateLoginCommand(navigationStore);
-            NavigateContractCommand = new Commands.BuyerCommands.NavigateContractCommand(navigationStore);
+            NavigateSettingsCommand = new Commands.BuyerCommands.NavigateSettingsCommand(navigationStore);
         }
     }
 }

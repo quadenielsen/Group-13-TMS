@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="User.Views.BuyerViews.Contract_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:User.Views.BuyerViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             Background="SlateGray">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="DimGray" BorderThickness="0,0,4,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,42,0">
+                <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Width="100"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Left"
+                        Margin="2"
+                        Background="#14212B"
+                        >
+                    <Button x:Name="Home" Content="Home" Height="50" Width="100" Command="{Binding NavigateHomeCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,150,0,20" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="home_MouseEnter" MouseLeave="home_MouseLeave"/>
+                    <Button x:Name="settings" Content="Account Settings" Height="50" Width="100" Command="{Binding NavigateSettingsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" Foreground="#E0FFFF" FontWeight="SemiBold" MouseEnter="settings_MouseEnter" MouseLeave="settings_MouseLeave"/>
+                </StackPanel>
+            </Border>
+
+            <Grid Height="60" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Background="#233C4F">
+                <Label Content="CONTRACTS"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="26"
+                   FontFamily="open sans condensed"
+                   Foreground="#E0FFFF"
+               />
+            </Grid>
+
+            <Grid Height="60" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Background="#233C4F">
+                <Label 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="26"
+                   FontFamily="open sans condensed"
+                   Foreground="#E0FFFF"
+               />
+            </Grid>
+
+            <DataGrid Background="Transparent" Grid.Column="0" Grid.Row="0"
+                      Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right"
+                      Margin="0,60,1,3" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="672" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="City" Binding="{Binding CityName}" MinWidth="50"/>
+                    <DataGridTextColumn Header="Province/State" Binding="{Binding CityProvince}"/>
+                    <DataGridTextColumn Header="Country" Binding="{Binding CityCountry}"/>
+                    <DataGridTextColumn Header="Kilometers to Next City (East)" Binding="{Binding KilometersToNextCityEast}"/>
+                    <DataGridTextColumn Header="Hours to Next City (East)" Binding="{Binding TimeToNextCityEast}"/>
+                    <DataGridTextColumn Header="Next City (West)" Binding="{Binding NextCityWestName}"/>
+                    <DataGridTextColumn Header="Next City (East)" Binding="{Binding NextCityEastName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <Button Grid.Column="1" Grid.Row="1" Content="Logout" Command="{Binding NavigateLoginCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Height="40" Width="80"/>
+        </Grid>
+            
+    </Grid>
+</UserControl>
