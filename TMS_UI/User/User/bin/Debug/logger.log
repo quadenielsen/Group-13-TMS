@@ -78,3 +78,6 @@
    at SQLConnectorLibrary.SQLConnector.RetrieveFromColumnsWithLookup(String table, String requestColumns, String lookupColumn, String value, List`1& output) in C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnector.cs:line 356MySql.Data.MySqlClient.MySqlPacket ReadPacket()MySql.Data
 2021-12-07 3:07:05 PM: Program Started
 2021-12-07 3:07:16 PM: Program Started
+2021-12-07 3:11:10 PM: Program Started
+2021-12-07 3:11:39 PM: Program Started
+2021-12-07 3:12:18 PM: Program Started
