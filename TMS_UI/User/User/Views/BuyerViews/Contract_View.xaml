@@ -59,9 +59,8 @@
                />
             </Grid>
 
-            <DataGrid Background="Transparent" Grid.Column="0" Grid.Row="0"
-                      Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right"
-                      Margin="0,60,1,3" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="672" >
+            <DataGrid Background="Transparent" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right"
+                      Margin="0,60,0,0" Name="Routes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="687" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="City" Binding="{Binding CityName}" MinWidth="50"/>
                     <DataGridTextColumn Header="Province/State" Binding="{Binding CityProvince}"/>
@@ -76,6 +75,6 @@
 
             <Button Grid.Column="1" Grid.Row="1" Content="Logout" Command="{Binding NavigateLoginCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Height="40" Width="80"/>
         </Grid>
-            
+
     </Grid>
 </UserControl>
