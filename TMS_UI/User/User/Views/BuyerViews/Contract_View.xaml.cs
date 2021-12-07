@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TMSObjectLibrary;
+using TMSUserLibrary;
 
 namespace User.Views.BuyerViews
 {
@@ -20,9 +23,16 @@ namespace User.Views.BuyerViews
     /// </summary>
     public partial class Contract_View : UserControl
     {
+        Buyer buyer;
+        ObservableCollection<Contract> contracts;
+        
+
         public Contract_View()
         {
             InitializeComponent();
+            buyer = new Buyer();
+            contracts = buyer.Contracts;
+            Contracts.DataContext = contracts;
         }
 
         private void settings_MouseEnter(object sender, MouseEventArgs e)

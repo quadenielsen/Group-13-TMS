@@ -63,10 +63,26 @@ namespace TMSUserLibrary
                         Contract contract = new Contract();
                         contract.ClientName = contractInfoRetrieved[0][i];
                         contract.JobType = contractInfoRetrieved[1][i];
+                        if (contract.JobType == "0")
+                        {
+                            contract.JobType = "FTL";
+                        }
+                        else
+                        {
+                            contract.JobType = "LTL";
+                        }
                         contract.Quantity = int.Parse(contractInfoRetrieved[2][i]);
                         contract.Origin = contractInfoRetrieved[3][i];
                         contract.Destination = contractInfoRetrieved[4][i];
                         contract.VanType = contractInfoRetrieved[5][i];
+                        if (contract.VanType == "0")
+                        {
+                            contract.JobType = "Dry";
+                        }
+                        else
+                        {
+                            contract.JobType = "Reefer";
+                        }
                         contractsFetched.Add(contract);
                     }
                 }

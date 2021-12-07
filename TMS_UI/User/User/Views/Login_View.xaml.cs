@@ -57,13 +57,13 @@ namespace User.Views
                 a.username = userNameTB.Text;
                 a.password = passWordTB.Text;
 
-                SQLConnector connector = new SQLConnector("localhost", "OMNI_TMS_13", "root", "justin19987");
+                SQLConnector connector = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
                 List<List<string>> retrivedData = null;
                 bool b = connector.RetrieveFromColumns("systemUser", "username, userPassword, userRole", out retrivedData);
 
                 bool checkUsername = false;
                 bool checkPassword = false;
-                int index;
+                //int index;
                 foreach(string username in retrivedData[0])
                 {
                     if (username == a.username)
