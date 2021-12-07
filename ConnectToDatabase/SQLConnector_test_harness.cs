@@ -19,6 +19,8 @@ namespace ConnectToDatabase
             try
             {
                 User user = new User("planner");
+
+                Object lol;
             
                 foreach (Carrier carrier in user.Carriers)
                 {

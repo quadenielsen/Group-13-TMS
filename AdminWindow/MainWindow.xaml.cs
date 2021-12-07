@@ -46,7 +46,7 @@ namespace AdminWindow
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                Logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
             }
             
         }
@@ -68,7 +68,7 @@ namespace AdminWindow
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                Logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
             }
         }
 
@@ -88,7 +88,7 @@ namespace AdminWindow
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                Logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
             }
             
         }

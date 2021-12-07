@@ -20,3 +20,4 @@ C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.csproj.CopyComplete
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.dll
 C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\obj\Debug\SQLConnectorLibrary.csproj.AssemblyReference.cache

@@ -141,7 +141,7 @@ namespace TMSUserLibrary
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return carriersFetched;
             }
@@ -194,7 +194,7 @@ namespace TMSUserLibrary
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return depotsFetched;
             }
@@ -237,15 +237,48 @@ namespace TMSUserLibrary
                         city.CityCountry = cityInfoRetrieved[3][i];
                         city.KilometersToNextCityEast = int.Parse(cityInfoRetrieved[4][i]);
                         city.TimeToNextCityEast = float.Parse(cityInfoRetrieved[5][i]);
-                        city.NextCityWest = cityInfoRetrieved[6][i];
-                        city.NextCityEast = cityInfoRetrieved[7][i];
+                        int id;
+                        if (!int.TryParse(cityInfoRetrieved[6][i], out id))
+                        {
+                            city.NextCityWestID = null;
+                        }
+                        else
+                        {
+                            city.NextCityWestID = id;
+                        }
+                        if (!int.TryParse(cityInfoRetrieved[7][i], out id))
+                        {
+                            city.NextCityEastID = null;
+                        }
+                        else
+                        {
+                            city.NextCityEastID = id;
+                        }
+
+
+                        List<List<String>> cityName = new List<List<String>>();
+                        sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityWestID.ToString(), out cityName);
+
+                        if (cityName[0].Count != 0)
+                        {
+                            city.NextCityWestName = cityName[0][0];
+                        }
+
+                        
+                        cityName = new List<List<String>>();
+                        sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityEastID.ToString(), out cityName);
+
+                        if (cityName[0].Count != 0)
+                        {
+                            city.NextCityEastName = cityName[0][0];
+                        }
 
                         citiesFetched.Add(city);
                     }
                 }
                 catch (Exception ex)
                 {
-                    Logger.Log(ex.Message);
+                    Logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return citiesFetched;
             }

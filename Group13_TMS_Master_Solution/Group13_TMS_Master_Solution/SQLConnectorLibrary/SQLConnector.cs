@@ -326,6 +326,7 @@ namespace SQLConnectorLibrary
         /// <returns>Returns a dynamic array of lists of strings which contain the specified data that was retrieved.</returns>
         public bool RetrieveFromColumnsWithLookup(string table, string requestColumns, string lookupColumn, string value, out List<List<string>> output)
         {
+            
             string query = "SELECT * FROM " + table + " WHERE " + lookupColumn + "=" + value;
 
             //parse columns
@@ -342,41 +343,45 @@ namespace SQLConnectorLibrary
             }
             output = manyColumns;
 
-            //attempt to read from database
-            try
+           // check to make sure that there is a value to look up
+            if (value != "")
             {
-                if (this.OpenConnection() == true)
+                //attempt to read from database
+                try
                 {
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-                    int numberOfColumns = manyColumns.Count;
-
-                    for (int i = 0; i < numberOfColumns; ++i)
+                    if (this.OpenConnection() == true)
                     {
-                        if (!DataRecordExtensions.HasColumn(dataReader, columnNames[i]))
-                        {
-                            return false;
-                        }
-                    }
-
-                    while (dataReader.Read())
-                    {
-
+                        MySqlCommand cmd = new MySqlCommand(query, connection);
+                        MySqlDataReader dataReader = cmd.ExecuteReader();
+                        int numberOfColumns = manyColumns.Count;
 
                         for (int i = 0; i < numberOfColumns; ++i)
                         {
-                            manyColumns[i].Add(dataReader[columnNames[i]] + "");
+                            if (!DataRecordExtensions.HasColumn(dataReader, columnNames[i]))
+                            {
+                                return false;
+                            }
                         }
-                    }
 
-                    dataReader.Close();
-                    this.CloseConnection();
-                    return true;
+                        while (dataReader.Read())
+                        {
+
+
+                            for (int i = 0; i < numberOfColumns; ++i)
+                            {
+                                manyColumns[i].Add(dataReader[columnNames[i]] + "");
+                            }
+                        }
+
+                        dataReader.Close();
+                        this.CloseConnection();
+                        return true;
+                    }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine(ex);
+                catch (MySqlException ex)
+                {
+                    Logger.Log(ex.Message + ex.Source);
+                }
             }
             return false;
         }

@@ -26,3 +26,31 @@ C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\Views\AdminViews\Se
 C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\User.csproj.AssemblyReference.cache
 C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\Views\AdminViews\Settings_View.g.cs
 C:\Users\Justin Chan\source\repos\TMS_UI\User\User\obj\Debug\Views\AdminViews\Settings_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\User.exe.config
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\User.exe
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\bin\Debug\User.pdb
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User.csproj.AssemblyReference.cache
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\MainWindow.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\AdminViews\Home_View.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\AdminViews\SelectDirectory_View.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\AdminViews\Settings_View.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\BuyerViews\Home_View.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\Login_View.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\PlannerViews\Home_View.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\App.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User_MarkupCompile.cache
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User_MarkupCompile.lref
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\MainWindow.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\AdminViews\Home_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\AdminViews\SelectDirectory_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\AdminViews\Settings_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\BuyerViews\Home_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\Login_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\Views\PlannerViews\Home_View.baml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User.g.resources
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User.Properties.Resources.resources
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User.csproj.GenerateResource.cache
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User.csproj.CoreCompileInputs.cache
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User.exe
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\User.pdb

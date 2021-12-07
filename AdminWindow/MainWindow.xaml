@@ -56,8 +56,8 @@
                         <DataGridTextColumn Header="Country" Binding="{Binding CityCountry}"/>
                         <DataGridTextColumn Header="Kilometers to Next City (East)" Binding="{Binding KilometersToNextCityEast}"/>
                         <DataGridTextColumn Header="Hours to Next City (East)" Binding="{Binding TimeToNextCityEast}"/>
-                        <DataGridTextColumn Header="Next City (West)" Binding="{Binding NextCityWest}"/>
-                        <DataGridTextColumn Header="Next City (East)" Binding="{Binding NextCityEast}"/>
+                        <DataGridTextColumn Header="Next City (West)" Binding="{Binding NextCityWestName}"/>
+                        <DataGridTextColumn Header="Next City (East)" Binding="{Binding NextCityEastName}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
