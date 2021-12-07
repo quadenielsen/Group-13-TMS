@@ -16,14 +16,15 @@ using System.Windows.Shapes;
 namespace User.Views.PlannerViews
 {
     /// <summary>
-    /// Interaction logic for Home_View.xaml
+    /// Interaction logic for Carrier_View.xaml
     /// </summary>
-    public partial class Home_View : UserControl
+    public partial class Carrier_View : UserControl
     {
-        public Home_View()
+        public Carrier_View()
         {
             InitializeComponent();
         }
+
         private void settings_MouseEnter(object sender, MouseEventArgs e)
         {
             settings.Foreground = Brushes.Black;
@@ -33,19 +34,15 @@ namespace User.Views.PlannerViews
         {
             settings.Foreground = Brushes.White;
         }
-        private void carrier_MouseEnter(object sender, MouseEventArgs e)
+
+        private void home_MouseEnter(object sender, MouseEventArgs e)
         {
-            carrier.Foreground = Brushes.Black;
+            home.Foreground = Brushes.Black;
         }
 
-        private void carrier_MouseLeave(object sender, MouseEventArgs e)
+        private void home_MouseLeave(object sender, MouseEventArgs e)
         {
-            carrier.Foreground = Brushes.White;
-        }
-
-        private void settings_Click()
-        {
-
+            home.Foreground = Brushes.White;
         }
     }
 }

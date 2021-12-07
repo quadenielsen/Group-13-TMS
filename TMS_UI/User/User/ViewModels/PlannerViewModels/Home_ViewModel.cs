@@ -16,12 +16,14 @@ namespace User.ViewModels.PlannerViewModels
         //----------------------------------- COMMANDS --------------------------------------------
         public ICommand NavigateLoginCommand { get; }
         public ICommand NavigateSettingsCommand { get; }
+        public ICommand NavigateCarrierCommand { get; }
 
         //----------------------------------- CONSTRUCTOR --------------------------------------------
         public Home_ViewModel(NavigationStore navigationStore)
         {
             NavigateLoginCommand = new Commands.NavigateLoginCommand(navigationStore);
             NavigateSettingsCommand = new Commands.PlannerCommands.NavigateSettingsCommand(navigationStore);
+            NavigateCarrierCommand = new Commands.PlannerCommands.NavigateCarrierCommand(navigationStore);
         }
     }
 }

@@ -34,6 +34,16 @@ namespace User.Views.PlannerViews
             home.Foreground = Brushes.White;
         }
 
+        private void carrier_MouseEnter(object sender, MouseEventArgs e)
+        {
+            carrier.Foreground = Brushes.Black;
+        }
+
+        private void carrier_MouseLeave(object sender, MouseEventArgs e)
+        {
+            carrier.Foreground = Brushes.White;
+        }
+
         private void settingsGrid_MouseEnter(object sender, MouseEventArgs e)
         {
             User.ViewModels.Main_ViewModel a = Window.GetWindow(this).DataContext as User.ViewModels.Main_ViewModel;
