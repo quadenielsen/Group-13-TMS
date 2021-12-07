@@ -16,6 +16,10 @@ using System.Windows.Shapes;
 using TMSObjectLibrary;
 using TMSUserLibrary;
 using SQLConnectorLibrary;
+using System.Configuration;
+using System.IO;
+using Microsoft.Win32;
+
 
 namespace AdminWindow
 {
@@ -28,12 +32,13 @@ namespace AdminWindow
         ObservableCollection<Carrier> carriers;
         ObservableCollection<Depot> depots;
         ObservableCollection<City> cities;
+        Logger logger = new Logger();
 
         public MainWindow()
         {
             InitializeComponent();
+            logger.Log("Program Started");
 
-            Logger.ClearLog();
             try
             {
                 admin = new Admin();
@@ -46,7 +51,7 @@ namespace AdminWindow
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                logger.Log(ex.Message);
             }
             
         }
@@ -68,7 +73,7 @@ namespace AdminWindow
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                logger.Log(ex.Message);
             }
         }
 
@@ -88,7 +93,7 @@ namespace AdminWindow
             }
             catch (Exception ex)
             {
-                Logger.Log(ex.Message);
+                logger.Log(ex.Message);
             }
             
         }
@@ -99,6 +104,42 @@ namespace AdminWindow
             Depot depot = (Depot)e.NewItem;
             Carrier carrier = (Carrier)Carriers.SelectedItem;
             depot.CarrierName = carrier.CarrierName;
+        }
+
+
+        private void ChooseLoggerFilepath_Click(object sender, RoutedEventArgs e)
+        {
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == true)
+            {
+                string filepath = ofd.FileName;       //Get Filepath chosen by user
+                logger.ChangeFilepath(filepath);       //Change Filepath of logger
+                logger.Log("Logger Filepath changed.");
+
+                //Show filepath of Log File in Textbox
+                FilepathText.Text = filepath;
+
+                // Show contents of Log File in Textbox
+                LogFileText.Text = File.ReadAllText(filepath);
+
+                //Change app config settings
+                AppConfigClass.SetAppConfig("logpath", filepath);
+
+            }
+
+        }
+
+        private void ViewLogFile_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the current filepath for the logger and display contents in textbox
+            string filepath = logger.GetFilepath();
+
+            //Show filepath of Log File in Textbox
+            FilepathText.Text = filepath;
+
+            // Show contents of Log File in Textbox
+            LogFileText.Text = File.ReadAllText(filepath);
         }
     }
 }

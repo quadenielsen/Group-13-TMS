@@ -61,6 +61,14 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
+            <TabItem Header="Logger">
+                <Grid>
+                    <Button Content="Choose New Log File" HorizontalAlignment="Left" Margin="362,350,0,0" VerticalAlignment="Top" Click="ChooseLoggerFilepath_Click"/>
+                    <TextBox Name="FilepathText" HorizontalAlignment="Left" Margin="47,352,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
+                    <TextBox Name="LogFileText" HorizontalAlignment="Left" Margin="47,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430" Height="243"/>
+                    <Button Content="View Log File" HorizontalAlignment="Left" Margin="47,79,0,0" VerticalAlignment="Top" Click="ViewLogFile_Click"/>
+                </Grid>
+            </TabItem>
         </TabControl>
 
         <Button x:Name="btnUpdate_Table" Grid.Column="1" Height="40" Width="100" Margin="20,0,0,0" Content="Update Table" Click="btnUpdate_Table_Click" HorizontalAlignment="Left"></Button>

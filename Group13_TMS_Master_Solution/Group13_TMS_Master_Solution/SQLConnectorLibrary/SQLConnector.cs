@@ -15,7 +15,7 @@ namespace SQLConnectorLibrary
         private string uid;
         private string password;
 
-
+        Logger logger = new Logger();
 
         //============================
         // CONSTRUCTORS
@@ -159,7 +159,7 @@ namespace SQLConnectorLibrary
                 catch (MySqlException ex)
                 {
                     this.CloseConnection();
-                    Logger.Log(ex.Message);
+                    logger.Log(ex.Message);
                     return false;
                 }
             }
