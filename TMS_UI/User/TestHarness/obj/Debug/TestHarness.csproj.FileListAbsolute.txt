@@ -9,3 +9,7 @@ C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.
 C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.csproj.CopyComplete
 C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.exe
 C:\Users\Justin Chan\source\repos\TMS_UI\User\TestHarness\obj\Debug\TestHarness.pdb
+C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\TMS_UI\User\TestHarness\obj\Debug\TestHarness.csproj.AssemblyReference.cache
+C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\TMS_UI\User\TestHarness\obj\Debug\TestHarness.csproj.CoreCompileInputs.cache
+C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\TMS_UI\User\TestHarness\obj\Debug\TestHarness.exe
+C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\TMS_UI\User\TestHarness\obj\Debug\TestHarness.pdb

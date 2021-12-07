@@ -18,7 +18,7 @@
         
         mc:Ignorable="d"
         Title=""
-                Height="475"
+        Height="475"
         Width="800">
         <!--WindowStartupLocation="CenterScreen"
         WindowStyle="None"
