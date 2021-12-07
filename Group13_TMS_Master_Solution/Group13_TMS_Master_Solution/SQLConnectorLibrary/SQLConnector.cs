@@ -250,7 +250,8 @@ namespace SQLConnectorLibrary
         /// </summary>
         /// <param name="table"></param>
         /// <param name="columns"></param>
-        /// <returns>Returns a dynamic array of lists of strings which contain the specified data that was retrieved.</returns>
+        /// <returns>Returns a dynamic array of lists of strings which contain the specified data that was retrieved.
+        /// The first index is the column, the second index is the row.</returns>
         public bool RetrieveFromColumns(string table, string columns, out List<List<string>> output)
         {
             string query = "SELECT * FROM " + table;
