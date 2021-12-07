@@ -19,30 +19,3 @@ C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj
 C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.exe
 C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.pdb
 C:\Users\quade\source\repos\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj.AssemblyReference.cache
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\ConnectToDatabase.exe.config
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\ConnectToDatabase.exe
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\ConnectToDatabase.pdb
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\MySql.Data.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\SQLConnectorLibrary.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\TMSObjectLibrary.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\TMSUserLibrary.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\Google.Protobuf.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\ZstdNet.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\System.Memory.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\System.Buffers.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\SQLConnectorLibrary.pdb
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\TMSObjectLibrary.pdb
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\TMSUserLibrary.pdb
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\bin\Debug\MySql.Data.xml
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj.AssemblyReference.cache
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.exe.config
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj.CoreCompileInputs.cache
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.csproj.CopyComplete
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.exe
-C:\Users\Justin Chan\OneDrive\Desktop\Group-13-TMS\ConnectToDatabase\obj\Debug\ConnectToDatabase.pdb

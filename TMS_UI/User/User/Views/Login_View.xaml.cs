@@ -57,7 +57,7 @@ namespace User.Views
                 a.username = userNameTB.Text;
                 a.password = passWordTB.Text;
 
-                SQLConnector connector = new SQLConnector("localhost:3306", "OMNI_TMS_13", "root", "justin19987");
+                SQLConnector connector = new SQLConnector("localhost", "OMNI_TMS_13", "root", "justin19987");
                 List<List<string>> retrivedData = null;
                 bool b = connector.RetrieveFromColumns("systemUser", "username", out retrivedData);
 
@@ -73,7 +73,7 @@ namespace User.Views
                 bool checkPassword = false;
                 if (checkUsername == true)
                 {
-                    connector.RetrieveFromColumnsWithLookup("systemuser", "userpassword", "username", a.username, out retrivedData);
+                    connector.RetrieveFromColumnsWithLookup("systemUser", "userPassword", "username", a.username, out retrivedData);
                     if (a.password == retrivedData[0][0])
                     {
                         checkPassword = true;
@@ -93,13 +93,21 @@ namespace User.Views
                     }
                     else if (retrivedData[0][0] == "planner")
                     {
-                        command = new User.Commands.BuyerCommands.NavigateHomeCommand(a._navigationStore);
+                        command = new User.Commands.PlannerCommands.NavigateHomeCommand(a._navigationStore);
                     }
                     submitBtn.Command = command;
                 }
                 else
                 {
+                    if (failedLogin == false)
+                    {
+                        command = submitBtn.Command;
+                        failedLogin = true;
+                    }
                     submitBtn.Command = null;
+                    MessageBox.Show("UserName and password do not match");
+                    userNameTB.Clear();
+                    passWordTB.Clear();
                 }
             }
         }
