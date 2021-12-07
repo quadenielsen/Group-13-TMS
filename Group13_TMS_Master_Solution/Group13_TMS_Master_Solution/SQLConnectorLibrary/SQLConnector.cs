@@ -23,7 +23,6 @@ namespace SQLConnectorLibrary
         //============================
 
 
-
         /// <summary>
         /// Default constructor for the DBConnector class.
         /// </summary>

@@ -142,7 +142,8 @@ namespace TMSUserLibrary
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                    logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return carriersFetched;
             }
@@ -195,7 +196,8 @@ namespace TMSUserLibrary
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                    logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return depotsFetched;
             }

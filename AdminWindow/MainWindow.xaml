@@ -38,7 +38,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True">
+                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" InitializingNewItem="Depots_InitializingNewItem">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
                             <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>
@@ -96,6 +96,7 @@
         </TabControl>
 
         <Button x:Name="btnUpdate_Table" Grid.Column="1" Height="40" Width="100" Margin="20,0,0,0" Content="Update Table" Click="btnUpdate_Table_Click" HorizontalAlignment="Left"></Button>
+        <TextBlock x:Name="Status" Grid.Column="1" MinHeight="100" MinWidth="150" Margin="20,310,30,10" TextWrapping="Wrap"></TextBlock>
 
     </Grid>
 </Window>

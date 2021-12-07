@@ -29,3 +29,77 @@
 2021-12-07 1:42:33 AM: Program Started
 2021-12-07 1:43:58 AM: Program Started
 2021-12-07 1:46:01 AM: Program Started
+2021-12-07 1:47:21 AM: Program Started
+2021-12-07 1:57:33 AM: Program Started
+2021-12-07 2:21:48 AM: Object reference not set to an instance of an object.
+2021-12-07 2:22:05 AM: Program Started
+2021-12-07 2:22:10 AM: Object reference not set to an instance of an object.
+2021-12-07 2:22:13 AM: Program Started
+2021-12-07 2:57:48 AM: Program Started
+2021-12-07 2:58:10 AM: Program Started
+2021-12-07 2:59:04 AM: Program Started
+2021-12-07 2:59:44 AM: Program Started
+2021-12-07 3:00:10 AM: Program Started
+2021-12-07 3:00:15 AM: Object reference not set to an instance of an object.   at AdminWindow.MainWindow.Carriers_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\MainWindow.xaml.cs:line 87Void Carriers_SelectionChanged(System.Object, System.Windows.Controls.SelectionChangedEventArgs)AdminWindow
+2021-12-07 3:00:48 AM: Object reference not set to an instance of an object.   at AdminWindow.MainWindow.Depots_CellEditEnding(Object sender, DataGridCellEditEndingEventArgs e) in C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\MainWindow.xaml.cs:line 117Void Depots_CellEditEnding(System.Object, System.Windows.Controls.DataGridCellEditEndingEventArgs)AdminWindow
+2021-12-07 3:09:23 AM: Program Started
+2021-12-07 3:15:54 AM: Program Started
+2021-12-07 3:16:39 AM: Program Started
+2021-12-07 3:16:50 AM: Program Started
+2021-12-07 3:17:33 AM: Program Started
+2021-12-07 9:03:14 AM: Program Started
+2021-12-07 9:26:49 AM: Program Started
+2021-12-07 9:38:24 AM: Program Started
+2021-12-07 9:38:34 AM: Program Started
+2021-12-07 9:38:54 AM: Program Started
+2021-12-07 9:39:19 AM: Program Started
+2021-12-07 9:40:09 AM: Program Started
+2021-12-07 9:40:26 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 9:40:32 AM: Program Started
+2021-12-07 9:40:48 AM: Program Started
+2021-12-07 9:41:13 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 9:41:17 AM: Program Started
+2021-12-07 9:42:31 AM: Program Started
+2021-12-07 9:42:40 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 9:42:54 AM: Program Started
+2021-12-07 9:43:15 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 9:44:14 AM: Program Started
+2021-12-07 9:45:09 AM: Program Started
+2021-12-07 9:45:28 AM: Program Started
+2021-12-07 9:45:39 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 9:45:46 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 9:45:46 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 9:45:51 AM: Program Started
+2021-12-07 9:46:02 AM: Program Started
+2021-12-07 9:53:03 AM: Program Started
+2021-12-07 9:53:25 AM: Program Started
+2021-12-07 9:55:10 AM: Program Started
+2021-12-07 9:59:02 AM: Program Started
+2021-12-07 10:06:38 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 10:06:43 AM: Program Started
+2021-12-07 10:07:11 AM: Program Started
+2021-12-07 10:08:31 AM: Program Started
+2021-12-07 10:08:37 AM: Object reference not set to an instance of an object.   at AdminWindow.MainWindow.Carriers_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\quade\Documents\GitHub\Group-13-TMS\AdminWindow\MainWindow.xaml.cs:line 88Void Carriers_SelectionChanged(System.Object, System.Windows.Controls.SelectionChangedEventArgs)AdminWindow
+2021-12-07 10:11:03 AM: Program Started
+2021-12-07 10:11:10 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 10:11:15 AM: Program Started
+2021-12-07 10:12:42 AM: Program Started
+2021-12-07 10:13:39 AM: Program Started
+2021-12-07 10:14:14 AM: Program Started
+2021-12-07 10:14:22 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 10:15:36 AM: Program Started
+2021-12-07 10:16:01 AM: Program Started
+2021-12-07 10:16:40 AM: Program Started
+2021-12-07 10:17:02 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 10:17:08 AM: Program Started
+2021-12-07 10:24:18 AM: Program Started
+2021-12-07 10:31:05 AM: Program Started
+2021-12-07 10:31:16 AM: Program Started
+2021-12-07 10:31:30 AM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 10:31:34 AM: Program Started
+2021-12-07 10:31:56 AM: Program Started
+2021-12-07 10:34:29 AM: Program Started
+2021-12-07 10:34:40 AM: Program Started
+2021-12-07 10:36:27 AM: Program Started
+2021-12-07 10:36:41 AM: Program Started
+2021-12-07 10:37:01 AM: Program Started
