@@ -55,10 +55,22 @@ namespace TMSUserLibrary
         /// specified by the Admin.
         /// </summary>
         /// <returns>True if the update was successful.</returns>
-        public bool UpdateCarrierData()
+        public string UpdateCarrierData()
         {
             try
             {
+                foreach (Carrier carrier in Carriers)
+                {
+                    foreach (Depot depot in carrier.Depots)
+                    {
+                        if (!depot.ValidateProperties(Cities))
+                        {
+                            return "New depot is located in unknown city. Please create a new city.";
+                        }
+                    }
+                }
+                
+
                 //clear the tables in the database
                 sqlc.ClearTable("depots");
                 sqlc.ClearTable("carriers");
@@ -82,10 +94,10 @@ namespace TMSUserLibrary
             {
                 Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
                 logger.Log(ex.ToString());
-                return false;
+                return "Update failed.";
             }
             
-            return true;
+            return "Update successful.";
         }
 
     }

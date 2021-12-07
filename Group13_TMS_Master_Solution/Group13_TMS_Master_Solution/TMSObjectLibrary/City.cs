@@ -19,10 +19,12 @@ namespace TMSObjectLibrary
         private string cityName;
         private string cityProvince;
         private string cityCountry;
-        private int kilometersToNextCityEast;
-        private float timeToNextCityEast;
-        private string nextCityEast;
-        private string nextCityWest;
+        private int? kilometersToNextCityEast;
+        private float? timeToNextCityEast;
+        private int? nextCityEastID;
+        private int? nextCityWestID;
+        private string nextCityEastName;
+        private string nextCityWestName;
 
         //======================
         //PUBLIC PROPERTIES
@@ -118,7 +120,7 @@ namespace TMSObjectLibrary
             }
         }
 
-        public int KilometersToNextCityEast
+        public int? KilometersToNextCityEast
         {
             get
             {
@@ -138,7 +140,7 @@ namespace TMSObjectLibrary
             }
         }
 
-        public float TimeToNextCityEast
+        public float? TimeToNextCityEast
         {
             get
             {
@@ -158,27 +160,52 @@ namespace TMSObjectLibrary
             }
         }
 
-        public string NextCityEast
+        public int? NextCityEastID
         {
             get
             {
-                return nextCityEast;
+                return nextCityEastID;
             }
             set
             {
-                nextCityEast = value;
+                nextCityEastID = value;
             }
         }
 
-        public string NextCityWest
+        public int? NextCityWestID
         {
             get
             {
-                return nextCityWest;
+                return nextCityWestID;
             }
             set
             {
-                nextCityWest = value;
+                nextCityWestID = value;
+            }
+        }
+
+
+        public string NextCityEastName
+        {
+            get
+            {
+                return nextCityEastName;
+            }
+            set
+            {
+                nextCityEastName = value;
+            }
+        }
+
+        public string NextCityWestName
+        {
+            get
+            {
+                return nextCityWestName;
+            }
+            set
+            {
+                nextCityWestName = value;
             }
         }
         //======================
@@ -221,12 +248,12 @@ namespace TMSObjectLibrary
    
         override public string GenerateQueryString()
         {
-            return cityID + "|" + cityName + "|" + cityProvince + "|" + cityCountry + "|" + kilometersToNextCityEast + "|" + timeToNextCityEast + "|" + timeToNextCityEast + "|" + nextCityEast + "|" + nextCityWest;
+            return cityID + "|" + cityName + "|" + cityProvince + "|" + cityCountry + "|" + kilometersToNextCityEast + "|" + timeToNextCityEast + "|" + timeToNextCityEast + "|" + nextCityEastID + "|" + nextCityWestID;
         }
 
         public string GenerateCommaDelimitedString()
         {
-            return "'" + cityID + "'" + ", " + cityName + ", " + cityProvince + ", " + cityCountry + ", " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEast + ", " + nextCityWest;
+            return "'" + cityID + "'" + ", " + cityName + ", " + cityProvince + ", " + cityCountry + ", " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEastID + ", " + nextCityWestID;
         }
 
     }

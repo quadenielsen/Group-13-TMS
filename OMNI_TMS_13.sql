@@ -58,6 +58,34 @@ insert  into `cities`(`cityID`,`cityName`,`cityProvince`,`cityCountry`,`kilomete
 (7, 'Kingston', 'Ontario', 'Canada', 196, 2.5, 6, NULL),
 (8, 'Ottawa', 'Ontario', 'Canada', NULL, NULL, 7, NULL);
 
+DROP TABLE IF EXISTS `customers`;
+
+CREATE TABLE `customers`
+(
+`customerID` INT NOT NULL,
+`customerName` VARCHAR(40) NOT NULL,
+`customerAddress` VARCHAR(40) NOT NULL,
+`customerCity` VARCHAR(40) NOT NULL,
+`customerState` VARCHAR(40) NOT NULL,
+`customerCountry` VARCHAR(40) NOT NULL,
+`customerPostal` VARCHAR(10) NOT NULL,
+PRIMARY KEY (`customerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `invoices`;
+
+CREATE TABLE `invoices`
+(
+`invoiceID` INT NOT NULL,
+`amount` FLOAT NOT NULL,
+`dateIssued` DATETIME NOT NULL,
+`datePaid` DATETIME NOT NULL,
+`invoiceStatus` VARCHAR(40) NOT NULL,
+`orderID` INT NOT NULL,
+PRIMARY KEY (`invoiceID`),
+KEY `orderID` (`orderID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 DROP TABLE IF EXISTS `orders`;
 
 CREATE TABLE `orders`
@@ -73,16 +101,16 @@ CREATE TABLE `orders`
 `vanType` VARCHAR(4) NOT NULL, /*"DRY" for dry and "REEF" for reefer*/
 `customerID` INT NOT NULL,
 `invoiceID` INT DEFAULT NULL,
-PRIMARY KEY (`orderID`),/*,
+PRIMARY KEY (`orderID`),
 KEY `customerID` (`customerID`),
 KEY `invoiceID` (`invoiceID`),
 CONSTRAINT `orders_constraint1` FOREIGN KEY (`customerID`) REFERENCES `customers` (`customerID`),
-CONSTRAINT `orders_constraint2` FOREIGN KEY (`invoiceID`) REFERENCES `invoices` (`invoiceID`)*/
-KEY `customerID` (`customerID`),
-KEY `invoiceID` (`invoiceID`),
+CONSTRAINT `orders_constraint2` FOREIGN KEY (`invoiceID`) REFERENCES `invoices` (`invoiceID`),
 CONSTRAINT `orders_constraint3` FOREIGN KEY (`originCity`) REFERENCES `cities` (`cityID`),
 CONSTRAINT `orders_constraint4` FOREIGN KEY (`destinationCity`) REFERENCES `cities` (`cityID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `invoices` ADD CONSTRAINT `invoices_constraint1` FOREIGN KEY (`orderID`) REFERENCES `orders`(`orderID`);
 
 DROP TABLE IF EXISTS `depots`;
 
@@ -140,3 +168,28 @@ CONSTRAINT `trips_constraint2` FOREIGN KEY (`cityID`) REFERENCES `depots` (`city
 CONSTRAINT `trips_constraint3` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+
+DROP TABLE IF EXISTS `logs`;
+
+CREATE TABLE `logs`
+(
+`logID` INT NOT NULL AUTO_INCREMENT,
+`directoryPathname` VARCHAR(40) NOT NULL,
+`logCreationDate` DATETIME NOT NULL,
+`lastUpdated` DATETIME NOT NULL,
+`logPathname` VARCHAR(40) NOT NULL,
+PRIMARY KEY (`logID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `IPAddress`;
+
+CREATE TABLE `IPAddress`
+(
+`IPID` INT NOT NULL,
+`IPAddress` VARCHAR(40) NOT NULL,
+`domainName` VARCHAR(40) NOT NULL,
+`permissionStatus` VARCHAR(40) NOT NULL,
+`logPathname` VARCHAR(40) NOT NULL,
+PRIMARY KEY (`IPID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

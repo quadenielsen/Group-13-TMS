@@ -142,7 +142,8 @@ namespace TMSUserLibrary
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                    logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return carriersFetched;
             }
@@ -195,7 +196,8 @@ namespace TMSUserLibrary
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                    logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return depotsFetched;
             }
@@ -205,7 +207,7 @@ namespace TMSUserLibrary
             }
         }
 
-        
+
 
         /// <summary>
         /// Method FetchCarrierData fetches city data from the database and returns a list of City objects.
@@ -236,10 +238,58 @@ namespace TMSUserLibrary
                         city.CityName = cityInfoRetrieved[1][i];
                         city.CityProvince = cityInfoRetrieved[2][i];
                         city.CityCountry = cityInfoRetrieved[3][i];
-                        city.KilometersToNextCityEast = int.Parse(cityInfoRetrieved[4][i]);
-                        city.TimeToNextCityEast = float.Parse(cityInfoRetrieved[5][i]);
-                        city.NextCityWest = cityInfoRetrieved[6][i];
-                        city.NextCityEast = cityInfoRetrieved[7][i];
+                        int number;
+                        if (!int.TryParse(cityInfoRetrieved[4][i], out number))
+                        {
+                            city.KilometersToNextCityEast = null;
+                        }
+                        else
+                        {
+                            city.KilometersToNextCityEast = number;
+                        }
+                        float realNumber;
+                        if (!float.TryParse(cityInfoRetrieved[5][i], out realNumber))
+                        {
+                            city.TimeToNextCityEast = null;
+                        }
+                        else
+                        {
+                            city.TimeToNextCityEast = realNumber;
+                        }             
+                        if (!int.TryParse(cityInfoRetrieved[6][i], out number))
+                        {
+                            city.NextCityWestID = null;
+                        }
+                        else
+                        {
+                            city.NextCityWestID = number;
+                        }
+                        if (!int.TryParse(cityInfoRetrieved[7][i], out number))
+                        {
+                            city.NextCityEastID = null;
+                        }
+                        else
+                        {
+                            city.NextCityEastID = number;
+                        }
+
+
+                        List<List<String>> cityName = new List<List<String>>();
+                        sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityWestID.ToString(), out cityName);
+
+                        if (cityName[0].Count != 0)
+                        {
+                            city.NextCityWestName = cityName[0][0];
+                        }
+
+
+                        cityName = new List<List<String>>();
+                        sqlc.RetrieveFromColumnsWithLookup("cities", "CityName", "CityID", city.NextCityEastID.ToString(), out cityName);
+
+                        if (cityName[0].Count != 0)
+                        {
+                            city.NextCityEastName = cityName[0][0];
+                        }
 
                         citiesFetched.Add(city);
                     }
@@ -247,7 +297,7 @@ namespace TMSUserLibrary
                 catch (Exception ex)
                 {
                     Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
-                    logger.Log(ex.Message);
+                    logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
                 }
                 return citiesFetched;
             }
@@ -257,12 +307,12 @@ namespace TMSUserLibrary
             }
         }
     }
-    
 
-        /// <summary>
-        /// Buyer derives from User and adds methods CreatOrder(), GetContract(), GenerateInvoice()
-        /// </summary>
-        public class Buyer : TMSUser
+
+    /// <summary>
+    /// Buyer derives from User and adds methods CreatOrder(), GetContract(), GenerateInvoice()
+    /// </summary>
+    public class Buyer : TMSUser
         {
             /// <summary>
             /// Method CreateOrder

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace TMSObjectLibrary
 {
@@ -96,6 +98,28 @@ namespace TMSObjectLibrary
             cityName = "Unknown";
             ftlAvailability = 0;
             ltlAvailability = 0;
+        }
+
+
+
+        public bool ValidateProperties(ObservableCollection<City> cities)
+        {
+            bool cityExists = false;
+            foreach (City city in cities)
+            {
+                if (city.CityName == CityName)
+                {
+                    cityExists = true;
+                    CityID = city.CityID;
+                }
+            }
+
+            if (cityExists == false)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public string GenerateCommaDelimitedString()
