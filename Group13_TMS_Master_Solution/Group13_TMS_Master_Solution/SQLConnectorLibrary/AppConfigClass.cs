@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace AdminWindow
+namespace SQLConnectorLibrary
 {
-    class AppConfigClass
+    public class AppConfigClass
     {
         //Default Constructor
         public AppConfigClass()

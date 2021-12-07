@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\e-sho\OneDrive\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\obj\Debug\
 User
 none
 false
 DEBUG;TRACE
-C:\Users\e-sho\OneDrive\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\App.xaml
+C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\App.xaml
 9-894780857
 
-35-1668498550
-17-1801659216
+34-826139183
+1211832169192
 MainWindow.xaml;Views\AdminViews\Home_View.xaml;Views\AdminViews\SelectDirectory_View.xaml;Views\AdminViews\Settings_View.xaml;Views\BuyerViews\Home_View.xaml;Views\BuyerViews\Settings_View.xaml;Views\Login_View.xaml;Views\PlannerViews\Home_View.xaml;Views\PlannerViews\Settings_View.xaml;
 
-True
+False
 
