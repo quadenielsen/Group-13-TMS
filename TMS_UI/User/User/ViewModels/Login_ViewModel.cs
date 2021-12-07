@@ -27,6 +27,8 @@ namespace User.ViewModels
             NavigateAdminHomeCommand = new Commands.AdminCommands.NavigateHomeCommand(navigationStore);
             NavigateBuyerHomeCommand = new Commands.BuyerCommands.NavigateHomeCommand(navigationStore);
             NavigatePlannerHomeCommand = new Commands.PlannerCommands.NavigateHomeCommand(navigationStore);
+
+            NavigateUserHomeCommand = NavigateAdminHomeCommand;
         }
     }
 }

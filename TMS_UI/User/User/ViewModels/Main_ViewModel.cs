@@ -13,6 +13,8 @@ namespace User.ViewModels
     {
         //----------------------------------- NAVIGATION STORE --------------------------------------------
         private readonly NavigationStore _navigationStore;
+        public string username;
+        public string password;
 
         public ViewModelBASE CurrentViewModel => _navigationStore.CurrentViewModel;
 

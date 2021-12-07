@@ -57,6 +57,8 @@ namespace User.Views
                 {
                     submitBtn.Command = command;
                 }
+                //SQL function here
+
             }
         }
     }
