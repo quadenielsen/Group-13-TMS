@@ -92,7 +92,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid Background="Transparent" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Grid.ColumnSpan="8" Margin="354,0,26,0">
+                    <DataGrid Background="Transparent" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Grid.ColumnSpan="8" Margin="354,0,26,0" InitializingNewItem="Depots_InitializingNewItem">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
                             <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>

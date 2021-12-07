@@ -21,3 +21,18 @@
 2021-12-07 12:56:17 PM: Program Started
 2021-12-07 12:59:30 PM: Program Started
 2021-12-07 1:16:45 PM: Program Started
+2021-12-07 1:22:34 PM: Program Started
+2021-12-07 1:22:44 PM: Object reference not set to an instance of an object.   at User.Views.AdminViews.SelectDirectory_View.Carriers_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\Views\AdminViews\SelectDirectory_View.xaml.cs:line 88Void Carriers_SelectionChanged(System.Object, System.Windows.Controls.SelectionChangedEventArgs)User
+2021-12-07 1:22:51 PM: Program Started
+2021-12-07 1:22:57 PM: Object reference not set to an instance of an object.   at User.Views.AdminViews.SelectDirectory_View.Carriers_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\Views\AdminViews\SelectDirectory_View.xaml.cs:line 88Void Carriers_SelectionChanged(System.Object, System.Windows.Controls.SelectionChangedEventArgs)User
+2021-12-07 1:23:29 PM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 1:24:03 PM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 1:24:07 PM: Program Started
+2021-12-07 1:30:57 PM: Program Started
+2021-12-07 1:31:09 PM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint1` FOREIGN KEY (`carrierName`) REFERENCES `carriers` (`carrierName`))
+2021-12-07 1:31:14 PM: Program Started
+2021-12-07 1:31:53 PM: Program Started
+2021-12-07 1:33:04 PM: Program Started
+2021-12-07 1:33:33 PM: Program Started
+2021-12-07 1:33:37 PM: Object reference not set to an instance of an object.   at User.Views.AdminViews.SelectDirectory_View.Carriers_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\quade\Documents\GitHub\Group-13-TMS\TMS_UI\User\User\Views\AdminViews\SelectDirectory_View.xaml.cs:line 88Void Carriers_SelectionChanged(System.Object, System.Windows.Controls.SelectionChangedEventArgs)User
+2021-12-07 1:34:11 PM: Program Started

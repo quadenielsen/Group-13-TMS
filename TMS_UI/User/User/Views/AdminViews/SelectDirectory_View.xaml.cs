@@ -79,6 +79,7 @@ namespace User.Views.AdminViews
 
 
 
+
         private void Carriers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Carrier test = new Carrier();
@@ -95,7 +96,6 @@ namespace User.Views.AdminViews
             {
                 logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
             }
-
         }
 
 
@@ -218,6 +218,5 @@ namespace User.Views.AdminViews
         {
             settings.Foreground = Brushes.White;
         }
-
     }
 }
