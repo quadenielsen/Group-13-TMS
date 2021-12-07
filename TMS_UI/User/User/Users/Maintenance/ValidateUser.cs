@@ -4,23 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 
 namespace User.Users.Maintenance
 {
     public class ValidateUser
     {
-        private string firstName;
-        private string lastName;
-        private DateTime dateOfBirth;
-        private string email;
-
-        public ValidateUser()
-        {
-            firstName = string.Empty;
-            lastName = string.Empty;
-            dateOfBirth = DateTime.Now;
-            email = string.Empty;
-        }
 
         static public bool ValidateCredentials(string fName, string lName, string dob, string Email)
         {
@@ -30,7 +19,20 @@ namespace User.Users.Maintenance
             {
                 validityStatus = false;
             }
+
             if (!Regex.IsMatch(lName, @"^[a-zA-Z0-9]+$"))
+            {
+                validityStatus = false;
+            }
+
+            DateTime date;
+            if(!DateTime.TryParse(dob, out date))
+            {
+                validityStatus = false;
+            }
+
+            var foo = new EmailAddressAttribute();
+            if (!foo.IsValid(Email))
             {
                 validityStatus = false;
             }

@@ -18,8 +18,12 @@
         
         mc:Ignorable="d"
         Title=""
-        Height="475"
+                Height="475"
         Width="800">
+        <!--WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"-->
     
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
@@ -51,16 +55,20 @@
             <DataTemplate DataType="{x:Type BuyerViewModels:Home_ViewModel}">
                 <BuyerViews:Home_View />
             </DataTemplate>
-            <!--************************BUYER ACCOUNT View and ViewModel***************************-->
-            
-            
+            <!--************************BUYER SETTINGS View and ViewModel***************************-->
+            <DataTemplate DataType="{x:Type BuyerViewModels:Settings_ViewModel}">
+                <BuyerViews:Settings_View />
+            </DataTemplate>
+
         <!--PLANNER PAGES-->
             <!--************************PLANNER HOME View and ViewModel***************************-->
             <DataTemplate DataType="{x:Type PlannerViewmodels:Home_ViewModel}">
                 <PlannerViews:Home_View />
             </DataTemplate>
             <!--************************PLANNER ACCOUNT View and ViewModel***************************-->
-
+            <DataTemplate DataType="{x:Type PlannerViewmodels:Settings_ViewModel}">
+                <PlannerViews:Settings_View />
+            </DataTemplate>
 
 
         </ContentControl.Resources>

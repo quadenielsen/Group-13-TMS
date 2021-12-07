@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
+
+using User.Commands.AdminCommands;
+using User.Stores;
 
 namespace User.Views.AdminViews
 {
@@ -23,6 +27,26 @@ namespace User.Views.AdminViews
         public Home_View()
         {
             InitializeComponent();
+        }
+
+        private void datatables_MouseEnter(object sender, MouseEventArgs e)
+        {
+            datatables.Foreground = Brushes.Black;
+        }
+
+        private void datatables_MouseLeave(object sender, MouseEventArgs e)
+        {
+            datatables.Foreground = Brushes.White;
+        }
+
+        private void settings_MouseEnter(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.Black;
+        }
+
+        private void settings_MouseLeave(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.White;
         }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{63AFA034-8537-4C04-B285-CAAD6C3322FD}</ProjectGuid>
+    <ProjectGuid>{C90887B6-CB48-4055-AB9B-69CBEAC9CC8B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>User</RootNamespace>
     <AssemblyName>User</AssemblyName>
@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,18 +60,22 @@
     <Compile Include="Commands\AdminCommands\NavigateSelectDirectoryCommand.cs" />
     <Compile Include="Commands\AdminCommands\NavigateSettingsCommand.cs" />
     <Compile Include="Commands\BuyerCommands\NavigateHomeCommand.cs" />
+    <Compile Include="Commands\BuyerCommands\NavigateSettingsCommand.cs" />
     <Compile Include="Commands\CommandBASE.cs" />
     <Compile Include="Commands\NavigateLoginCommand.cs" />
     <Compile Include="Commands\PlannerCommands\NavigateHomeCommand.cs" />
+    <Compile Include="Commands\PlannerCommands\NavigateSettingsCommand.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="Users\Maintenance\ValidateUser.cs" />
     <Compile Include="ViewModels\AdminViewModels\Home_ViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModels\SelectDirectory_ViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModels\Settings_ViewModel.cs" />
     <Compile Include="ViewModels\BuyerViewModels\Home_ViewModel.cs" />
+    <Compile Include="ViewModels\BuyerViewModels\Settings_ViewModel.cs" />
     <Compile Include="ViewModels\Login_ViewModel.cs" />
     <Compile Include="ViewModels\Main_ViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModels\Home_ViewModel.cs" />
+    <Compile Include="ViewModels\PlannerViewModels\Settings_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBASE.cs" />
     <Compile Include="Views\AdminViews\Home_View.xaml.cs">
       <DependentUpon>Home_View.xaml</DependentUpon>
@@ -84,11 +89,17 @@
     <Compile Include="Views\BuyerViews\Home_View.xaml.cs">
       <DependentUpon>Home_View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\BuyerViews\Settings_View.xaml.cs">
+      <DependentUpon>Settings_View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login_View.xaml.cs">
       <DependentUpon>Login_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlannerViews\Home_View.xaml.cs">
       <DependentUpon>Home_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlannerViews\Settings_View.xaml.cs">
+      <DependentUpon>Settings_View.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -118,11 +129,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BuyerViews\Settings_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Login_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PlannerViews\Home_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlannerViews\Settings_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,6 +187,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\background.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\SQLConnectorLibrary\SQLConnectorLibrary.csproj">
+      <Project>{68df36fd-5f10-4a65-8c25-900d50c52afc}</Project>
+      <Name>SQLConnectorLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\TMSObjectLibrary\TMSObjectLibrary.csproj">
+      <Project>{849edbf0-a384-4a3f-9ac5-6444d471c28f}</Project>
+      <Name>TMSObjectLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Group13_TMS_Master_Solution\Group13_TMS_Master_Solution\TMSUserLibrary\TMSUserLibrary.csproj">
+      <Project>{b997bf4c-04de-4e35-b259-e333f2d93a77}</Project>
+      <Name>TMSUserLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

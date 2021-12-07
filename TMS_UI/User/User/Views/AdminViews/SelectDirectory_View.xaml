@@ -7,8 +7,52 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="SELECT DIRECTORY (ADMIN)"/>
-        <Button Content="go to ADMIN HOME" Command="{Binding NavigateHomeCommand}" Margin="100"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="650" Width="*"/>
+            <ColumnDefinition MinWidth="200" Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <TabControl Grid.Column="0" Name="Data_Editing_Tabs">
+            <TabItem Header="Rate/Fee Tables" />
+            <TabItem Name="CarrierData" Header="Carrier Data">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="400" Width="*"/>
+                        <ColumnDefinition MinWidth="300" Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Column="0" Name="Carriers" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" MinWidth="150"/>
+                            <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
+                            <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTLRate}"/>
+                            <DataGridTextColumn Header="Reefer Charge" Binding="{Binding ReefCharge}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <DataGrid Grid.Column="1" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" AddingNewItem="Depots_AddingNewItem" InitializingNewItem="Depots_InitializingNewItem">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
+                            <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>
+                            <DataGridTextColumn Header="LTL Availability" Binding="{Binding LTLAvailability}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Route Table" />
+        </TabControl>
+
+        <Button x:Name="btnUpdate_Table" Grid.Column="1" Height="40" Width="100" Margin="20,0,0,0" Content="Update Table" Click="btnUpdate_Table_Click" HorizontalAlignment="Left" />
+        <Label Content="SELECT DIRECTORY (ADMIN)" Margin="0,50,0,0"/>
+        <Button Content="go to ADMIN HOME" Command="{Binding NavigateHomeCommand}" Margin="150,200"/>
         <Button Content="go to login" Command="{Binding NavigateLoginCommand}" Margin="100" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

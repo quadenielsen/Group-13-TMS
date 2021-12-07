@@ -24,5 +24,14 @@ namespace User.Views.BuyerViews
         {
             InitializeComponent();
         }
+        private void Settings_MouseEnter(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.Black;
+        }
+
+        private void Settings_MouseLeave(object sender, MouseEventArgs e)
+        {
+            settings.Foreground = Brushes.White;
+        }
     }
 }
