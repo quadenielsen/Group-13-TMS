@@ -34,7 +34,7 @@
             </Border>
 
             <Grid Height="60" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Background="#233C4F">
-                <Label Content="CONTRACTS"
+                <Label Content="CARRIERS"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Grid.Column="0"

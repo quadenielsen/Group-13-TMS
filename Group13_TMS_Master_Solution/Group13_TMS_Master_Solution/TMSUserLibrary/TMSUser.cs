@@ -327,31 +327,31 @@ namespace TMSUserLibrary
         /// <summary>
         /// Planner derives from User and adds methods AdvanceTime(), PairCarrierToOrder(), ConfirmOrder(), FetchShipmentData()
         /// </summary>
-        public class Planner : TMSUser
-        {
-            /// <summary>
-            /// Method AdvanceTime
-            /// </summary>
-            public void AdvanceTime()
-            {
+        //public class Planner : TMSUser
+        //{
+        //    /// <summary>
+        //    /// Method AdvanceTime
+        //    /// </summary>
+        //    public void AdvanceTime()
+        //    {
 
-            }
+        //    }
 
-            /// <summary>
-            /// Method PAirCarrierToOrder
-            /// </summary>
-            public void PairCarrierToOrder()
-            {
+        //    /// <summary>
+        //    /// Method PAirCarrierToOrder
+        //    /// </summary>
+        //    public void PairCarrierToOrder()
+        //    {
 
-            }
+        //    }
 
-            /// <summary>
-            /// Method FetchShipmentData
-            /// </summary>
-            public void FetchShipmentData()
-            {
+        //    /// <summary>
+        //    /// Method FetchShipmentData
+        //    /// </summary>
+        //    public void FetchShipmentData()
+        //    {
 
-            }
-        }
+        //    }
+        //}
     }
 

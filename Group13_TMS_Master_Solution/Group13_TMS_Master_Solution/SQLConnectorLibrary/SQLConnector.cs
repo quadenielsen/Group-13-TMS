@@ -422,6 +422,64 @@ namespace SQLConnectorLibrary
             }
         }
 
+        //increment column by day(s)
+        public bool incrementDay(string table, string column, int increment, out List<List<string>> output)
+        {
+            string query = "SELECT * DATEADD(day, " + increment + ", *) AS * FROM " + table;
+            Console.WriteLine(query);
+
+            //parse columns
+            char[] columnNameDelimiter = { ',', ' ' };
+            string[] columnName = column.Split(columnNameDelimiter, StringSplitOptions.RemoveEmptyEntries);
+
+
+            //create dynamic array of lists of strings in which to store data
+            List<List<string>> oneColumn = new List<List<string>>();
+            foreach (string s in columnName)
+            {
+                List<string> singleColumn = new List<string>();
+                oneColumn.Add(singleColumn);
+            }
+            output = oneColumn;
+
+            //attempt to read from database
+            try
+            {
+                if (this.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    int numberOfColumns = oneColumn.Count;
+
+                    for (int i = 0; i < numberOfColumns; ++i)
+                    {
+                        if (!DataRecordExtensions.HasColumn(dataReader, columnName[i]))
+                        {
+                            return false;
+                        }
+                    }
+
+                    while (dataReader.Read())
+                    {
+                        for (int i = 0; i < numberOfColumns; ++i)
+                        {
+                            oneColumn[i].Add(dataReader[columnName[i]] + "");
+                        }
+                    }
+
+                    dataReader.Close();
+                    this.CloseConnection();
+                    return true;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Logger logger = new Logger(ConfigurationManager.AppSettings["logpath"]);
+                logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
+            }
+            return false;
+        }
+
         //Backup
         public void Backup()
         {

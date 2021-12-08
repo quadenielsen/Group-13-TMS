@@ -20,7 +20,7 @@
         Title=""
         Height="475"
         Width="800"
-        SizeToContent="WidthAndHeight">
+        >
         <!--WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"

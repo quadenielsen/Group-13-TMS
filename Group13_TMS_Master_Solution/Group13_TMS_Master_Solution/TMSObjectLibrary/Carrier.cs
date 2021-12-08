@@ -26,6 +26,7 @@ namespace TMSObjectLibrary
         private float ftlRate;
         private float ltlRate;
         private float reefCharge;
+        private ObservableCollection<Orders> orders;
 
         //======================
         //PUBLIC PROPERTIES
@@ -104,6 +105,18 @@ namespace TMSObjectLibrary
                     reefCharge = value;
                 }
 
+            }
+        }
+
+        public ObservableCollection<Orders> Orders
+        {
+            get
+            {
+                return orders;
+            }
+            set
+            {
+                orders = value;
             }
         }
 
