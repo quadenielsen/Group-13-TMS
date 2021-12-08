@@ -298,6 +298,14 @@ namespace TMSUserLibrary
                             city.NextCityEastName = cityName[0][0];
                         }
 
+                        //populate the depot collection of the city
+                        ObservableCollection<Depot> depots = FetchDepotData();
+                        foreach (Depot depot in depots)
+                        {
+                            if (depot.CityName == city.CityName)
+                                city.Depots.Add(depot);
+                        }
+
                         citiesFetched.Add(city);
                     }
                 }

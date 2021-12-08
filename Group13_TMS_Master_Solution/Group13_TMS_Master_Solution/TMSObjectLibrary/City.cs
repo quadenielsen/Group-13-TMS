@@ -215,13 +215,14 @@ namespace TMSObjectLibrary
                 nextCityWestName = value;
             }
         }
+        public ObservableCollection<Depot> Depots { get; set; }
         //======================
         //CONSTRUCTORS
         //======================
 
         public City()
         {
-
+            Depots = new ObservableCollection<Depot>();
         }
 
         //======================
@@ -260,7 +261,7 @@ namespace TMSObjectLibrary
 
         public string GenerateCommaDelimitedString()
         {
-            return  cityID + ", '" + cityName + "', '" + cityProvince + "', '" + cityCountry + "', " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEastID + ", " + nextCityWestID;
+            return  cityID + ", '" + cityName + "', '" + cityProvince + "', '" + cityCountry + "', " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEastID;
         }
 
     }

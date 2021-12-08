@@ -39,11 +39,8 @@ CREATE TABLE `cities`
 `timeToNextCityEast` DECIMAL(3,2) DEFAULT NULL,
 `nextCityWest` INT DEFAULT NULL,
 `nextCityEast` INT DEFAULT NULL,
-PRIMARY KEY (`cityID`),
-KEY `nextCityWest` (`nextCityWest`),
-KEY `nextCityEast` (`nextCityEast`),
-CONSTRAINT `cities_constraint1` FOREIGN KEY (`nextCityWest`) REFERENCES `cities` (`cityID`),
-CONSTRAINT `cities_constraint2` FOREIGN KEY (`nextCityEast`) REFERENCES `cities` (`cityID`)
+PRIMARY KEY (`cityID`)
+
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -57,6 +54,14 @@ insert  into `cities`(`cityID`,`cityName`,`cityProvince`,`cityCountry`,`kilomete
 (6, 'Belleville', 'Ontario', 'Canada', 82, 1.2, 5, NULL),
 (7, 'Kingston', 'Ontario', 'Canada', 196, 2.5, 6, NULL),
 (8, 'Ottawa', 'Ontario', 'Canada', NULL, NULL, 7, NULL);
+
+UPDATE `cities` SET `nextCityEast`='2' WHERE `CityID`='1';
+UPDATE `cities` SET `nextCityEast`='3' WHERE `CityID`='2';
+UPDATE `cities` SET `nextCityEast`='4' WHERE `CityID`='3';
+UPDATE `cities` SET `nextCityEast`='5' WHERE `CityID`='4';
+UPDATE `cities` SET `nextCityEast`='6' WHERE `CityID`='5';
+UPDATE `cities` SET `nextCityEast`='7' WHERE `CityID`='6';
+UPDATE `cities` SET `nextCityEast`='8' WHERE `CityID`='7';
 
 DROP TABLE IF EXISTS `customers`;
 
