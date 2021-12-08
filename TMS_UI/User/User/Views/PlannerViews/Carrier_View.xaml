@@ -58,9 +58,9 @@
                    Foreground="#E0FFFF"
                />
             </Grid>
-
+        
             <DataGrid Background="Transparent" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right"
-                      Margin="0,60,0,0" Name="Contracts" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="675" >
+                      Margin="0,60,0,0" Name="PCarrier" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="675" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" MinWidth="50"/>
                     <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>

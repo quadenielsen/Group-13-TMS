@@ -36,7 +36,7 @@ namespace TMSUserLibrary
         /// </summary>
         public TMSUser()
         {
-            sqlcTMS = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
+            sqlcTMS = new SQLConnector("localhost", "OMNI_TMS_13", "root", "justin19987"); 
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace TMSUserLibrary
         /// </summary>
         public TMSUser(string userRole)
         {
-            sqlcTMS = new SQLConnector("localhost", "OMNI_TMS_13", "root", "securepassword!94");
+            sqlcTMS = new SQLConnector("localhost", "OMNI_TMS_13", "root", "justin19987");
             if (userRole == "planner" || userRole == "admin")
             {
                 Carriers = FetchCarrierData();

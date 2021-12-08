@@ -219,3 +219,4 @@
 2021-12-07 7:20:51 PM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint2` FOREIGN KEY (`cityID`) REFERENCES `cities` (`cityID`))
 2021-12-07 7:20:51 PM: Cannot add or update a child row: a foreign key constraint fails (`omni_tms_13`.`depots`, CONSTRAINT `carrierDepots_constraint2` FOREIGN KEY (`cityID`) REFERENCES `cities` (`cityID`))
 2021-12-07 7:21:01 PM: Program Started
+12/7/2021 10:24:58 PM: Program Started

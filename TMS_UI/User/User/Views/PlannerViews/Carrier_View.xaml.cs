@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TMSObjectLibrary;
+using TMSUserLibrary;
+using SQLConnectorLibrary;
+using System.Configuration;
+using System.IO;
+using Microsoft.Win32;
 
 namespace User.Views.PlannerViews
 {
@@ -20,9 +27,27 @@ namespace User.Views.PlannerViews
     /// </summary>
     public partial class Carrier_View : UserControl
     {
+        Planner planner;
+        ObservableCollection<Carrier> carriers;
+        Logger logger = new Logger();
+        
         public Carrier_View()
         {
             InitializeComponent();
+            logger.Log("Program Started");
+
+            try
+            {
+                planner = new Planner();
+                carriers = planner.Carriers;
+                PCarrier.DataContext = carriers;
+                
+            }
+            catch (Exception ex)
+            {
+                logger.Log(ex.Message + ex.StackTrace + ex.TargetSite + ex.Source);
+            }
+
         }
 
 

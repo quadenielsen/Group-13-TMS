@@ -73,7 +73,8 @@ namespace SQLConnectorLibrary
         /// </summary>
         private void Initialize()
         {
-            server = "localhost";     
+            
+            server = "localhost";    
             database = "OMNI_TMS_13";
             uid = "root";
             password = "securepassword!94";
