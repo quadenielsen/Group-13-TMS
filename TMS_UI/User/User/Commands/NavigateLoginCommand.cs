@@ -1,4 +1,11 @@
-﻿using System;
+﻿//
+// FILE          : NavigateLoginCommand.cs
+// PROJECT       : OMNI TMS GROUP 13
+// PROGRAMMER    : Justin, Quade, Evan, Anthony
+// FIRST VERSION : December 7, 2021
+// DESCRIPTION   : This file contains the NavigateLoginCommand
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
