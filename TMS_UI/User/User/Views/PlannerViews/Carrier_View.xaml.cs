@@ -25,6 +25,11 @@ namespace User.Views.PlannerViews
             InitializeComponent();
         }
 
+
+
+
+
+
         private void settings_MouseEnter(object sender, MouseEventArgs e)
         {
             settings.Foreground = Brushes.Black;

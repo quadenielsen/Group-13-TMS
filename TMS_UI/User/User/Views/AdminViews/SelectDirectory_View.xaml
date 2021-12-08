@@ -70,21 +70,22 @@
             <TabItem Name="CarrierData" Header="Carrier Data">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="400" Width="229*"/>
-                        <ColumnDefinition Width="171*"/>
+                        <ColumnDefinition MinWidth="400" Width="39*"/>
+                        <ColumnDefinition/>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition Width="0*"/>
-                        <ColumnDefinition MinWidth="300" Width="300*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition MinWidth="300" Width="30*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <DataGrid Name="Carriers" Background="Transparent" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged" Margin="0,0,46,0" Grid.ColumnSpan="2">
+                    <DataGrid Name="Carriers" Background="Transparent" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" SelectionChanged="Carriers_SelectionChanged" Margin="0,0,36,0">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Carrier Name" Binding="{Binding CarrierName}" MinWidth="150"/>
                             <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTLRate}"/>
@@ -93,7 +94,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid Background="Transparent" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Grid.ColumnSpan="8" Margin="125,0,26,0" InitializingNewItem="Depots_InitializingNewItem" Grid.Column="1">
+                    <DataGrid Background="Transparent" Name="Depots" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Grid.ColumnSpan="10" Margin="354,0,26,0" InitializingNewItem="Depots_InitializingNewItem">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Depot" Binding="{Binding CityName}" MinWidth="120"/>
                             <DataGridTextColumn Header="FTL Availability" Binding="{Binding FTLAvailability}"/>
