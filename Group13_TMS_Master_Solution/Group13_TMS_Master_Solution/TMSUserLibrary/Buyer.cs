@@ -28,6 +28,8 @@ namespace TMSUserLibrary
             Contracts = FetchContracts();
         }
         
+
+
         /// <summary>
         /// Method CreateOrder
         /// </summary>
@@ -35,6 +37,8 @@ namespace TMSUserLibrary
         {
 
         }
+
+
 
         /// <summary>
         /// Method FetchCarrierData fetches carrier data from the database and returns a list of Carrier objects.
@@ -98,6 +102,8 @@ namespace TMSUserLibrary
                 return null;
             }
         }
+
+
 
         /// <summary>
         /// Method GenerateInvoice
