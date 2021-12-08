@@ -1,4 +1,11 @@
-﻿using System;
+﻿//
+// FILE          : TMSUser.cs
+// PROJECT       : OMNI TMS GROUP 13
+// PROGRAMMER    : Justin, Quade, Evan, Anthony
+// FIRST VERSION : December 7, 2021
+// DESCRIPTION   : This file contains the TMSUser Class
+//
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -289,6 +296,14 @@ namespace TMSUserLibrary
                         if (cityName[0].Count != 0)
                         {
                             city.NextCityEastName = cityName[0][0];
+                        }
+
+                        //populate the depot collection of the city
+                        ObservableCollection<Depot> depots = FetchDepotData();
+                        foreach (Depot depot in depots)
+                        {
+                            if (depot.CityName == city.CityName)
+                                city.Depots.Add(depot);
                         }
 
                         citiesFetched.Add(city);

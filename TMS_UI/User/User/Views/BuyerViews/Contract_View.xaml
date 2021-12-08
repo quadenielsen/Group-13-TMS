@@ -62,13 +62,12 @@
             <DataGrid Background="Transparent" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right"
                       Margin="0,60,0,0" Name="Contracts" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="True" Width="675" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ClientName" Binding="{Binding ClientName}" MinWidth="50"/>
-                    <DataGridTextColumn Header="JobType" Binding="{Binding JobType}"/>
+                    <DataGridTextColumn Header="Client Name" Binding="{Binding ClientName}" MinWidth="50"/>
+                    <DataGridTextColumn Header="Job Type" Binding="{Binding JobType}"/>
                     <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
                     <DataGridTextColumn Header="Origin" Binding="{Binding Origin}"/>
                     <DataGridTextColumn Header="Destination" Binding="{Binding Destination}"/>
-                    <DataGridTextColumn Header="VanType" Binding="{Binding VanType}"/>
-                    
+                    <DataGridTextColumn Header="Van Type" Binding="{Binding VanType}"/>
                 </DataGrid.Columns>
             </DataGrid>
 

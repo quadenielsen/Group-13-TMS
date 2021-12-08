@@ -1,4 +1,11 @@
-﻿using System;
+﻿//
+// FILE          : Admin.cs
+// PROJECT       : OMNI TMS GROUP 13
+// PROGRAMMER    : Justin, Quade, Evan, Anthony
+// FIRST VERSION : December 7, 2021
+// DESCRIPTION   : This file contains Admin Class (child of TMSUser)
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -111,15 +118,27 @@ namespace TMSUserLibrary
         public string UpdateCityData()
         {
             try
-            { 
+            {
                 //clear the tables in the database
+                sqlcTMS.ClearTable("depots");
                 sqlcTMS.ClearTable("cities");
 
 
                 //for each carrier, insert a new row into the database
                 foreach (City city in this.Cities)
                 {
-                    sqlcTMS.InsertRow("cities (cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest, nextCityEast)", city.GenerateCommaDelimitedString());
+                    sqlcTMS.InsertRow("cities (CityID, cityName, cityProvince, cityCountry, kilometersToNextCityEast, timeToNextCityEast, nextCityWest)", city.GenerateCommaDelimitedString());
+                }
+                foreach (City city in this.Cities)
+                {
+                    sqlcTMS.InsertRow("cities (nextCityEast)", city.NextCityEastID.ToString());
+                    //for each depot that exists in the city, add a new row into the database
+                    foreach (Depot depot in city.Depots)
+                    {
+                        {
+                            sqlcTMS.InsertRow("depots (carrierName, CityID, FTLAvailability, LTLAvailability)", depot.GenerateCommaDelimitedString());
+                        }
+                    }
                 }
 
             }

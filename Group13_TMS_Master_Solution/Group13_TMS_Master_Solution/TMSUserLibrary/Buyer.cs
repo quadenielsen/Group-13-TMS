@@ -1,4 +1,11 @@
-﻿using System;
+﻿//
+// FILE          : Buyer,cs
+// PROJECT       : OMNI TMS GROUP 13
+// PROGRAMMER    : Justin, Quade, Evan, Anthony
+// FIRST VERSION : December 7, 2021
+// DESCRIPTION   : This file contains the Buyer class
+//
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -17,7 +24,7 @@ namespace TMSUserLibrary
     public class Buyer : TMSUser
     {
 
-        private SQLConnector sqlcTMS;
+        //private SQLConnector sqlcTMS;
         private SQLConnector sqlcCMP;
 
         public ObservableCollection<Contract> Contracts { get; set; }
@@ -28,6 +35,8 @@ namespace TMSUserLibrary
             Contracts = FetchContracts();
         }
         
+
+
         /// <summary>
         /// Method CreateOrder
         /// </summary>
@@ -35,6 +44,8 @@ namespace TMSUserLibrary
         {
 
         }
+
+
 
         /// <summary>
         /// Method FetchCarrierData fetches carrier data from the database and returns a list of Carrier objects.
@@ -63,10 +74,26 @@ namespace TMSUserLibrary
                         Contract contract = new Contract();
                         contract.ClientName = contractInfoRetrieved[0][i];
                         contract.JobType = contractInfoRetrieved[1][i];
+                        if (contract.JobType == "0")
+                        {
+                            contract.JobType = "FTL";
+                        }
+                        else
+                        {
+                            contract.JobType = "LTL";
+                        }
                         contract.Quantity = int.Parse(contractInfoRetrieved[2][i]);
                         contract.Origin = contractInfoRetrieved[3][i];
                         contract.Destination = contractInfoRetrieved[4][i];
                         contract.VanType = contractInfoRetrieved[5][i];
+                        if (contract.VanType == "0")
+                        {
+                            contract.VanType = "Dry";
+                        }
+                        else
+                        {
+                            contract.VanType = "Reefer";
+                        }
                         contractsFetched.Add(contract);
                     }
                 }
@@ -82,6 +109,8 @@ namespace TMSUserLibrary
                 return null;
             }
         }
+
+
 
         /// <summary>
         /// Method GenerateInvoice

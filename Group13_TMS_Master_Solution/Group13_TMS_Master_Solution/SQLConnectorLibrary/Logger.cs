@@ -1,10 +1,10 @@
-﻿/*
- * File:		Logger.cs
- * Project:		myOwnWebServer
- * By:			Quade Nielsen
- * Date:		November 27, 2021
- * Description:	This file contains the Logger class.
- */
+﻿//
+// FILE          : Logger.cs
+// PROJECT       : OMNI TMS GROUP 13
+// PROGRAMMER    : Justin, Quade, Evan, Anthony
+// FIRST VERSION : December 7, 2021
+// DESCRIPTION   : This file contains the Logger class.  It is used to log information to specified files.
+//
 
 using System;
 using System.Collections.Generic;

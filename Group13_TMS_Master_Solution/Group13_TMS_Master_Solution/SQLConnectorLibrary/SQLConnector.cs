@@ -1,4 +1,13 @@
-﻿using System;
+﻿//
+// FILE          : SQLConnector.cs
+// PROJECT       : OMNI TMS GROUP 13
+// PROGRAMMER    : Justin, Quade, Evan, Anthony
+// FIRST VERSION : December 7, 2021
+// DESCRIPTION   : This file contains the SQLConnector class which establishes connections with databases
+//
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,13 +63,9 @@ namespace SQLConnectorLibrary
             connection = new MySqlConnection(connectionString);
         }
 
-
-
         //============================
         // PRIVATE METHODS
         //============================
-
-
 
         /// <summary>
         /// Initializer for the DBConnector class. To be called in the default constructor.

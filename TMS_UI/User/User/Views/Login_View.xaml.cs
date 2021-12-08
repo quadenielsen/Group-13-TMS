@@ -63,7 +63,7 @@ namespace User.Views
 
                 bool checkUsername = false;
                 bool checkPassword = false;
-                int index;
+                //int index;
                 foreach(string username in retrivedData[0])
                 {
                     if (username == a.username)

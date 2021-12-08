@@ -1,4 +1,11 @@
-﻿using System;
+﻿//
+// FILE          : City.cs
+// PROJECT       : OMNI TMS GROUP 13
+// PROGRAMMER    : Justin, Quade, Evan, Anthony
+// FIRST VERSION : December 7, 2021
+// DESCRIPTION   : This file contains the City class.
+//
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -208,13 +215,14 @@ namespace TMSObjectLibrary
                 nextCityWestName = value;
             }
         }
+        public ObservableCollection<Depot> Depots { get; set; }
         //======================
         //CONSTRUCTORS
         //======================
 
         public City()
         {
-
+            Depots = new ObservableCollection<Depot>();
         }
 
         //======================
@@ -253,7 +261,7 @@ namespace TMSObjectLibrary
 
         public string GenerateCommaDelimitedString()
         {
-            return  cityID + ", '" + cityName + "', '" + cityProvince + "', '" + cityCountry + "', " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEastID + ", " + nextCityWestID;
+            return  cityID + ", '" + cityName + "', '" + cityProvince + "', '" + cityCountry + "', " + kilometersToNextCityEast + ", " + timeToNextCityEast + ", " + nextCityEastID;
         }
 
     }
